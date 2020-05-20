@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--숙소-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="UnU-k4-3yb"/>
+                    <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UnU-k4-3yb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
-        <!--Item-->
+        <!--예약-->
         <scene sceneID="JwP-9r-Lpr">
             <objects>
                 <viewController id="lbe-2B-IwT" sceneMemberID="viewController">
@@ -52,13 +52,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Qil-gW-LWt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ui2-lT-Ejm"/>
+                    <tabBarItem key="tabBarItem" title="예약" image="person" catalog="system" selectedImage="person.fill" id="ui2-lT-Ejm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9G-0a-wtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1122" y="911"/>
         </scene>
-        <!--Item-->
+        <!--즐겨찾기-->
         <scene sceneID="pvR-Le-eNK">
             <objects>
                 <viewController id="cAZ-rQ-6gp" sceneMemberID="viewController">
@@ -68,11 +68,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="QIy-lr-A5b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Bhd-i9-fSc"/>
+                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="heart" catalog="system" selectedImage="heart.fill" id="Bhd-i9-fSc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYE-hU-fLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="911"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
 </document>
