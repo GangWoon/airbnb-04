@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13434F2475537B0081E1D0 /* SearchTextField.swift */; };
 		AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184394247287F8007ABDB3 /* AppDelegate.swift */; };
 		AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184396247287F8007ABDB3 /* SceneDelegate.swift */; };
 		AE184399247287F8007ABDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184398247287F8007ABDB3 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE13434F2475537B0081E1D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		AE184391247287F8007ABDB3 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE184394247287F8007ABDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE184396247287F8007ABDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE13434E247553320081E1D0 /* StyleView */ = {
+			isa = PBXGroup;
+			children = (
+				AE13434F2475537B0081E1D0 /* SearchTextField.swift */,
+			);
+			path = StyleView;
+			sourceTree = "<group>";
+		};
 		AE184388247287F8007ABDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		AE184393247287F8007ABDB3 /* Airbnb */ = {
 			isa = PBXGroup;
 			children = (
+				AE13434E247553320081E1D0 /* StyleView */,
 				AE184394247287F8007ABDB3 /* AppDelegate.swift */,
 				AE184396247287F8007ABDB3 /* SceneDelegate.swift */,
 				AE184398247287F8007ABDB3 /* ViewController.swift */,
@@ -141,6 +152,7 @@
 				AE184399247287F8007ABDB3 /* ViewController.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
 				AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */,
+				AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
