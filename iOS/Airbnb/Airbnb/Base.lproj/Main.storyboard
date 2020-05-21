@@ -257,6 +257,10 @@
                                                 <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="Kc9-dW-JLm" secondAttribute="top" id="uP4-w5-097"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pageControl" destination="32Q-33-Pdo" id="Hj2-W1-j3S"/>
+                                            <outlet property="scrollView" destination="06v-2l-ZZF" id="Hwe-4O-10B"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
