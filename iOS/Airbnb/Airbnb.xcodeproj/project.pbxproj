@@ -10,6 +10,7 @@
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
 		AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13434F2475537B0081E1D0 /* SearchTextField.swift */; };
 		AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13437F247643B00081E1D0 /* BorderLabel.swift */; };
+		AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1343852476475C0081E1D0 /* AccommodationsCell.swift */; };
 		AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184394247287F8007ABDB3 /* AppDelegate.swift */; };
 		AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184396247287F8007ABDB3 /* SceneDelegate.swift */; };
 		AE184399247287F8007ABDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184398247287F8007ABDB3 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		AE13434F2475537B0081E1D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		AE13437F247643B00081E1D0 /* BorderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
+		AE1343852476475C0081E1D0 /* AccommodationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsCell.swift; sourceTree = "<group>"; };
 		AE184391247287F8007ABDB3 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE184394247287F8007ABDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE184396247287F8007ABDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,22 @@
 			path = StyleView;
 			sourceTree = "<group>";
 		};
+		AE1343812476466C0081E1D0 /* Accommodations */ = {
+			isa = PBXGroup;
+			children = (
+				AE134382247646B00081E1D0 /* TableView */,
+			);
+			path = Accommodations;
+			sourceTree = "<group>";
+		};
+		AE134382247646B00081E1D0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				AE1343852476475C0081E1D0 /* AccommodationsCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		AE184388247287F8007ABDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +90,7 @@
 		AE184393247287F8007ABDB3 /* Airbnb */ = {
 			isa = PBXGroup;
 			children = (
+				AE1343812476466C0081E1D0 /* Accommodations */,
 				AE13434E247553320081E1D0 /* StyleView */,
 				AE184394247287F8007ABDB3 /* AppDelegate.swift */,
 				AE184396247287F8007ABDB3 /* SceneDelegate.swift */,
@@ -156,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,
+				AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */,
 				AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */,
 				AE184399247287F8007ABDB3 /* ViewController.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
