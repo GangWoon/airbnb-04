@@ -1,10 +1,15 @@
 ### iOS 협업 규칙
 #### MARK 순서
+0. IBInspectable
 1. IBOutlet
 2. Properties
 3. Lifecycle
 4. IBAction
 5. Methods
+
+#### 프로퍼티 선언 순서
+1. Computed Property
+2. Stored Property
 
 #### 접근 제어자 별 선언 순서
 1. static
