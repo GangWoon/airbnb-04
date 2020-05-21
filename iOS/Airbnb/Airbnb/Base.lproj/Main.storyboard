@@ -142,7 +142,7 @@
                                                     <rect key="frame" x="8" y="8" width="374" height="374"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5">
-                                                            <rect key="frame" x="20" y="254" width="334" height="100"/>
+                                                            <rect key="frame" x="20" y="282" width="334" height="80"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
@@ -179,7 +179,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                                    <rect key="frame" x="0.0" y="25.5" width="334" height="58.5"/>
+                                                                    <rect key="frame" x="0.0" y="25.5" width="334" height="54.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="jKN-oP-FH4" firstAttribute="centerY" secondItem="wF8-h2-EAA" secondAttribute="centerY" id="6Lx-lM-uew"/>
                                                                 <constraint firstAttribute="trailing" secondItem="yjb-NC-J1O" secondAttribute="trailing" id="7Lx-cR-Pbk"/>
-                                                                <constraint firstAttribute="bottom" secondItem="yjb-NC-J1O" secondAttribute="bottom" constant="16" id="9S2-Ns-gku"/>
+                                                                <constraint firstAttribute="bottom" secondItem="yjb-NC-J1O" secondAttribute="bottom" id="9S2-Ns-gku"/>
                                                                 <constraint firstItem="yjb-NC-J1O" firstAttribute="leading" secondItem="51g-oz-fu5" secondAttribute="leading" id="DlX-Nf-M8l"/>
                                                                 <constraint firstAttribute="trailing" secondItem="jKN-oP-FH4" secondAttribute="trailing" id="Dtg-Os-a9L"/>
                                                                 <constraint firstItem="wF8-h2-EAA" firstAttribute="leading" secondItem="51g-oz-fu5" secondAttribute="leading" id="JSy-bF-EdP"/>
@@ -201,22 +201,22 @@
                                                             </constraints>
                                                         </view>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
-                                                            <rect key="frame" x="20" y="20" width="334" height="234"/>
+                                                            <rect key="frame" x="20" y="20" width="334" height="262"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="1002" height="234"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="1002" height="262"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-UM-tIC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="1002" height="234"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="1002" height="262"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NtZ-WB-eBs">
-                                                                                    <rect key="frame" x="0.0" y="0.5" width="334" height="233"/>
+                                                                                    <rect key="frame" x="0.0" y="0.5" width="334" height="261"/>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Jr-LG-2HR">
-                                                                                    <rect key="frame" x="334" y="0.5" width="334" height="233"/>
+                                                                                    <rect key="frame" x="334" y="0.5" width="334" height="261"/>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-ZF-Om0">
-                                                                                    <rect key="frame" x="668" y="0.5" width="334" height="233"/>
+                                                                                    <rect key="frame" x="668" y="0.5" width="334" height="261"/>
                                                                                 </imageView>
                                                                             </subviews>
                                                                         </stackView>
@@ -244,7 +244,7 @@
                                                             <viewLayoutGuide key="frameLayoutGuide" id="sAn-Ww-ZLO"/>
                                                         </scrollView>
                                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-33-Pdo">
-                                                            <rect key="frame" x="167.5" y="217" width="39" height="37"/>
+                                                            <rect key="frame" x="167.5" y="245" width="39" height="37"/>
                                                             <connections>
                                                                 <action selector="moveToPage:" destination="edH-pV-TOT" eventType="valueChanged" id="6Hu-uG-TOu"/>
                                                             </connections>
@@ -257,11 +257,11 @@
                                                         <constraint firstItem="32Q-33-Pdo" firstAttribute="bottom" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="7MT-1g-dFs"/>
                                                         <constraint firstItem="51g-oz-fu5" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="D2C-bk-Qvk"/>
                                                         <constraint firstItem="51g-oz-fu5" firstAttribute="leading" secondItem="sa5-Zk-7Y7" secondAttribute="leading" constant="20" id="E4W-Lz-pIU"/>
-                                                        <constraint firstAttribute="bottom" secondItem="51g-oz-fu5" secondAttribute="bottom" constant="20" id="JhV-4g-fV2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="51g-oz-fu5" secondAttribute="bottom" constant="12" id="JhV-4g-fV2"/>
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="sa5-Zk-7Y7" secondAttribute="leading" constant="20" id="SVP-Nw-n9r"/>
                                                         <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" constant="20" id="Y3G-cN-LMR"/>
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="sa5-Zk-7Y7" secondAttribute="top" constant="20" id="apo-95-5rE"/>
-                                                        <constraint firstItem="06v-2l-ZZF" firstAttribute="height" secondItem="sa5-Zk-7Y7" secondAttribute="height" multiplier="0.7" constant="-28" id="mN0-id-Gra"/>
+                                                        <constraint firstItem="06v-2l-ZZF" firstAttribute="height" secondItem="sa5-Zk-7Y7" secondAttribute="height" multiplier="0.7" id="mN0-id-Gra"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
