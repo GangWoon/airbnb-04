@@ -176,7 +176,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                            <rect key="frame" x="0.0" y="30" width="366" height="87"/>
+                                                            <rect key="frame" x="0.0" y="26" width="366" height="75"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                                     <constraints>
                                                         <constraint firstItem="jKN-oP-FH4" firstAttribute="centerY" secondItem="wF8-h2-EAA" secondAttribute="centerY" id="6Lx-lM-uew"/>
                                                         <constraint firstAttribute="trailing" secondItem="yjb-NC-J1O" secondAttribute="trailing" id="7Lx-cR-Pbk"/>
-                                                        <constraint firstAttribute="bottom" secondItem="yjb-NC-J1O" secondAttribute="bottom" id="9S2-Ns-gku"/>
+                                                        <constraint firstAttribute="bottom" secondItem="yjb-NC-J1O" secondAttribute="bottom" constant="16" id="9S2-Ns-gku"/>
                                                         <constraint firstItem="yjb-NC-J1O" firstAttribute="leading" secondItem="51g-oz-fu5" secondAttribute="leading" id="DlX-Nf-M8l"/>
                                                         <constraint firstAttribute="trailing" secondItem="jKN-oP-FH4" secondAttribute="trailing" id="Dtg-Os-a9L"/>
                                                         <constraint firstItem="wF8-h2-EAA" firstAttribute="leading" secondItem="51g-oz-fu5" secondAttribute="leading" id="JSy-bF-EdP"/>
@@ -194,7 +194,7 @@
                                                         <constraint firstItem="jKN-oP-FH4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IpP-Ef-xuY" secondAttribute="trailing" constant="4" id="Kht-fX-bdd"/>
                                                         <constraint firstItem="IpP-Ef-xuY" firstAttribute="centerY" secondItem="wF8-h2-EAA" secondAttribute="centerY" id="dH4-Sb-U9y"/>
                                                         <constraint firstItem="wF8-h2-EAA" firstAttribute="top" secondItem="51g-oz-fu5" secondAttribute="top" constant="8" id="gLU-Vx-u80"/>
-                                                        <constraint firstItem="yjb-NC-J1O" firstAttribute="top" secondItem="IpP-Ef-xuY" secondAttribute="bottom" constant="8" id="gs6-7y-00c"/>
+                                                        <constraint firstItem="yjb-NC-J1O" firstAttribute="top" secondItem="IpP-Ef-xuY" secondAttribute="bottom" constant="4" id="gs6-7y-00c"/>
                                                     </constraints>
                                                 </view>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
