@@ -32,7 +32,9 @@ final class AccommodationsCell: UITableViewCell {
                                      y: scrollView.frame.minY,
                                      width: scrollView.frame.width,
                                      height: scrollView.frame.height)
-        scrollView.scrollRectToVisible(visibleViewRect, animated: true)
+        scrollView
+            .scrollRectToVisible(visibleViewRect,
+                                 animated: true)
     }
     
     // MARK: - Methods

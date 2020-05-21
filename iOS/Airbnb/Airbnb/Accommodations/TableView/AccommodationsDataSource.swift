@@ -9,7 +9,7 @@
 import UIKit
 
 final class AccommodationsDataSource: NSObject, UITableViewDataSource {
-
+    
     // MARK: - Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
