@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 final class BorderButton: UIButton {
 
+    // MARK: - IBInspectables
     @IBInspectable var borderWidth: CGFloat {
         get { layer.borderWidth }
         set { layer.borderWidth = newValue }
@@ -40,6 +41,7 @@ final class BorderButton: UIButton {
         set { padding.right = newValue }
     }
     
+    // MARK: - Properties
     override var intrinsicContentSize : CGSize {
         let superContentSize = super.intrinsicContentSize
         let width = superContentSize.width + padding.left + padding.right
