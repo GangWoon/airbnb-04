@@ -197,17 +197,23 @@
                                                         <constraint firstItem="yjb-NC-J1O" firstAttribute="top" secondItem="IpP-Ef-xuY" secondAttribute="bottom" constant="4" id="gs6-7y-00c"/>
                                                     </constraints>
                                                 </view>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
                                                     <rect key="frame" x="12" y="0.0" width="366" height="273"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
-                                                            <rect key="frame" x="0.0" y="0.0" width="366" height="273"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="1098" height="273"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-UM-tIC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="273"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="1098" height="273"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NtZ-WB-eBs">
-                                                                            <rect key="frame" x="0.0" y="-1" width="366" height="274"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NtZ-WB-eBs">
+                                                                            <rect key="frame" x="0.0" y="0.5" width="366" height="272"/>
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Jr-LG-2HR">
+                                                                            <rect key="frame" x="366" y="0.5" width="366" height="272"/>
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-ZF-Om0">
+                                                                            <rect key="frame" x="732" y="0.5" width="366" height="272"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                 </stackView>
@@ -222,10 +228,12 @@
                                                         </view>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="PSt-ZF-Om0" firstAttribute="width" secondItem="sAn-Ww-ZLO" secondAttribute="width" id="604-Rs-a2V"/>
                                                         <constraint firstItem="t6P-dn-H87" firstAttribute="top" secondItem="a69-hh-OPm" secondAttribute="top" id="6o0-2y-1bI"/>
                                                         <constraint firstItem="t6P-dn-H87" firstAttribute="leading" secondItem="a69-hh-OPm" secondAttribute="leading" id="Cte-HG-6o5"/>
                                                         <constraint firstItem="NtZ-WB-eBs" firstAttribute="width" secondItem="sAn-Ww-ZLO" secondAttribute="width" id="FXH-Fn-ecb"/>
                                                         <constraint firstItem="t6P-dn-H87" firstAttribute="height" secondItem="sAn-Ww-ZLO" secondAttribute="height" id="H1K-c7-mG2"/>
+                                                        <constraint firstItem="7Jr-LG-2HR" firstAttribute="width" secondItem="sAn-Ww-ZLO" secondAttribute="width" id="IO4-Fd-gRf"/>
                                                         <constraint firstItem="t6P-dn-H87" firstAttribute="trailing" secondItem="a69-hh-OPm" secondAttribute="trailing" id="Klg-08-sbA"/>
                                                         <constraint firstItem="t6P-dn-H87" firstAttribute="bottom" secondItem="a69-hh-OPm" secondAttribute="bottom" id="gXY-En-ReS"/>
                                                     </constraints>
@@ -330,6 +338,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="star.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
