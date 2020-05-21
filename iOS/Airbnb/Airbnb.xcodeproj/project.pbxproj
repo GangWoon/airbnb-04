@@ -10,10 +10,10 @@
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
 		AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13434F2475537B0081E1D0 /* SearchTextField.swift */; };
 		AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13437F247643B00081E1D0 /* BorderLabel.swift */; };
+		AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */; };
 		AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1343852476475C0081E1D0 /* AccommodationsCell.swift */; };
 		AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184394247287F8007ABDB3 /* AppDelegate.swift */; };
 		AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184396247287F8007ABDB3 /* SceneDelegate.swift */; };
-		AE184399247287F8007ABDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE184398247287F8007ABDB3 /* ViewController.swift */; };
 		AE18439C247287F8007ABDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439A247287F8007ABDB3 /* Main.storyboard */; };
 		AE18439E247287FA007ABDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE18439D247287FA007ABDB3 /* Assets.xcassets */; };
 		AE1843A1247287FA007ABDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439F247287FA007ABDB3 /* LaunchScreen.storyboard */; };
@@ -23,11 +23,11 @@
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		AE13434F2475537B0081E1D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		AE13437F247643B00081E1D0 /* BorderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
+		AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsViewController.swift; sourceTree = "<group>"; };
 		AE1343852476475C0081E1D0 /* AccommodationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsCell.swift; sourceTree = "<group>"; };
 		AE184391247287F8007ABDB3 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE184394247287F8007ABDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE184396247287F8007ABDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE184398247287F8007ABDB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE18439B247287F8007ABDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE18439D247287FA007ABDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE1843A0247287FA007ABDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				AE134382247646B00081E1D0 /* TableView */,
+				AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */,
 			);
 			path = Accommodations;
 			sourceTree = "<group>";
@@ -94,7 +95,6 @@
 				AE13434E247553320081E1D0 /* StyleView */,
 				AE184394247287F8007ABDB3 /* AppDelegate.swift */,
 				AE184396247287F8007ABDB3 /* SceneDelegate.swift */,
-				AE184398247287F8007ABDB3 /* ViewController.swift */,
 				AE18439A247287F8007ABDB3 /* Main.storyboard */,
 				AE18439D247287FA007ABDB3 /* Assets.xcassets */,
 				AE18439F247287FA007ABDB3 /* LaunchScreen.storyboard */,
@@ -176,8 +176,8 @@
 			files = (
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,
 				AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */,
+				AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */,
 				AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */,
-				AE184399247287F8007ABDB3 /* ViewController.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
 				AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */,
 				AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */,
