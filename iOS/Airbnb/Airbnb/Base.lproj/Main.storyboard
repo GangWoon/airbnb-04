@@ -197,7 +197,7 @@
                                                         <constraint firstItem="yjb-NC-J1O" firstAttribute="top" secondItem="IpP-Ef-xuY" secondAttribute="bottom" constant="4" id="gs6-7y-00c"/>
                                                     </constraints>
                                                 </view>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
                                                     <rect key="frame" x="12" y="0.0" width="366" height="273"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
@@ -240,14 +240,19 @@
                                                     <viewLayoutGuide key="contentLayoutGuide" id="a69-hh-OPm"/>
                                                     <viewLayoutGuide key="frameLayoutGuide" id="sAn-Ww-ZLO"/>
                                                 </scrollView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-33-Pdo">
+                                                    <rect key="frame" x="175.5" y="236" width="39" height="37"/>
+                                                </pageControl>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="06v-2l-ZZF" firstAttribute="height" secondItem="Kc9-dW-JLm" secondAttribute="height" multiplier="0.7" id="5Sb-A4-Zw5"/>
                                                 <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" constant="12" id="9BR-gn-3KU"/>
+                                                <constraint firstItem="32Q-33-Pdo" firstAttribute="centerX" secondItem="06v-2l-ZZF" secondAttribute="centerX" id="HUS-KV-aa5"/>
                                                 <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" constant="12" id="IL3-Bp-vFd"/>
                                                 <constraint firstAttribute="bottom" secondItem="51g-oz-fu5" secondAttribute="bottom" id="Rdr-Ow-RYi"/>
                                                 <constraint firstItem="51g-oz-fu5" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="TLF-6w-ipq"/>
                                                 <constraint firstItem="51g-oz-fu5" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" constant="12" id="Vlm-SR-xjp"/>
+                                                <constraint firstItem="32Q-33-Pdo" firstAttribute="bottom" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="Xi9-gc-3KZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="06v-2l-ZZF" secondAttribute="trailing" constant="12" id="Xzb-36-m6x"/>
                                                 <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="Kc9-dW-JLm" secondAttribute="top" id="uP4-w5-097"/>
                                             </constraints>
