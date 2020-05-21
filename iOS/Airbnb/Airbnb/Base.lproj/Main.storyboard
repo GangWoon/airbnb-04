@@ -10,7 +10,7 @@
         <!--숙소-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AVPlayerViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AccommodationsViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,19 +127,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rZ3-kf-nfJ">
-                                <rect key="frame" x="24" y="176" width="366" height="637"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rZ3-kf-nfJ">
+                                <rect key="frame" x="12" y="176" width="390" height="637"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccommodationsCell" rowHeight="390" id="edH-pV-TOT" customClass="AccommodationsCell" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="366" height="390"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AccommodationsCell" rowHeight="390" id="edH-pV-TOT" customClass="AccommodationsCell" customModule="Airbnb" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="390"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edH-pV-TOT" id="Kc9-dW-JLm">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="390"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5">
-                                                    <rect key="frame" x="0.0" y="273" width="366" height="117"/>
+                                                    <rect key="frame" x="12" y="273" width="366" height="117"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
@@ -198,7 +198,7 @@
                                                     </constraints>
                                                 </view>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="273"/>
+                                                    <rect key="frame" x="12" y="0.0" width="366" height="273"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
                                                             <rect key="frame" x="0.0" y="0.0" width="366" height="273"/>
@@ -235,12 +235,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="06v-2l-ZZF" firstAttribute="height" secondItem="Kc9-dW-JLm" secondAttribute="height" multiplier="0.7" id="5Sb-A4-Zw5"/>
-                                                <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" id="9BR-gn-3KU"/>
-                                                <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" id="IL3-Bp-vFd"/>
+                                                <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" constant="12" id="9BR-gn-3KU"/>
+                                                <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" constant="12" id="IL3-Bp-vFd"/>
                                                 <constraint firstAttribute="bottom" secondItem="51g-oz-fu5" secondAttribute="bottom" id="Rdr-Ow-RYi"/>
                                                 <constraint firstItem="51g-oz-fu5" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="TLF-6w-ipq"/>
-                                                <constraint firstItem="51g-oz-fu5" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" id="Vlm-SR-xjp"/>
-                                                <constraint firstAttribute="trailing" secondItem="06v-2l-ZZF" secondAttribute="trailing" id="Xzb-36-m6x"/>
+                                                <constraint firstItem="51g-oz-fu5" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" constant="12" id="Vlm-SR-xjp"/>
+                                                <constraint firstAttribute="trailing" secondItem="06v-2l-ZZF" secondAttribute="trailing" constant="12" id="Xzb-36-m6x"/>
                                                 <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="Kc9-dW-JLm" secondAttribute="top" id="uP4-w5-097"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -253,7 +253,7 @@
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="0DT-CL-gIh"/>
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7AP-IT-oIn"/>
                             <constraint firstItem="mvG-Sv-fN4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Apk-BC-9Yp"/>
-                            <constraint firstItem="rZ3-kf-nfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Mtm-kg-hYM"/>
+                            <constraint firstItem="rZ3-kf-nfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="Mtm-kg-hYM"/>
                             <constraint firstItem="rZ3-kf-nfJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P6n-fC-NHP"/>
                             <constraint firstItem="mvG-Sv-fN4" firstAttribute="top" secondItem="OSx-Vn-QPP" secondAttribute="bottom" constant="16" id="Qx6-XN-1Nd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rZ3-kf-nfJ" secondAttribute="bottom" id="lLh-9m-vin"/>
@@ -263,6 +263,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UnU-k4-3yb"/>
+                    <connections>
+                        <outlet property="tableView" destination="rZ3-kf-nfJ" id="ZFD-pT-Ynn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
