@@ -24,29 +24,29 @@ final class BorderButton: UIButton {
         get { layer.cornerRadius }
         set { layer.cornerRadius = newValue }
     }
-    @IBInspectable var paddingTop: CGFloat {
-        get { padding.top }
-        set { padding.top = newValue }
+    @IBInspectable var paddingWidth: CGFloat {
+        get { padding.width }
+        set { padding.width = newValue }
     }
-    @IBInspectable var paddingLeft: CGFloat {
-        get { padding.left }
-        set { padding.left = newValue }
+    @IBInspectable var paddingHeight: CGFloat {
+        get { padding.height }
+        set { padding.height = newValue }
     }
-    @IBInspectable var paddingBottom: CGFloat {
-        get { padding.bottom }
-        set { padding.bottom = newValue }
+    @IBInspectable var shadowOpacity: Float {
+        get { layer.shadowOpacity }
+        set { layer.shadowOpacity = newValue }
     }
-    @IBInspectable var paddingRight: CGFloat {
-        get { padding.right }
-        set { padding.right = newValue }
+    @IBInspectable var shadowOffset: CGSize {
+        get { layer.shadowOffset }
+        set { layer.shadowOffset = newValue }
     }
     
     // MARK: - Properties
     override var intrinsicContentSize : CGSize {
         let superContentSize = super.intrinsicContentSize
-        let width = superContentSize.width + padding.left + padding.right
-        let heigth = superContentSize.height + padding.top + padding.bottom
+        let width = superContentSize.width + padding.width
+        let heigth = superContentSize.height + padding.height
         return CGSize(width: width, height: heigth)
     }
-    private var padding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+    private var padding: CGSize = .init(width: 0, height: 0)
 }
