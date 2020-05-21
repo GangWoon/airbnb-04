@@ -12,6 +12,19 @@ import UIKit
 final class SearchTextField: UITextField {
     
     // MARK: - IBInspectables
+    // MARK: Border
+    @IBInspectable var borderWidth: CGFloat {
+        get { layer.borderWidth }
+        set { layer.borderWidth = newValue }
+    }
+    @IBInspectable var borderColor: UIColor {
+        get { UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor) }
+        set { layer.borderColor = newValue.cgColor }
+    }
+    @IBInspectable var cornerRadius: CGFloat {
+        get { layer.cornerRadius }
+        set { layer.cornerRadius = newValue }
+    }
     // MARK: Shadow
     @IBInspectable var shadowOpacity: Float {
         get { layer.shadowOpacity }
@@ -20,5 +33,16 @@ final class SearchTextField: UITextField {
     @IBInspectable var shadowOffset: CGSize {
         get { layer.shadowOffset }
         set { layer.shadowOffset = newValue }
+    }
+    
+    // MARK: - Properties
+    private var edgeInsets: UIEdgeInsets = .init(top: 0, left: 10, bottom: 0, right: 10)
+    
+    // MARK: - Methods
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: edgeInsets)
+    }
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: edgeInsets)
     }
 }
