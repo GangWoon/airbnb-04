@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
+		4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481A88B24766B0600B79F09 /* ShadowView.swift */; };
 		AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13434F2475537B0081E1D0 /* SearchTextField.swift */; };
 		AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13437F247643B00081E1D0 /* BorderLabel.swift */; };
 		AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		4481A88B24766B0600B79F09 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		AE13434F2475537B0081E1D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		AE13437F247643B00081E1D0 /* BorderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
 		AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				AE13434F2475537B0081E1D0 /* SearchTextField.swift */,
 				446544D924755685002D84A1 /* BorderButton.swift */,
 				AE13437F247643B00081E1D0 /* BorderLabel.swift */,
+				4481A88B24766B0600B79F09 /* ShadowView.swift */,
 			);
 			path = StyleView;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */,
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,
 				AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */,
 				AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */,
