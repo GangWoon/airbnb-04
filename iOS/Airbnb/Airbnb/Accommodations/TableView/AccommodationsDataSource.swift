@@ -19,6 +19,7 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
         guard let cell = tableView
             .dequeueReusableCell(withIdentifier: AccommodationsCell.identifier,
                                  for: indexPath) as? AccommodationsCell else { return UITableViewCell() }
+        
         return cell
     }
 }

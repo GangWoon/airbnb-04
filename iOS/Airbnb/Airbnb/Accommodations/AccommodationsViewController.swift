@@ -14,6 +14,9 @@ final class AccommodationsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = dataSource
+            tableView
+                .register(AccommodationsHeaderView.self,
+                          forHeaderFooterViewReuseIdentifier: AccommodationsHeaderView.identifier)
         }
     }
     
@@ -25,3 +28,19 @@ final class AccommodationsViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+// MARK: - UITableView
+// MARK: Delegate
+extension AccommodationsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return tableView
+            .dequeueReusableHeaderFooterView(withIdentifier: AccommodationsHeaderView.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerView = view as! AccommodationsHeaderView
+        headerView.configure(text: "날짜와 인원을 선택하시면 가격별 숙소를 추천해드립니다.")
+    }
+}
+
