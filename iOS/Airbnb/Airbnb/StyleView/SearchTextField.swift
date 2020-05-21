@@ -12,6 +12,7 @@ import UIKit
 final class SearchTextField: UITextField {
     
     // MARK: - IBInspectables
+    // MARK: Shadow
     @IBInspectable var shadowOpacity: Float {
         get { layer.shadowOpacity }
         set { layer.shadowOpacity = newValue }

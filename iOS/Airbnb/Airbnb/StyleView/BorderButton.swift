@@ -12,6 +12,7 @@ import UIKit
 final class BorderButton: UIButton {
 
     // MARK: - IBInspectables
+    // MARK: Border
     @IBInspectable var borderWidth: CGFloat {
         get { layer.borderWidth }
         set { layer.borderWidth = newValue }
@@ -24,6 +25,7 @@ final class BorderButton: UIButton {
         get { layer.cornerRadius }
         set { layer.cornerRadius = newValue }
     }
+    // MARK: Padding
     @IBInspectable var paddingWidth: CGFloat {
         get { padding.width }
         set { padding.width = newValue }
@@ -32,6 +34,7 @@ final class BorderButton: UIButton {
         get { padding.height }
         set { padding.height = newValue }
     }
+    // MARK: Shadow
     @IBInspectable var shadowOpacity: Float {
         get { layer.shadowOpacity }
         set { layer.shadowOpacity = newValue }
