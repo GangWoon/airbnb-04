@@ -10,9 +10,17 @@ import UIKit
 
 final class AccommodationsDataSource: NSObject, UITableViewDataSource {
     
+    private let sections: Int = 2
+    
     // MARK: - Methods
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        let numberOfRowsInSection = [0: 0,
+                                     1: 100]
+        return numberOfRowsInSection[section] ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

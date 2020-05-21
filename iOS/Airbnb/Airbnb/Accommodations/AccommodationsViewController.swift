@@ -34,8 +34,16 @@ final class AccommodationsViewController: UIViewController {
 extension AccommodationsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard section == AccommodationsHeaderView.section else { return nil }
+        
         return tableView
             .dequeueReusableHeaderFooterView(withIdentifier: AccommodationsHeaderView.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard section == AccommodationsHeaderView.section else { return .zero }
+        
+        return AccommodationsHeaderView.height
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
