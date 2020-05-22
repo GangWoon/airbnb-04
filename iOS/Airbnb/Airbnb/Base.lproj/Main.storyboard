@@ -250,7 +250,11 @@
                                                             </connections>
                                                         </pageControl>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elz-VG-pF2">
-                                                            <rect key="frame" x="333.5" y="20" width="20.5" height="22"/>
+                                                            <rect key="frame" x="322" y="20" width="32" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="32" id="gLp-5a-Jbm"/>
+                                                                <constraint firstAttribute="height" constant="32" id="pUQ-fH-fLQ"/>
+                                                            </constraints>
                                                             <state key="normal" image="heart" catalog="system"/>
                                                         </button>
                                                     </subviews>
