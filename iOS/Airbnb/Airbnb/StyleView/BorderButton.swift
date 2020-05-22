@@ -43,6 +43,10 @@ final class BorderButton: UIButton {
         get { layer.shadowOffset }
         set { layer.shadowOffset = newValue }
     }
+    @IBInspectable var shadowColor: UIColor {
+        get { UIColor(cgColor: layer.shadowColor ?? UIColor.black.cgColor ) }
+        set { layer.shadowColor = newValue.cgColor }
+    }
     
     // MARK: - Properties
     override var intrinsicContentSize : CGSize {

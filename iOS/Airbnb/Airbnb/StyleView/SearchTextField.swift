@@ -34,6 +34,10 @@ final class SearchTextField: UITextField {
         get { layer.shadowOffset }
         set { layer.shadowOffset = newValue }
     }
+    @IBInspectable var shadowColor: UIColor {
+        get { UIColor(cgColor: layer.shadowColor ?? UIColor.black.cgColor ) }
+        set { layer.shadowColor = newValue.cgColor }
+    }
     
     // MARK: - Properties
     private var edgeInsets: UIEdgeInsets = .init(top: 0, left: 10, bottom: 0, right: 10)

@@ -19,9 +19,9 @@ final class AccommodationsHeaderView: UITableViewHeaderFooterView {
     // MARK: - Methods
     func configure(text: String) {
         textLabel?.text = text
-        tintColor = .clear
         textLabel?.textColor = .systemGray
         textLabel?.textAlignment = .center
         textLabel?.font = .boldSystemFont(ofSize: fontSize)
+        tintColor = .clear
     }
 }
