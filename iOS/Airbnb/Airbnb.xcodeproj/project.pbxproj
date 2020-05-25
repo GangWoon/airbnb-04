@@ -26,6 +26,7 @@
 		AE1843A1247287FA007ABDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439F247287FA007ABDB3 /* LaunchScreen.storyboard */; };
 		AEB5CB592477A30F009AD1E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB5CB582477A30F009AD1E2 /* Color.xcassets */; };
 		AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */; };
+		AEE36F19247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AE1843A2247287FA007ABDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB5CB582477A30F009AD1E2 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsInfoView.swift; sourceTree = "<group>"; };
+		AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsThumbnailScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */,
 				AE134387247649480081E1D0 /* AccommodationsDataSource.swift */,
 				AE1343B72476753E0081E1D0 /* AccommodationsHeaderView.swift */,
+				AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */,
+				AEE36F19247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift in Sources */,
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,
 				44725071247BB027009D38EA /* AirbnbNetworkImpl.swift in Sources */,
 				AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */,
