@@ -11,7 +11,7 @@ import UIKit
 final class AccommodationsCell: UITableViewCell {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var scrollView: UIScrollView! {
+    @IBOutlet weak var scrollView: AccommodationsThumbnailScrollView! {
         didSet {
             scrollView.delegate = self
         }
@@ -58,6 +58,9 @@ final class AccommodationsCell: UITableViewCell {
                                      roomType: roomType,
                                      rate: attributedString,
                                      title: accommodations.name)
+        accommodations.images.forEach {
+            scrollView.addThumbnail(image: UIImage(named: $0) ?? UIImage())
+        }
     }
 }
 
