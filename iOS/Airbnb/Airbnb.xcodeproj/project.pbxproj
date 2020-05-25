@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
+		4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472506E247BAF09009D38EA /* AirbnbNetwork.swift */; };
 		4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481A88B24766B0600B79F09 /* ShadowView.swift */; };
 		44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABE57A2477B0630052DBBD /* Accommodations.swift */; };
 		44CFA69B2477B364000CE29D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA69A2477B364000CE29D /* Endpoint.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		4472506E247BAF09009D38EA /* AirbnbNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetwork.swift; sourceTree = "<group>"; };
 		4481A88B24766B0600B79F09 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		44ABE57A2477B0630052DBBD /* Accommodations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accommodations.swift; sourceTree = "<group>"; };
 		44CFA69A2477B364000CE29D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				44ABE57A2477B0630052DBBD /* Accommodations.swift */,
 				44CFA69A2477B364000CE29D /* Endpoint.swift */,
+				4472506E247BAF09009D38EA /* AirbnbNetwork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				44CFA69B2477B364000CE29D /* Endpoint.swift in Sources */,
 				AE1343B82476753E0081E1D0 /* AccommodationsHeaderView.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
+				4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */,
 				AE134388247649480081E1D0 /* AccommodationsDataSource.swift in Sources */,
 				44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */,
 				AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */,
