@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8vn-2o-Nos">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8vn-2o-Nos">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -46,10 +46,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-Sv-fN4">
-                                <rect key="frame" x="116" y="122" width="182" height="30"/>
+                                <rect key="frame" x="146" y="122" width="122" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjR-nt-m6a" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" name="Color-2"/>
                                         <state key="normal" title="날짜">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +76,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-iJ-E4M" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="66" y="0.0" width="50" height="30"/>
+                                        <rect key="frame" x="46" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" name="Color-2"/>
                                         <state key="normal" title="인원">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +103,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov6-mJ-Bo3" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="0.0" width="50" height="30"/>
+                                        <rect key="frame" x="92" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" name="Color-2"/>
                                         <state key="normal" title="가격">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,11 +147,11 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-Zk-7Y7" customClass="ShadowView" customModule="Airbnb" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="374" height="374"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5" customClass="AccommodationsInfoView" customModule="Airbnb" customModuleProvider="target">
                                                             <rect key="frame" x="20" y="282" width="334" height="80"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="70.5" height="13.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -173,19 +173,19 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire apartment ・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpP-Ef-xuY">
-                                                                    <rect key="frame" x="88.5" y="9.5" width="120" height="12"/>
+                                                                    <rect key="frame" x="78.5" y="8.5" width="120" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="✭ 4.83 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKN-oP-FH4">
-                                                                    <rect key="frame" x="260" y="8.5" width="74" height="14.5"/>
+                                                                    <rect key="frame" x="260" y="7.5" width="74" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                                    <rect key="frame" x="0.0" y="25.5" width="334" height="54.5"/>
+                                                                    <rect key="frame" x="0.0" y="24.5" width="334" height="55.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -205,6 +205,12 @@
                                                                 <constraint firstItem="wF8-h2-EAA" firstAttribute="top" secondItem="51g-oz-fu5" secondAttribute="top" constant="8" id="gLU-Vx-u80"/>
                                                                 <constraint firstItem="yjb-NC-J1O" firstAttribute="top" secondItem="IpP-Ef-xuY" secondAttribute="bottom" constant="4" id="gs6-7y-00c"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="badge" destination="wF8-h2-EAA" id="P02-CA-qlb"/>
+                                                                <outlet property="rate" destination="jKN-oP-FH4" id="GKa-68-yXg"/>
+                                                                <outlet property="roomType" destination="IpP-Ef-xuY" id="P2X-Wc-yOV"/>
+                                                                <outlet property="title" destination="yjb-NC-J1O" id="C9e-5x-9ki"/>
+                                                            </connections>
                                                         </view>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
                                                             <rect key="frame" x="20" y="20" width="334" height="262"/>
@@ -308,6 +314,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Color"/>
                                         <connections>
+                                            <outlet property="accommodationsInfoView" destination="51g-oz-fu5" id="yff-eQ-tu7"/>
+                                            <outlet property="favoritesButton" destination="elz-VG-pF2" id="Vkm-nq-Wb3"/>
                                             <outlet property="pageControl" destination="32Q-33-Pdo" id="Hj2-W1-j3S"/>
                                             <outlet property="scrollView" destination="06v-2l-ZZF" id="Hwe-4O-10B"/>
                                         </connections>

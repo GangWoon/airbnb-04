@@ -21,6 +21,8 @@ final class AccommodationsCell: UITableViewCell {
             configurePageControl()
         }
     }
+    @IBOutlet weak var favoritesButton: UIButton!
+    @IBOutlet weak var accommodationsInfoView: AccommodationsInfoView!
     
     // MARK: - Properties
     static let identifier: String = "AccommodationsCell"
@@ -41,6 +43,21 @@ final class AccommodationsCell: UITableViewCell {
     private func configurePageControl() {
         pageControl.currentPage = 0
         pageControl.numberOfPages = 3
+    }
+    
+    func apply(accommodations: Accommodations) {
+        let roomType = accommodations.roomType + " ・ " + accommodations.bedroomCount
+        let rate = "✭ \(accommodations.rate) (\(accommodations.reviewCount))"
+        let attributedString = NSMutableAttributedString(string: rate)
+        attributedString
+            .addAttribute(.foregroundColor,
+                          value: UIColor.systemRed,
+                          range: (rate as NSString).range(of: "✭"))
+        
+        accommodationsInfoView.apply(badge: accommodations.badge,
+                                     roomType: roomType,
+                                     rate: attributedString,
+                                     title: accommodations.name)
     }
 }
 
