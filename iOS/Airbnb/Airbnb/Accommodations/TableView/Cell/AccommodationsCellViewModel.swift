@@ -10,6 +10,7 @@ import UIKit
 
 class AccommodationsCellViewModel {
     
+    // MARK: - Properties
     private var accommodations: Accommodations
     var badge: String {
         accommodations.badge
@@ -30,10 +31,12 @@ class AccommodationsCellViewModel {
         accommodations.favorite
     }
     
+    // MARK: - Lifecycles
     init(accommodations: Accommodations) {
         self.accommodations = accommodations
     }
     
+    // MARK: - Methods
     private func configureRoomType() -> String {
         return accommodations.roomType + " ・ " + accommodations.bedroomCount
     }
@@ -45,6 +48,7 @@ class AccommodationsCellViewModel {
             .addAttribute(.foregroundColor,
                           value: UIColor.systemRed,
                           range: (rate as NSString).range(of: "✭"))
+        
         return attributedString
     }
     
