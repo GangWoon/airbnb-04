@@ -260,6 +260,10 @@
                                                             </constraints>
                                                             <color key="tintColor" name="Color-3"/>
                                                             <state key="normal" image="heart" catalog="system"/>
+                                                            <state key="selected" image="heart.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="buttonTouched:" destination="edH-pV-TOT" eventType="touchUpInside" id="3bL-R3-xnK"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

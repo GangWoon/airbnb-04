@@ -39,6 +39,10 @@ final class AccommodationsCell: UITableViewCell {
                                  animated: true)
     }
     
+    @IBAction func buttonTouched(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    
     // MARK: - Methods
     private func configurePageControl() {
         pageControl.currentPage = 0
@@ -61,6 +65,7 @@ final class AccommodationsCell: UITableViewCell {
         accommodations.images.forEach {
             scrollView.addThumbnail(image: UIImage(named: $0) ?? UIImage())
         }
+        favoritesButton.isSelected = accommodations.favorite
     }
 }
 
