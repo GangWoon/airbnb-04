@@ -28,7 +28,7 @@ struct AirbnbNetworkImpl: AirbnbNetwork {
     }
 }
 
-struct AirbnbMockNetworkImpl: AirbnbNetwork {
+struct AirbnbMockNetworkSuccessImpl: AirbnbNetwork {
     
     // MARK: - Methods
     static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
@@ -46,6 +46,19 @@ struct AirbnbMockNetworkImpl: AirbnbNetwork {
             
             return Future { promise in
                 promise(.success(result))
+            }
+            .eraseToAnyPublisher()
+    }
+}
+
+struct AirbnbMockNetworkFailImpl: AirbnbNetwork {
+    
+    // MARK: - Methods
+    static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
+        where T : Decodable {
+    
+            return Future { promise in
+                promise(.failure(.error("에러 발생!")))
             }
             .eraseToAnyPublisher()
     }

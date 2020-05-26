@@ -34,11 +34,13 @@ final class AccommodationsViewController: UIViewController {
     
     // MARK: - Methods
     private func fetchMock() {
-        AirbnbMockNetworkImpl
+        AirbnbMockNetworkSuccessImpl
             .request([Accommodations].self,
                      requestProviding: Endpoint(path: .main))
-            .sink(receiveCompletion: { _ in
-                // TODO: 에러 핸들링
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: {
+                guard case .failure(let error) = $0 else { return }
+                self.errorAlert(message: error.message)
             },
                   receiveValue: { accomodations in
                     self.dataSource.accomodations = accomodations
@@ -50,6 +52,13 @@ final class AccommodationsViewController: UIViewController {
         dataSource.$accomodations
             .sink { _ in self.tableView.reloadData() }
             .store(in: &subscriptions)
+    }
+    
+    private func errorAlert(message: String?) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Close", style: .cancel)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
 }
 
