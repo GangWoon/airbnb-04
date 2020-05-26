@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8vn-2o-Nos">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8vn-2o-Nos">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -148,7 +148,7 @@
                                                     <rect key="frame" x="8" y="8" width="374" height="374"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5" customClass="AccommodationsInfoView" customModule="Airbnb" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="282" width="334" height="80"/>
+                                                            <rect key="frame" x="20" y="220" width="334" height="142"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
@@ -173,7 +173,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire apartment ・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpP-Ef-xuY">
-                                                                    <rect key="frame" x="88.5" y="9.5" width="120" height="12"/>
+                                                                    <rect key="frame" x="88.5" y="10" width="120" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                                    <rect key="frame" x="0.0" y="25.5" width="334" height="54.5"/>
+                                                                    <rect key="frame" x="0.0" y="26" width="334" height="116"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -213,13 +213,13 @@
                                                             </connections>
                                                         </view>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF" customClass="AccommodationsThumbnailScrollView" customModule="Airbnb" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="20" width="334" height="262"/>
+                                                            <rect key="frame" x="20" y="20" width="334" height="200"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="262"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-UM-tIC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="262"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -237,6 +237,7 @@
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="leading" secondItem="a69-hh-OPm" secondAttribute="leading" id="Cte-HG-6o5"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="height" secondItem="sAn-Ww-ZLO" secondAttribute="height" id="H1K-c7-mG2"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="trailing" secondItem="a69-hh-OPm" secondAttribute="trailing" id="Klg-08-sbA"/>
+                                                                <constraint firstAttribute="height" constant="200" id="VTz-CL-Wh1"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="bottom" secondItem="a69-hh-OPm" secondAttribute="bottom" id="gXY-En-ReS"/>
                                                             </constraints>
                                                             <viewLayoutGuide key="contentLayoutGuide" id="a69-hh-OPm"/>
@@ -246,7 +247,7 @@
                                                             </connections>
                                                         </scrollView>
                                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-33-Pdo">
-                                                            <rect key="frame" x="167.5" y="245" width="39" height="37"/>
+                                                            <rect key="frame" x="167.5" y="183" width="39" height="37"/>
                                                             <connections>
                                                                 <action selector="moveToPage:" destination="edH-pV-TOT" eventType="valueChanged" id="6Hu-uG-TOu"/>
                                                             </connections>
@@ -273,7 +274,6 @@
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="sa5-Zk-7Y7" secondAttribute="leading" constant="20" id="SVP-Nw-n9r"/>
                                                         <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" constant="20" id="Y3G-cN-LMR"/>
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="sa5-Zk-7Y7" secondAttribute="top" constant="20" id="apo-95-5rE"/>
-                                                        <constraint firstItem="06v-2l-ZZF" firstAttribute="height" secondItem="sa5-Zk-7Y7" secondAttribute="height" multiplier="0.7" id="mN0-id-Gra"/>
                                                         <constraint firstItem="elz-VG-pF2" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="top" id="qyz-EK-cK3"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
