@@ -22,4 +22,11 @@ final class AccommodationsThumbnailScrollView: UIScrollView {
         stackView.addArrangedSubview(imageView)
         imageView.widthAnchor.constraint(equalTo: frameLayoutGuide.widthAnchor).isActive = true
     }
+    
+    func resetThumbnails() {
+        stackView.arrangedSubviews.forEach {
+            $0.removeFromSuperview()
+            stackView.removeArrangedSubview($0)
+        }
+    }
 }

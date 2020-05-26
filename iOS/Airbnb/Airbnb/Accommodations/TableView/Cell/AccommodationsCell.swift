@@ -32,6 +32,12 @@ final class AccommodationsCell: UITableViewCell {
         }
     }
     
+    // MARK: - Lifecycle
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        scrollView.resetThumbnails()
+    }
+    
     // MARK: - IBActions
     @IBAction func moveToPage(_ sender: UIPageControl) {
         let page = CGFloat(sender.currentPage)
