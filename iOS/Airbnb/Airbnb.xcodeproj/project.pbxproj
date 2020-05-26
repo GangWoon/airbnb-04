@@ -13,6 +13,7 @@
 		4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481A88B24766B0600B79F09 /* ShadowView.swift */; };
 		44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABE57A2477B0630052DBBD /* Accommodations.swift */; };
 		44CFA69B2477B364000CE29D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA69A2477B364000CE29D /* Endpoint.swift */; };
+		44F17427247CE8FA0049BF30 /* AccommodationsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F17426247CE8FA0049BF30 /* AccommodationsCellViewModel.swift */; };
 		AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13434F2475537B0081E1D0 /* SearchTextField.swift */; };
 		AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13437F247643B00081E1D0 /* BorderLabel.swift */; };
 		AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */; };
@@ -36,6 +37,7 @@
 		4481A88B24766B0600B79F09 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		44ABE57A2477B0630052DBBD /* Accommodations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accommodations.swift; sourceTree = "<group>"; };
 		44CFA69A2477B364000CE29D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		44F17426247CE8FA0049BF30 /* AccommodationsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsCellViewModel.swift; sourceTree = "<group>"; };
 		AE13434F2475537B0081E1D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		AE13437F247643B00081E1D0 /* BorderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
 		AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		44F17425247CE8D30049BF30 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AE1343852476475C0081E1D0 /* AccommodationsCell.swift */,
+				AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */,
+				AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */,
+				44F17426247CE8FA0049BF30 /* AccommodationsCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AE13434E247553320081E1D0 /* StyleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +120,9 @@
 		AE134382247646B00081E1D0 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				AE1343852476475C0081E1D0 /* AccommodationsCell.swift */,
-				AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */,
+				44F17425247CE8D30049BF30 /* Cell */,
 				AE134387247649480081E1D0 /* AccommodationsDataSource.swift */,
 				AE1343B72476753E0081E1D0 /* AccommodationsHeaderView.swift */,
-				AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -221,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F17427247CE8FA0049BF30 /* AccommodationsCellViewModel.swift in Sources */,
 				4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */,
 				AEE36F19247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift in Sources */,
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,

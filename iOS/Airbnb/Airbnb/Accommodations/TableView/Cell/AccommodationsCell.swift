@@ -26,6 +26,11 @@ final class AccommodationsCell: UITableViewCell {
     
     // MARK: - Properties
     static let identifier: String = "AccommodationsCell"
+    private var viewModel: AccommodationsCellViewModel? {
+        didSet {
+            apply()
+        }
+    }
     
     // MARK: - IBActions
     @IBAction func moveToPage(_ sender: UIPageControl) {
@@ -49,23 +54,20 @@ final class AccommodationsCell: UITableViewCell {
         pageControl.numberOfPages = 3
     }
     
-    func apply(accommodations: Accommodations) {
-        let roomType = accommodations.roomType + " ・ " + accommodations.bedroomCount
-        let rate = "✭ \(accommodations.rate) (\(accommodations.reviewCount))"
-        let attributedString = NSMutableAttributedString(string: rate)
-        attributedString
-            .addAttribute(.foregroundColor,
-                          value: UIColor.systemRed,
-                          range: (rate as NSString).range(of: "✭"))
-        
-        accommodationsInfoView.apply(badge: accommodations.badge,
-                                     roomType: roomType,
-                                     rate: attributedString,
-                                     title: accommodations.name)
-        accommodations.images.forEach {
-            scrollView.addThumbnail(image: UIImage(named: $0) ?? UIImage())
+    private func apply() {
+        guard let viewModel = viewModel else { return }
+        accommodationsInfoView.apply(badge: viewModel.badge,
+                                     roomType: viewModel.roomType,
+                                     rate: viewModel.rate,
+                                     title: viewModel.title)
+        viewModel.images.forEach {
+            scrollView.addThumbnail(image: $0)
         }
-        favoritesButton.isSelected = accommodations.favorite
+        favoritesButton.isSelected = viewModel.isFavorite
+    }
+    
+    func update(with viewModel: AccommodationsCellViewModel) {
+        self.viewModel = viewModel
     }
 }
 

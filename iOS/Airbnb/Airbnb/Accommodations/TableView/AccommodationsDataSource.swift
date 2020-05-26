@@ -29,7 +29,9 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
             .dequeueReusableCell(withIdentifier: AccommodationsCell.identifier,
                                  for: indexPath) as? AccommodationsCell else { return UITableViewCell() }
         let item = accomodations[indexPath.row]
-        cell.apply(accommodations: item)
+        
+        cell.update(with: AccommodationsCellViewModel(accommodations: item))
+        
         return cell
     }
 }
