@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class AccommodationsViewController: UIViewController {
     
@@ -22,10 +23,31 @@ final class AccommodationsViewController: UIViewController {
     
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
-    
+    private var subscriptions: Set<AnyCancellable> = .init()
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchMock()
+        bindViewModelToView()
+    }
+    
+    private func fetchMock() {
+        AirbnbMockNetworkImpl
+            .request([Accommodations].self,
+                     requestProviding: Endpoint(path: .main))
+            .sink(receiveCompletion: { _ in
+                // TODO: 에러 핸들링
+            },
+                  receiveValue: { accomodations in
+                    self.dataSource.accomodations = accomodations
+            })
+            .cancel()
+    }
+    
+    private func bindViewModelToView() {
+        dataSource.$accomodations
+            .sink { _ in self.tableView.reloadData() }
+            .store(in: &subscriptions)
     }
 }
 

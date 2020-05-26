@@ -11,6 +11,7 @@ import UIKit
 final class AccommodationsDataSource: NSObject, UITableViewDataSource {
     
     private let sections: Int = 2
+    @Published var accomodations: [Accommodations] = .init()
     
     // MARK: - Methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -19,7 +20,7 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRowsInSection = [0: 0,
-                                     1: 100]
+                                     1: accomodations.count]
         return numberOfRowsInSection[section] ?? 0
     }
     
@@ -27,7 +28,8 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
         guard let cell = tableView
             .dequeueReusableCell(withIdentifier: AccommodationsCell.identifier,
                                  for: indexPath) as? AccommodationsCell else { return UITableViewCell() }
-        
+        let item = accomodations[indexPath.row]
+        cell.apply(accommodations: item)
         return cell
     }
 }

@@ -26,3 +26,23 @@ struct AirbnbNetworkImpl: AirbnbNetwork {
                 .eraseToAnyPublisher()
     }
 }
+
+struct AirbnbMockNetworkImpl: AirbnbNetwork {
+    static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
+        where T : Decodable {
+            let accommodations = Accommodations(id: 1,
+                                                images: ["1", "2", "3"],
+                                                name: "좋은 집",
+                                                badge: "SUPERHOST",
+                                                roomType: "Entire apartment",
+                                                bedroomCount: "4",
+                                                rate: 4.99,
+                                                reviewCount: 400,
+                                                favorite: true)
+            let result = Array(repeating: accommodations, count: 100) as! T
+            return Future { promise in
+                promise(.success(result))
+            }
+            .eraseToAnyPublisher()
+    }
+}
