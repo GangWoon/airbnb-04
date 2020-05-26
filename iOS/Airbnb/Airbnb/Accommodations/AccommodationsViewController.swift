@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class AccommodationsViewController: UIViewController {
     
@@ -22,10 +23,42 @@ final class AccommodationsViewController: UIViewController {
     
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
+    private var subscriptions: Set<AnyCancellable> = .init()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetch(provider: AirbnbMockNetworkSuccessImpl())
+        bindViewModelToView()
+    }
+    
+    // MARK: - Methods
+    private func fetch(provider: AirbnbNetwork) {
+        provider
+            .request([Accommodations].self,
+                     requestProviding: Endpoint(path: .main))
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: {
+                guard case .failure(let error) = $0 else { return }
+                self.errorAlert(message: error.message)
+            },
+                  receiveValue: { accomodations in
+                    self.dataSource.accomodations = accomodations
+            })
+            .cancel()
+    }
+    
+    private func bindViewModelToView() {
+        dataSource.$accomodations
+            .sink { _ in self.tableView.reloadData() }
+            .store(in: &subscriptions)
+    }
+    
+    private func errorAlert(message: String?) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Close", style: .cancel)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
 }
 

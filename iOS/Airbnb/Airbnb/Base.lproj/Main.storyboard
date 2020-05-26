@@ -147,8 +147,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-Zk-7Y7" customClass="ShadowView" customModule="Airbnb" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="374" height="374"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5">
-                                                            <rect key="frame" x="20" y="282" width="334" height="80"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5" customClass="AccommodationsInfoView" customModule="Airbnb" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="220" width="334" height="142"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
@@ -173,7 +173,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire apartment ・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpP-Ef-xuY">
-                                                                    <rect key="frame" x="88.5" y="9.5" width="120" height="12"/>
+                                                                    <rect key="frame" x="88.5" y="10" width="120" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                                    <rect key="frame" x="0.0" y="25.5" width="334" height="54.5"/>
+                                                                    <rect key="frame" x="0.0" y="26" width="334" height="116"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -205,31 +205,27 @@
                                                                 <constraint firstItem="wF8-h2-EAA" firstAttribute="top" secondItem="51g-oz-fu5" secondAttribute="top" constant="8" id="gLU-Vx-u80"/>
                                                                 <constraint firstItem="yjb-NC-J1O" firstAttribute="top" secondItem="IpP-Ef-xuY" secondAttribute="bottom" constant="4" id="gs6-7y-00c"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="badge" destination="wF8-h2-EAA" id="P02-CA-qlb"/>
+                                                                <outlet property="rate" destination="jKN-oP-FH4" id="GKa-68-yXg"/>
+                                                                <outlet property="roomType" destination="IpP-Ef-xuY" id="P2X-Wc-yOV"/>
+                                                                <outlet property="title" destination="yjb-NC-J1O" id="C9e-5x-9ki"/>
+                                                            </connections>
                                                         </view>
-                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF">
-                                                            <rect key="frame" x="20" y="20" width="334" height="262"/>
+                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF" customClass="AccommodationsThumbnailScrollView" customModule="Airbnb" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="20" width="334" height="200"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="1002" height="262"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-UM-tIC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="1002" height="262"/>
-                                                                            <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NtZ-WB-eBs">
-                                                                                    <rect key="frame" x="0.0" y="0.5" width="334" height="261"/>
-                                                                                </imageView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Jr-LG-2HR">
-                                                                                    <rect key="frame" x="334" y="0.5" width="334" height="261"/>
-                                                                                </imageView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-ZF-Om0">
-                                                                                    <rect key="frame" x="668" y="0.5" width="334" height="261"/>
-                                                                                </imageView>
-                                                                            </subviews>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="xG4-UM-tIC" firstAttribute="top" secondItem="t6P-dn-H87" secondAttribute="top" id="FoQ-eQ-73j"/>
+                                                                        <constraint firstAttribute="width" priority="1" constant="334" id="Nss-5K-0HF"/>
                                                                         <constraint firstAttribute="trailing" secondItem="xG4-UM-tIC" secondAttribute="trailing" id="UCK-mm-8Ih"/>
                                                                         <constraint firstItem="xG4-UM-tIC" firstAttribute="leading" secondItem="t6P-dn-H87" secondAttribute="leading" id="V2s-Wa-eoI"/>
                                                                         <constraint firstAttribute="bottom" secondItem="xG4-UM-tIC" secondAttribute="bottom" id="mfl-1x-hr9"/>
@@ -237,20 +233,21 @@
                                                                 </view>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="PSt-ZF-Om0" firstAttribute="width" secondItem="sAn-Ww-ZLO" secondAttribute="width" id="604-Rs-a2V"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="top" secondItem="a69-hh-OPm" secondAttribute="top" id="6o0-2y-1bI"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="leading" secondItem="a69-hh-OPm" secondAttribute="leading" id="Cte-HG-6o5"/>
-                                                                <constraint firstItem="NtZ-WB-eBs" firstAttribute="width" secondItem="sAn-Ww-ZLO" secondAttribute="width" id="FXH-Fn-ecb"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="height" secondItem="sAn-Ww-ZLO" secondAttribute="height" id="H1K-c7-mG2"/>
-                                                                <constraint firstItem="7Jr-LG-2HR" firstAttribute="width" secondItem="sAn-Ww-ZLO" secondAttribute="width" id="IO4-Fd-gRf"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="trailing" secondItem="a69-hh-OPm" secondAttribute="trailing" id="Klg-08-sbA"/>
+                                                                <constraint firstAttribute="height" constant="200" id="VTz-CL-Wh1"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="bottom" secondItem="a69-hh-OPm" secondAttribute="bottom" id="gXY-En-ReS"/>
                                                             </constraints>
                                                             <viewLayoutGuide key="contentLayoutGuide" id="a69-hh-OPm"/>
                                                             <viewLayoutGuide key="frameLayoutGuide" id="sAn-Ww-ZLO"/>
+                                                            <connections>
+                                                                <outlet property="stackView" destination="xG4-UM-tIC" id="GvL-Np-oB2"/>
+                                                            </connections>
                                                         </scrollView>
                                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-33-Pdo">
-                                                            <rect key="frame" x="167.5" y="245" width="39" height="37"/>
+                                                            <rect key="frame" x="167.5" y="183" width="39" height="37"/>
                                                             <connections>
                                                                 <action selector="moveToPage:" destination="edH-pV-TOT" eventType="valueChanged" id="6Hu-uG-TOu"/>
                                                             </connections>
@@ -263,6 +260,10 @@
                                                             </constraints>
                                                             <color key="tintColor" name="Color-3"/>
                                                             <state key="normal" image="heart" catalog="system"/>
+                                                            <state key="selected" image="heart.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="buttonTouched:" destination="edH-pV-TOT" eventType="touchUpInside" id="3bL-R3-xnK"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -277,7 +278,6 @@
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="sa5-Zk-7Y7" secondAttribute="leading" constant="20" id="SVP-Nw-n9r"/>
                                                         <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" constant="20" id="Y3G-cN-LMR"/>
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="sa5-Zk-7Y7" secondAttribute="top" constant="20" id="apo-95-5rE"/>
-                                                        <constraint firstItem="06v-2l-ZZF" firstAttribute="height" secondItem="sa5-Zk-7Y7" secondAttribute="height" multiplier="0.7" id="mN0-id-Gra"/>
                                                         <constraint firstItem="elz-VG-pF2" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="top" id="qyz-EK-cK3"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -308,6 +308,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Color"/>
                                         <connections>
+                                            <outlet property="accommodationsInfoView" destination="51g-oz-fu5" id="yff-eQ-tu7"/>
+                                            <outlet property="favoritesButton" destination="elz-VG-pF2" id="Vkm-nq-Wb3"/>
                                             <outlet property="pageControl" destination="32Q-33-Pdo" id="Hj2-W1-j3S"/>
                                             <outlet property="scrollView" destination="06v-2l-ZZF" id="Hwe-4O-10B"/>
                                         </connections>
@@ -428,15 +430,14 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="star.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Color">
-            <color red="0.95686274509803915" green="0.93333333333333335" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9570000171661377" green="0.93300002813339233" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color-2">
-            <color red="0.65098039215686276" green="0.69411764705882351" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.65100002288818359" green="0.6940000057220459" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color-3">
-            <color red="0.25882352941176467" green="0.28235294117647058" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25900000333786011" green="0.28200000524520874" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

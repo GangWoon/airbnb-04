@@ -14,7 +14,7 @@ final class AccommodationsHeaderView: UITableViewHeaderFooterView {
     static let identifier: String = "AccommodationsHeaderView"
     static let height: CGFloat = 20
     static let section: Int = 0
-    let fontSize: CGFloat = 13
+    private let fontSize: CGFloat = 13
     
     // MARK: - Methods
     func configure(text: String) {

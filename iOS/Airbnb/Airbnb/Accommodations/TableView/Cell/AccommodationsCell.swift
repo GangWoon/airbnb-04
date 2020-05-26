@@ -11,7 +11,7 @@ import UIKit
 final class AccommodationsCell: UITableViewCell {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var scrollView: UIScrollView! {
+    @IBOutlet weak var scrollView: AccommodationsThumbnailScrollView! {
         didSet {
             scrollView.delegate = self
         }
@@ -21,9 +21,22 @@ final class AccommodationsCell: UITableViewCell {
             configurePageControl()
         }
     }
+    @IBOutlet weak var favoritesButton: UIButton!
+    @IBOutlet weak var accommodationsInfoView: AccommodationsInfoView!
     
     // MARK: - Properties
     static let identifier: String = "AccommodationsCell"
+    private var viewModel: AccommodationsCellViewModel? {
+        didSet {
+            apply()
+        }
+    }
+    
+    // MARK: - Lifecycle
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        scrollView.resetThumbnails()
+    }
     
     // MARK: - IBActions
     @IBAction func moveToPage(_ sender: UIPageControl) {
@@ -37,10 +50,30 @@ final class AccommodationsCell: UITableViewCell {
                                  animated: true)
     }
     
+    @IBAction func buttonTouched(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    
     // MARK: - Methods
     private func configurePageControl() {
         pageControl.currentPage = 0
         pageControl.numberOfPages = 3
+    }
+    
+    private func apply() {
+        guard let viewModel = viewModel else { return }
+        accommodationsInfoView.apply(badge: viewModel.badge,
+                                     roomType: viewModel.roomType,
+                                     rate: viewModel.rate,
+                                     title: viewModel.title)
+        viewModel.images.forEach {
+            scrollView.addThumbnail(image: $0)
+        }
+        favoritesButton.isSelected = viewModel.isFavorite
+    }
+    
+    func update(with viewModel: AccommodationsCellViewModel) {
+        self.viewModel = viewModel
     }
 }
 
