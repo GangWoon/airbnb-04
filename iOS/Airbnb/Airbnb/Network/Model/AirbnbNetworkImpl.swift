@@ -11,6 +11,7 @@ import Combine
 
 struct AirbnbNetworkImpl: AirbnbNetwork {
     
+    // MARK: - Methods
     static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T : Decodable {
             guard let url = requestProviding.url else {
@@ -28,6 +29,8 @@ struct AirbnbNetworkImpl: AirbnbNetwork {
 }
 
 struct AirbnbMockNetworkImpl: AirbnbNetwork {
+    
+    // MARK: - Methods
     static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T : Decodable {
             let accommodations = Accommodations(id: 1,
@@ -40,6 +43,7 @@ struct AirbnbMockNetworkImpl: AirbnbNetwork {
                                                 reviewCount: 400,
                                                 favorite: true)
             let result = Array(repeating: accommodations, count: 100) as! T
+            
             return Future { promise in
                 promise(.success(result))
             }

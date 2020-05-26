@@ -24,6 +24,7 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ final class AccommodationsViewController: UIViewController {
         bindViewModelToView()
     }
     
+    // MARK: - Methods
     private func fetchMock() {
         AirbnbMockNetworkImpl
             .request([Accommodations].self,

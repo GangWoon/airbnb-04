@@ -24,6 +24,7 @@ enum AirbnbNetworkError: Error {
 }
 
 protocol AirbnbNetwork {
+    
     static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T: Decodable
 }

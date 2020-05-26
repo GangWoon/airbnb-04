@@ -26,6 +26,7 @@ struct Endpoint: RequestPorviding {
         }
     }
     
+    // MARK: - Properties
     private let baseURL: String = "api/airbnb"
     let path: Path
     var url: URL? {

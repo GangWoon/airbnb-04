@@ -31,7 +31,7 @@ class AccommodationsCellViewModel {
         accommodations.favorite
     }
     
-    // MARK: - Lifecycles
+    // MARK: - Lifecycle
     init(accommodations: Accommodations) {
         self.accommodations = accommodations
     }

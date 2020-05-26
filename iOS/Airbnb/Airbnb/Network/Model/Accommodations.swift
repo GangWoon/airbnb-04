@@ -9,6 +9,7 @@
 import Foundation
 
 struct Accommodations: Codable {
+    
     var id: Int
     var images: [String]
     var name: String
