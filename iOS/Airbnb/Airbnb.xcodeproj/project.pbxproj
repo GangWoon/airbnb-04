@@ -26,6 +26,7 @@
 		AE18439C247287F8007ABDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439A247287F8007ABDB3 /* Main.storyboard */; };
 		AE18439E247287FA007ABDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE18439D247287FA007ABDB3 /* Assets.xcassets */; };
 		AE1843A1247287FA007ABDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439F247287FA007ABDB3 /* LaunchScreen.storyboard */; };
+		AE46E8D9247D46E900914CEB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8D8247D46E900914CEB /* CalendarView.swift */; };
 		AEB5CB592477A30F009AD1E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB5CB582477A30F009AD1E2 /* Color.xcassets */; };
 		AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */; };
 		AEE36F19247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */; };
@@ -52,6 +53,7 @@
 		AE18439D247287FA007ABDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE1843A0247287FA007ABDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE1843A2247287FA007ABDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE46E8D8247D46E900914CEB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		AEB5CB582477A30F009AD1E2 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsInfoView.swift; sourceTree = "<group>"; };
 		AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsThumbnailScrollView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		AE1343812476466C0081E1D0 /* Accommodations */ = {
 			isa = PBXGroup;
 			children = (
+				AEE36F23247D3B300063821D /* Calendar */,
 				AE134382247646B00081E1D0 /* TableView */,
 				AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */,
 			);
@@ -160,6 +163,14 @@
 				AE1843A2247287FA007ABDB3 /* Info.plist */,
 			);
 			path = Airbnb;
+			sourceTree = "<group>";
+		};
+		AEE36F23247D3B300063821D /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				AE46E8D8247D46E900914CEB /* CalendarView.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				AE1343B82476753E0081E1D0 /* AccommodationsHeaderView.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
 				4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */,
+				AE46E8D9247D46E900914CEB /* CalendarView.swift in Sources */,
 				AE134388247649480081E1D0 /* AccommodationsDataSource.swift in Sources */,
 				44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */,
 				AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */,
