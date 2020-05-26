@@ -28,13 +28,13 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchMock()
+        fetch(provider: AirbnbMockNetworkSuccessImpl())
         bindViewModelToView()
     }
     
     // MARK: - Methods
-    private func fetchMock() {
-        AirbnbMockNetworkSuccessImpl
+    private func fetch(provider: AirbnbNetwork) {
+        provider
             .request([Accommodations].self,
                      requestProviding: Endpoint(path: .main))
             .receive(on: RunLoop.main)

@@ -11,15 +11,23 @@ import Combine
 
 struct AirbnbNetworkImpl: AirbnbNetwork {
     
+    // MARK: - Properties
+    var session: URLSession
+    
+    // MARK: - Lifecycle
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     // MARK: - Methods
-    static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
+    func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T : Decodable {
             guard let url = requestProviding.url else {
                 return Fail(error: .error("유효하지 않은 URL"))
                     .eraseToAnyPublisher()
             }
             
-            return URLSession.shared.dataTaskPublisher(for: url)
+            return session.dataTaskPublisher(for: url)
                 .mapError { _ in AirbnbNetworkError.error("airbnb API 에러") }
                 .map { $0.data }
                 .decode(type: T.self, decoder: JSONDecoder())
@@ -30,8 +38,16 @@ struct AirbnbNetworkImpl: AirbnbNetwork {
 
 struct AirbnbMockNetworkSuccessImpl: AirbnbNetwork {
     
+    // MARK: - Properties
+    var session: URLSession
+    
+    // MARK: - Lifecycle
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     // MARK: - Methods
-    static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
+    func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T : Decodable {
             let accommodations = Accommodations(id: 1,
                                                 images: ["1", "2", "3"],
@@ -53,8 +69,16 @@ struct AirbnbMockNetworkSuccessImpl: AirbnbNetwork {
 
 struct AirbnbMockNetworkFailImpl: AirbnbNetwork {
     
+    // MARK: - Properties
+    var session: URLSession
+    
+    // MARK: - Lifecycle
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     // MARK: - Methods
-    static func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
+    func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T : Decodable {
     
             return Future { promise in
