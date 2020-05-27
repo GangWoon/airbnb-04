@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 
-@IBDesignable
 class DatePikcerView: UIView {
     
     // MARK: - IBOutlets

@@ -27,6 +27,7 @@
 		AE18439E247287FA007ABDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE18439D247287FA007ABDB3 /* Assets.xcassets */; };
 		AE1843A1247287FA007ABDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439F247287FA007ABDB3 /* LaunchScreen.storyboard */; };
 		AE46E8D9247D46E900914CEB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8D8247D46E900914CEB /* CalendarView.swift */; };
+		AE46E8DC247E233A00914CEB /* ConditionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */; };
 		AEB5CB592477A30F009AD1E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB5CB582477A30F009AD1E2 /* Color.xcassets */; };
 		AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */; };
 		AEE36F19247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */; };
@@ -54,6 +55,7 @@
 		AE1843A0247287FA007ABDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE1843A2247287FA007ABDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE46E8D8247D46E900914CEB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingViewController.swift; sourceTree = "<group>"; };
 		AEB5CB582477A30F009AD1E2 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsInfoView.swift; sourceTree = "<group>"; };
 		AEE36F18247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsThumbnailScrollView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		AE1343812476466C0081E1D0 /* Accommodations */ = {
 			isa = PBXGroup;
 			children = (
+				AE46E8DA247E22C700914CEB /* ConditionSetting */,
 				AEE36F23247D3B300063821D /* Calendar */,
 				AE134382247646B00081E1D0 /* TableView */,
 				AE134383247646CE0081E1D0 /* AccommodationsViewController.swift */,
@@ -163,6 +166,14 @@
 				AE1843A2247287FA007ABDB3 /* Info.plist */,
 			);
 			path = Airbnb;
+			sourceTree = "<group>";
+		};
+		AE46E8DA247E22C700914CEB /* ConditionSetting */ = {
+			isa = PBXGroup;
+			children = (
+				AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */,
+			);
+			path = ConditionSetting;
 			sourceTree = "<group>";
 		};
 		AEE36F23247D3B300063821D /* Calendar */ = {
@@ -251,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE46E8DC247E233A00914CEB /* ConditionSettingViewController.swift in Sources */,
 				44F17427247CE8FA0049BF30 /* AccommodationsCellViewModel.swift in Sources */,
 				4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */,
 				AEE36F19247BCD3E0063821D /* AccommodationsThumbnailScrollView.swift in Sources */,

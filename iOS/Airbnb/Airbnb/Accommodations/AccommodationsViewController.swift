@@ -32,6 +32,13 @@ final class AccommodationsViewController: UIViewController {
         bindViewModelToView()
     }
     
+    @IBAction func showConditionViewController(_ sender: UIButton) {
+        let conditionSettingViewController = ConditionSettingViewController()
+        conditionSettingViewController.modalPresentationStyle = .overFullScreen
+        present(conditionSettingViewController,
+                animated: true)
+    }
+    
     // MARK: - Methods
     private func fetch(provider: AirbnbNetwork) {
         provider
