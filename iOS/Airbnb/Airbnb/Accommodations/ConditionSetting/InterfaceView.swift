@@ -84,4 +84,13 @@ final class InterfaceView: UIView {
             make.width.equalTo(48)
         }
     }
+    
+    func addConditionView(_ view: UIView) {
+        addSubview(view)
+        view.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.bottom.equalTo(doneButton.snp.top).offset(-16)
+            make.leading.trailing.equalToSuperview()
+        }
+    }
 }
