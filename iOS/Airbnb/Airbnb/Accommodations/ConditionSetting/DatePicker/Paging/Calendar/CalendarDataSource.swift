@@ -25,4 +25,11 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarHeaderView.identifier, for: indexPath) as? CalendarHeaderView else { return UICollectionReusableView() }
+        headerView.backgroundColor = .black
+        
+        return headerView
+    }
 }

@@ -41,7 +41,7 @@ class ConditionSettingViewController: UIViewController {
         interfaceView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.width.equalTo(300)
-            make.height.equalTo(400)
+            make.height.equalTo(399)
         }
     }
 }

@@ -20,6 +20,7 @@
 		449F2CEC247E40BA0036214A /* PagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F2CEB247E40BA0036214A /* PagingCell.swift */; };
 		44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABE57A2477B0630052DBBD /* Accommodations.swift */; };
 		44CFA69B2477B364000CE29D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFA69A2477B364000CE29D /* Endpoint.swift */; };
+		44F0F0F9247E860300B75810 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0F8247E860300B75810 /* CalendarHeaderView.swift */; };
 		44F17427247CE8FA0049BF30 /* AccommodationsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F17426247CE8FA0049BF30 /* AccommodationsCellViewModel.swift */; };
 		AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13434F2475537B0081E1D0 /* SearchTextField.swift */; };
 		AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE13437F247643B00081E1D0 /* BorderLabel.swift */; };
@@ -56,6 +57,7 @@
 		449F2CEB247E40BA0036214A /* PagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCell.swift; sourceTree = "<group>"; };
 		44ABE57A2477B0630052DBBD /* Accommodations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accommodations.swift; sourceTree = "<group>"; };
 		44CFA69A2477B364000CE29D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		44F0F0F8247E860300B75810 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		44F17426247CE8FA0049BF30 /* AccommodationsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsCellViewModel.swift; sourceTree = "<group>"; };
 		AE13434F2475537B0081E1D0 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		AE13437F247643B00081E1D0 /* BorderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				AE46E8DF247E503C00914CEB /* CalendarView.swift */,
+				44F0F0F8247E860300B75810 /* CalendarHeaderView.swift */,
 				444D75C0247E78BD0088523E /* CalendarDataSource.swift */,
 				AE191010247E58DC003EE161 /* CalendarCell.swift */,
 			);
@@ -321,6 +324,7 @@
 				AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */,
 				449F2CEC247E40BA0036214A /* PagingCell.swift in Sources */,
 				AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */,
+				44F0F0F9247E860300B75810 /* CalendarHeaderView.swift in Sources */,
 				44CFA69B2477B364000CE29D /* Endpoint.swift in Sources */,
 				449F2CEA247E40860036214A /* PagingView.swift in Sources */,
 				AE191011247E58DC003EE161 /* CalendarCell.swift in Sources */,

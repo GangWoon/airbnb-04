@@ -30,6 +30,7 @@ final class PagingCell: UICollectionViewCell {
         calendar
             .register(CalendarCell.self,
                           forCellWithReuseIdentifier: CalendarCell.identifier)
+        calendar.register(CalendarHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CalendarHeaderView.identifier)
         calendarDataSource = CalendarDataSource()
         calendar.dataSource = calendarDataSource
         calendar.delegate = self
@@ -56,5 +57,12 @@ extension PagingCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .zero
+    }
+}
+
+extension PagingCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: calendar.frame.width, height: calendar.frame.height / 7)
     }
 }

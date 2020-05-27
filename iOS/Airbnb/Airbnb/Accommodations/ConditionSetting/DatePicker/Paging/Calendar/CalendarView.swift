@@ -12,7 +12,7 @@ class CalendarView: UICollectionView {
     
     var calendarCellSize: CGSize {
         CGSize(width: frame.width / 7,
-               height: frame.height / 6)
+               height: frame.height / 7)
     }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
