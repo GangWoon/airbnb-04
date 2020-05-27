@@ -33,7 +33,7 @@ final class AccommodationsViewController: UIViewController {
     }
     
     @IBAction func showConditionViewController(_ sender: UIButton) {
-        let conditionSettingViewController = ConditionSettingViewController()
+        let conditionSettingViewController = DatePickerViewController()
         conditionSettingViewController.modalPresentationStyle = .overFullScreen
         present(conditionSettingViewController,
                 animated: true)
