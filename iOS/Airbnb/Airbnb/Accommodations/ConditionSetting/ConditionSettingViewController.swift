@@ -13,6 +13,7 @@ final class ConditionSettingViewController: UIViewController {
     
     // MARK: - Properties
     private var dimmedView: UIView!
+    private var interfaceView: InterfaceView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -21,9 +22,9 @@ final class ConditionSettingViewController: UIViewController {
     }
     
     private func configure() {
-        configureDimmedView()
         view.backgroundColor = .clear
-        
+        configureDimmedView()
+        configureInterfaceView()
     }
     
     private func configureDimmedView() {
@@ -32,6 +33,16 @@ final class ConditionSettingViewController: UIViewController {
         view.addSubview(dimmedView)
         dimmedView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+    }
+    
+    private func configureInterfaceView() {
+        interfaceView = InterfaceView()
+        view.addSubview(interfaceView)
+        interfaceView.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.width.equalTo(300)
+            make.height.equalTo(400)
         }
     }
 }
