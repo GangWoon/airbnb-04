@@ -14,6 +14,7 @@ final class InterfaceView: UIView {
     private var dismissButton: UIButton!
     private var titleLabel: UILabel!
     private var resetButton: UIButton!
+    private var doneButton: UIButton!
     
     // MARk: - Lifecycle
     override init(frame: CGRect) {
@@ -33,6 +34,7 @@ final class InterfaceView: UIView {
         configureDismissButton()
         configureTitleLabel()
         configureResetButton()
+        configureDoneButton()
     }
     
     private func configureDismissButton() {
@@ -65,6 +67,20 @@ final class InterfaceView: UIView {
         resetButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(8)
             make.leading.equalToSuperview().inset(12)
+            make.width.equalTo(48)
+        }
+    }
+    
+    private func configureDoneButton() {
+        doneButton = UIButton()
+        doneButton.setTitle("done", for: .normal)
+        doneButton.setTitleColor(.white, for: .normal)
+        doneButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
+        doneButton.backgroundColor = .black
+        doneButton.layer.cornerRadius = 8
+        addSubview(doneButton)
+        doneButton.snp.makeConstraints { make in
+            make.trailing.bottom.equalToSuperview().inset(8)
             make.width.equalTo(48)
         }
     }
