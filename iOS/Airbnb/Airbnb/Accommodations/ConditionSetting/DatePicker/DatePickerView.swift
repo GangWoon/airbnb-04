@@ -14,6 +14,9 @@ final class DatePickerView: UIView {
     // MARK: - IBOutlets
     private var weekDayView: WeekDayView!
     var pagingView: PagingView!
+    var pagingViewSize: CGSize {
+        pagingView.frame.size
+    }
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {

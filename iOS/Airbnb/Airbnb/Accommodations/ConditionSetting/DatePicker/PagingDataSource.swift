@@ -10,9 +10,11 @@ import UIKit
 
 final class PagingDataSource: NSObject, UICollectionViewDataSource {
     
+    private let numberOfMonths: Int = 6
+    
     // MARK: - Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return numberOfMonths
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -20,6 +22,7 @@ final class PagingDataSource: NSObject, UICollectionViewDataSource {
             .dequeueReusableCell(withReuseIdentifier: PagingCell.identifier,
                                  for: indexPath) as? PagingCell else { return UICollectionViewCell() }
         
+        cell.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         return cell
     }
 }

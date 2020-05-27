@@ -30,5 +30,16 @@ final class DatePickerViewController: ConditionSettingViewController {
                       forCellWithReuseIdentifier: PagingCell.identifier)
         pagingDataSource = PagingDataSource()
         datePickerView.pagingView.dataSource = pagingDataSource
+        datePickerView.pagingView.delegate = self
+    }
+}
+
+extension DatePickerViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return datePickerView.pagingViewSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return .zero
     }
 }

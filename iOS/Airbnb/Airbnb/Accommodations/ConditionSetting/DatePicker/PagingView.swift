@@ -24,6 +24,7 @@ final class PagingView: UICollectionView {
     // MARK: - Methods
     func configure() {
         isPagingEnabled = true
+        showsHorizontalScrollIndicator = false
         guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
         flowlayout.scrollDirection = .horizontal
     }
