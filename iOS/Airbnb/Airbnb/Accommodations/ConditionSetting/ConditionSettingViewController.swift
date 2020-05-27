@@ -9,11 +9,11 @@
 import UIKit
 import SnapKit
 
-final class ConditionSettingViewController: UIViewController {
+class ConditionSettingViewController: UIViewController {
     
     // MARK: - Properties
     private var dimmedView: UIView!
-    private var interfaceView: InterfaceView!
+    var interfaceView: InterfaceView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
