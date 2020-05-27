@@ -32,6 +32,7 @@ final class PagingCell: UICollectionViewCell {
                           forCellWithReuseIdentifier: CalendarCell.identifier)
         calendarDataSource = CalendarDataSource()
         calendar.dataSource = calendarDataSource
+        calendar.delegate = self
     }
     
     func configureCalendarView() {
@@ -40,5 +41,20 @@ final class PagingCell: UICollectionViewCell {
         calendar.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+}
+
+extension PagingCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return calendar.calendarCellSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return .zero
     }
 }

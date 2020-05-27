@@ -10,6 +10,11 @@ import UIKit
 
 class CalendarView: UICollectionView {
     
+    var calendarCellSize: CGSize {
+        CGSize(width: frame.width / 7,
+               height: frame.height / 6)
+    }
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         configure()
