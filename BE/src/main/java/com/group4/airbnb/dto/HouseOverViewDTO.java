@@ -1,9 +1,6 @@
 package com.group4.airbnb.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -11,10 +8,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 public class HouseOverViewDTO {
-    private Long house_id;
+    private Long houseId;
     private List<String> images;
-    private String name;
+    private String houseName;
     private boolean hostIsSuper;
     private String roomType;
     private int bedRoomCount;
