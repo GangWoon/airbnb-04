@@ -21,7 +21,6 @@ class CalendarView: UICollectionView {
     }
     
     private func configure() {
-        guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        flowlayout.scrollDirection = .horizontal
+        isScrollEnabled = false
     }
 }

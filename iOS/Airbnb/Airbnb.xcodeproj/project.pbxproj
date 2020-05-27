@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		441CC1F6247D3AE600B0F977 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 441CC1F5247D3AE600B0F977 /* SnapKit */; };
+		444D75C1247E78BD0088523E /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D75C0247E78BD0088523E /* CalendarDataSource.swift */; };
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
 		4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472506E247BAF09009D38EA /* AirbnbNetwork.swift */; };
 		44725071247BB027009D38EA /* AirbnbNetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44725070247BB027009D38EA /* AirbnbNetworkImpl.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		444D75C0247E78BD0088523E /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		4472506E247BAF09009D38EA /* AirbnbNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetwork.swift; sourceTree = "<group>"; };
 		44725070247BB027009D38EA /* AirbnbNetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetworkImpl.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				AE46E8DF247E503C00914CEB /* CalendarView.swift */,
+				444D75C0247E78BD0088523E /* CalendarDataSource.swift */,
 				AE191010247E58DC003EE161 /* CalendarCell.swift */,
 			);
 			path = Calendar;
@@ -332,6 +335,7 @@
 				44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */,
 				AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */,
 				AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */,
+				444D75C1247E78BD0088523E /* CalendarDataSource.swift in Sources */,
 				AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

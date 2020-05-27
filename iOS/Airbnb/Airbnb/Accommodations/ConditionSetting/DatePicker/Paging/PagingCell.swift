@@ -13,6 +13,7 @@ final class PagingCell: UICollectionViewCell {
     // MARK: - Properties
     static let identifier: String = "PagingCell"
     var calendar: CalendarView!
+    var calendarDataSource: CalendarDataSource?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +27,11 @@ final class PagingCell: UICollectionViewCell {
     
     func configure() {
         configureCalendarView()
+        calendar
+            .register(CalendarCell.self,
+                          forCellWithReuseIdentifier: CalendarCell.identifier)
+        calendarDataSource = CalendarDataSource()
+        calendar.dataSource = calendarDataSource
     }
     
     func configureCalendarView() {

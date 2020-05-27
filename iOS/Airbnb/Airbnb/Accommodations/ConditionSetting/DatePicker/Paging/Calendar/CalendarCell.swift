@@ -11,7 +11,7 @@ import UIKit
 final class CalendarCell: UICollectionViewCell {
     
     static let identifier: String = "CalendarCell"
-    private var dayLabel: UILabel!
+    var dayLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
