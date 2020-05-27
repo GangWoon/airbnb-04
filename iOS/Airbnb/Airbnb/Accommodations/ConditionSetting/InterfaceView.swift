@@ -12,6 +12,7 @@ final class InterfaceView: UIView {
     
     // MARK: - Properties
     private var dismissButton: UIButton!
+    private var titleLabel: UILabel!
     
     // MARk: - Lifecycle
     override init(frame: CGRect) {
@@ -29,6 +30,7 @@ final class InterfaceView: UIView {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12
         configureDismissButton()
+        configureTitleLabel()
     }
     
     private func configureDismissButton() {
@@ -39,6 +41,16 @@ final class InterfaceView: UIView {
         dismissButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
             make.leading.equalToSuperview().inset(12)
+        }
+    }
+    
+    private func configureTitleLabel() {
+        titleLabel = UILabel()
+        titleLabel.text = "Title"
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(dismissButton)
         }
     }
 }
