@@ -28,9 +28,11 @@ final class CalendarCell: UICollectionViewCell {
     }
     
     private func configureDayLabel() {
+        backgroundColor = .systemBackground
         dayLabel = UILabel()
         dayLabel.textAlignment = .center
         dayLabel.text = "\(Int.random(in: 1...30))"
+        dayLabel.font = .boldSystemFont(ofSize: 11)
         addSubview(dayLabel)
         dayLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()

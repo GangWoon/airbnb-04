@@ -20,8 +20,6 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier,
                                  for: indexPath) as? CalendarCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .red
-        cell.dayLabel.text = String(indexPath.item)
         
         return cell
     }
