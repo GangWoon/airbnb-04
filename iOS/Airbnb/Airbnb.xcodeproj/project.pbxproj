@@ -32,6 +32,7 @@
 		AE18439E247287FA007ABDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE18439D247287FA007ABDB3 /* Assets.xcassets */; };
 		AE1843A1247287FA007ABDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE18439F247287FA007ABDB3 /* LaunchScreen.storyboard */; };
 		AE19100F247E5694003EE161 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19100E247E5694003EE161 /* Dependencies.swift */; };
+		AE191011247E58DC003EE161 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE191010247E58DC003EE161 /* CalendarCell.swift */; };
 		AE46E8D9247D46E900914CEB /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8D8247D46E900914CEB /* DatePickerView.swift */; };
 		AE46E8DC247E233A00914CEB /* ConditionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */; };
 		AE46E8DE247E2D2A00914CEB /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */; };
@@ -68,6 +69,7 @@
 		AE1843A0247287FA007ABDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE1843A2247287FA007ABDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE19100E247E5694003EE161 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		AE191010247E58DC003EE161 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		AE46E8D8247D46E900914CEB /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingViewController.swift; sourceTree = "<group>"; };
 		AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				AE46E8DF247E503C00914CEB /* CalendarView.swift */,
+				AE191010247E58DC003EE161 /* CalendarCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				AE134380247643B00081E1D0 /* BorderLabel.swift in Sources */,
 				44CFA69B2477B364000CE29D /* Endpoint.swift in Sources */,
 				449F2CEA247E40860036214A /* PagingView.swift in Sources */,
+				AE191011247E58DC003EE161 /* CalendarCell.swift in Sources */,
 				AE46E8DE247E2D2A00914CEB /* InterfaceView.swift in Sources */,
 				AE1343B82476753E0081E1D0 /* AccommodationsHeaderView.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
