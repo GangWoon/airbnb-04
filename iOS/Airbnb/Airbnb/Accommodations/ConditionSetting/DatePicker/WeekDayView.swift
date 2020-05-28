@@ -45,8 +45,6 @@ final class WeekDayView: UIStackView {
         }
     }
     
-    // MARK: - Properties
-    
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)

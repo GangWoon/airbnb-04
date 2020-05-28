@@ -21,8 +21,7 @@ final class PagingDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: PagingCell.identifier,
                                  for: indexPath) as? PagingCell else { return UICollectionViewCell() }
-        
-        cell.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
+
         return cell
     }
 }

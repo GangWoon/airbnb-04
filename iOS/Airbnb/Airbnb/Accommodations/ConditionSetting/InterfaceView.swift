@@ -20,14 +20,17 @@ final class InterfaceView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        makeConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
+        makeConstraints()
     }
     
     // MARK: - Methods
+    // MARK: Configure
     private func configure() {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12
@@ -42,20 +45,12 @@ final class InterfaceView: UIView {
         dismissButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         dismissButton.tintColor = .black
         addSubview(dismissButton)
-        dismissButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(12)
-            make.leading.equalToSuperview().inset(12)
-        }
     }
     
     private func configureTitleLabel() {
         titleLabel = UILabel()
         titleLabel.text = "Title"
         addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalTo(dismissButton)
-        }
     }
     
     private func configureResetButton() {
@@ -64,11 +59,6 @@ final class InterfaceView: UIView {
         resetButton.setTitleColor(.systemGray, for: .normal)
         resetButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
         addSubview(resetButton)
-        resetButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(8)
-            make.leading.equalToSuperview().inset(12)
-            make.width.equalTo(48)
-        }
     }
     
     private func configureDoneButton() {
@@ -79,6 +69,39 @@ final class InterfaceView: UIView {
         doneButton.backgroundColor = .black
         doneButton.layer.cornerRadius = 8
         addSubview(doneButton)
+    }
+    
+    // MARK: Constraints
+    private func makeConstraints() {
+        makeConstraintsDismissButton()
+        makeConstraintsTitleLabel()
+        makeConstraintsResetButton()
+        makeConstraintsDoneButton()
+    }
+    
+    private func makeConstraintsDismissButton() {
+        dismissButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(12)
+            make.leading.equalToSuperview().inset(12)
+        }
+    }
+    
+    private func makeConstraintsTitleLabel() {
+        titleLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(dismissButton)
+        }
+    }
+    
+    private func makeConstraintsResetButton() {
+        resetButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(8)
+            make.leading.equalToSuperview().inset(12)
+            make.width.equalTo(48)
+        }
+    }
+    
+    private func makeConstraintsDoneButton() {
         doneButton.snp.makeConstraints { make in
             make.trailing.bottom.equalToSuperview().inset(8)
             make.width.equalTo(48)
