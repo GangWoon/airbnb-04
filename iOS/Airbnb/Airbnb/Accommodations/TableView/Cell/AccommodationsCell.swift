@@ -11,7 +11,7 @@ import UIKit
 final class AccommodationsCell: UITableViewCell {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var scrollView: AccommodationsThumbnailScrollView! {
+    @IBOutlet weak var scrollView: ThumbnailScrollView! {
         didSet {
             scrollView.delegate = self
         }
@@ -26,11 +26,6 @@ final class AccommodationsCell: UITableViewCell {
     
     // MARK: - Properties
     static let identifier: String = "AccommodationsCell"
-    private var viewModel: AccommodationsCellViewModel? {
-        didSet {
-            apply()
-        }
-    }
     
     // MARK: - Lifecycle
     override func prepareForReuse() {
@@ -60,8 +55,7 @@ final class AccommodationsCell: UITableViewCell {
         pageControl.numberOfPages = 3
     }
     
-    private func apply() {
-        guard let viewModel = viewModel else { return }
+    func apply(with viewModel: AccommodationsCellViewModel) {
         accommodationsInfoView.apply(badge: viewModel.badge,
                                      roomType: viewModel.roomType,
                                      rate: viewModel.rate,
@@ -70,10 +64,6 @@ final class AccommodationsCell: UITableViewCell {
             scrollView.addThumbnail(image: $0)
         }
         favoritesButton.isSelected = viewModel.isFavorite
-    }
-    
-    func update(with viewModel: AccommodationsCellViewModel) {
-        self.viewModel = viewModel
     }
 }
 

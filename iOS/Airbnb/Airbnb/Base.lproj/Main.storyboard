@@ -74,6 +74,9 @@
                                                 <color key="value" name="Color-3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showConditionViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zog-wy-cZC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-iJ-E4M" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="50" height="30"/>
@@ -212,7 +215,7 @@
                                                                 <outlet property="title" destination="yjb-NC-J1O" id="C9e-5x-9ki"/>
                                                             </connections>
                                                         </view>
-                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF" customClass="AccommodationsThumbnailScrollView" customModule="Airbnb" customModuleProvider="target">
+                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF" customClass="ThumbnailScrollView" customModule="Airbnb" customModuleProvider="target">
                                                             <rect key="frame" x="20" y="20" width="334" height="200"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
@@ -243,7 +246,7 @@
                                                             <viewLayoutGuide key="contentLayoutGuide" id="a69-hh-OPm"/>
                                                             <viewLayoutGuide key="frameLayoutGuide" id="sAn-Ww-ZLO"/>
                                                             <connections>
-                                                                <outlet property="stackView" destination="xG4-UM-tIC" id="GvL-Np-oB2"/>
+                                                                <outlet property="contentView" destination="xG4-UM-tIC" id="GvL-Np-oB2"/>
                                                             </connections>
                                                         </scrollView>
                                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-33-Pdo">

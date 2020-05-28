@@ -20,10 +20,9 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRowsInSection = [0: 0,
-                                     1: accomodations.count]
+        let numberOfRowsInSection = [0, accomodations.count]
         
-        return numberOfRowsInSection[section] ?? 0
+        return numberOfRowsInSection[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,7 +30,7 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
             .dequeueReusableCell(withIdentifier: AccommodationsCell.identifier,
                                  for: indexPath) as? AccommodationsCell else { return UITableViewCell() }
         let item = accomodations[indexPath.row]
-        cell.update(with: AccommodationsCellViewModel(accommodations: item))
+        cell.apply(with: AccommodationsCellViewModel(accommodations: item))
         
         return cell
     }
