@@ -23,6 +23,7 @@ final class PagingView: UICollectionView {
     
     // MARK: - Methods
     func configure() {
+        backgroundColor = .systemBackground
         isPagingEnabled = true
         showsHorizontalScrollIndicator = false
         guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }

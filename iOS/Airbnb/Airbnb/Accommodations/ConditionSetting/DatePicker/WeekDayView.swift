@@ -10,8 +10,42 @@ import UIKit
 
 final class WeekDayView: UIStackView {
     
+    enum WeekDays: CustomStringConvertible, CaseIterable {
+        
+        case Sun, Mon, Tue, Wed, Thu, Fri, Sat
+
+        var description: String {
+            switch self {
+            case .Sun:
+                return "Sun"
+            case .Mon:
+                return "Mon"
+            case .Tue:
+                return "Tue"
+            case .Wed:
+                return "Wed"
+            case .Thu:
+                return "Thu"
+            case .Fri:
+                return "Fri"
+            case .Sat:
+                return "Sat"
+            }
+        }
+        
+        func color() -> UIColor {
+            switch self {
+            case .Sun:
+                return .systemRed
+            case .Sat:
+                return .systemBlue
+            default:
+                return .systemGray
+            }
+        }
+    }
+    
     // MARK: - Properties
-    private let weekDays = ["Sun", "Mon" , "Tue", "Wed", "Thu", "Fri", "Sat"]
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {
@@ -27,12 +61,13 @@ final class WeekDayView: UIStackView {
     // MARK: - Methods
     func configure() {
         distribution = .fillEqually
-        weekDays.forEach { addArrangedSubview(configureWeekDayLabel($0)) }
+        WeekDays.allCases.forEach { addArrangedSubview(configureWeekDayLabel($0)) }
     }
     
-    func configureWeekDayLabel(_ weekDay: String) -> UILabel {
+    func configureWeekDayLabel(_ weekDay: WeekDays) -> UILabel {
         let label = UILabel()
-        label.text = weekDay
+        label.text = weekDay.description
+        label.textColor = weekDay.color()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 12)
         
