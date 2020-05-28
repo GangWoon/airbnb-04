@@ -18,8 +18,11 @@ class ConditionSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        makeConstraints()
     }
     
+    // MARK: - Methods
+    // MARK: Configure
     private func configure() {
         view.backgroundColor = .clear
         configureDimmedView()
@@ -30,14 +33,26 @@ class ConditionSettingViewController: UIViewController {
         dimmedView = UIView()
         dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.66)
         view.addSubview(dimmedView)
-        dimmedView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
     }
     
     private func configureInterfaceView() {
         interfaceView = InterfaceView()
         view.addSubview(interfaceView)
+    }
+    
+    // MARK: Constraints
+    private func makeConstraints() {
+        makeConstriantsDimmedView()
+        makeConstriantsInterfaceView()
+    }
+    
+    private func makeConstriantsDimmedView() {
+        dimmedView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    private func makeConstriantsInterfaceView() {
         interfaceView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.width.equalTo(300)

@@ -16,24 +16,26 @@ final class CalendarCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        makeConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
+        makeConstraints()
     }
     
     private func configure() {
-        configureDayLabel()
-    }
-    
-    private func configureDayLabel() {
         backgroundColor = .systemBackground
         dayLabel = UILabel()
         dayLabel.textAlignment = .center
         dayLabel.text = "\(Int.random(in: 1...30))"
         dayLabel.font = .boldSystemFont(ofSize: 11)
         addSubview(dayLabel)
+    }
+
+    // MARK: Constraints
+    private func makeConstraints() {
         dayLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

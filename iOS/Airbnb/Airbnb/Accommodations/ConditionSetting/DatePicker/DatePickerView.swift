@@ -21,14 +21,17 @@ final class DatePickerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        makeConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
+        makeConstraints()
     }
     
     // MARK: - Methods
+    // MARK: Configure
     private func configure() {
         configureWeekDayView()
         configurePagingView()
@@ -37,15 +40,27 @@ final class DatePickerView: UIView {
     private func configureWeekDayView() {
         weekDayView = WeekDayView()
         addSubview(weekDayView)
+    }
+    
+    private func configurePagingView() {
+        pagingView = PagingView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        addSubview(pagingView)
+    }
+    
+    //MARK: Constarints
+    private func makeConstraints() {
+        makeConstraintsWeekDayView()
+        makeConstraintsPagingView()
+    }
+    
+    private func makeConstraintsWeekDayView() {
         weekDayView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(32)
         }
     }
     
-    private func configurePagingView() {
-        pagingView = PagingView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        addSubview(pagingView)
+    private func makeConstraintsPagingView() {
         pagingView.snp.makeConstraints { make in
             make.top.equalTo(weekDayView.snp.bottom)
             make.leading.bottom.trailing.equalToSuperview()

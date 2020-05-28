@@ -16,7 +16,8 @@ class CalendarView: UICollectionView {
     }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: frame, collectionViewLayout: layout)
+        super.init(frame: frame,
+                   collectionViewLayout: layout)
         configure()
     }
     
