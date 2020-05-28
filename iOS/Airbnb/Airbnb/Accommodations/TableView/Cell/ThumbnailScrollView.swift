@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class AccommodationsThumbnailScrollView: UIScrollView {
+final class ThumbnailScrollView: UIScrollView {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var contentView: UIStackView!
     
     // MARK: - Methods
     func addThumbnail(image: UIImage) {
@@ -21,14 +21,14 @@ final class AccommodationsThumbnailScrollView: UIScrollView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView
         }()
-        stackView.addArrangedSubview(imageView)
+        contentView.addArrangedSubview(imageView)
         imageView.widthAnchor.constraint(equalTo: frameLayoutGuide.widthAnchor).isActive = true
     }
     
     func resetThumbnails() {
-        stackView.arrangedSubviews.forEach {
+        contentView.arrangedSubviews.forEach {
             $0.removeFromSuperview()
-            stackView.removeArrangedSubview($0)
+            contentView.removeArrangedSubview($0)
         }
     }
 }
