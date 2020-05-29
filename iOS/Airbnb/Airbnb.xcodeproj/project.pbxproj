@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		441CC1F6247D3AE600B0F977 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 441CC1F5247D3AE600B0F977 /* SnapKit */; };
+		442028342480E48F00B3DF42 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442028332480E48F00B3DF42 /* Month.swift */; };
 		444D75C1247E78BD0088523E /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D75C0247E78BD0088523E /* CalendarDataSource.swift */; };
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
 		4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472506E247BAF09009D38EA /* AirbnbNetwork.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442028332480E48F00B3DF42 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		444D75C0247E78BD0088523E /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		4472506E247BAF09009D38EA /* AirbnbNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetwork.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AE1910712480D542003EE161 /* WeekDays.swift */,
+				442028332480E48F00B3DF42 /* Month.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */,
 				AE46E8D9247D46E900914CEB /* DatePickerView.swift in Sources */,
 				AE1910752480D66F003EE161 /* Date.swift in Sources */,
+				442028342480E48F00B3DF42 /* Month.swift in Sources */,
 				449F2CE8247E403D0036214A /* WeekDayView.swift in Sources */,
 				AE1910722480D542003EE161 /* WeekDays.swift in Sources */,
 				AE19100F247E5694003EE161 /* Dependencies.swift in Sources */,
