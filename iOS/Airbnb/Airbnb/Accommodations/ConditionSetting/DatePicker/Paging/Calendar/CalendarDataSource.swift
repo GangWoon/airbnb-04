@@ -13,7 +13,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     private let numberOfDays: Int = 42
     private let index: Int
     private var month: Date? {
-        Date().monthLater(value: index)
+        DateCalculator.monthLater(value: index)
     }
     
     init(index: Int) {
@@ -33,7 +33,14 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarHeaderView.identifier, for: indexPath) as? CalendarHeaderView else { return UICollectionReusableView() }
+        guard let headerView = collectionView
+            .dequeueReusableSupplementaryView(ofKind: kind,
+                                              withReuseIdentifier: CalendarHeaderView.identifier,
+                                              for: indexPath) as? CalendarHeaderView,
+            let month = month else { return UICollectionReusableView() }
+        headerView
+            .applyDate(month: DateCalculator.month(from: month),
+                       year: DateCalculator.year(from: month))
         
         return headerView
     }

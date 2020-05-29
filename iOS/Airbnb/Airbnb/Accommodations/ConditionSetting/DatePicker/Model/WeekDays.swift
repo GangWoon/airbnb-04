@@ -10,7 +10,13 @@ import UIKit
 
 enum WeekDays: Int, CustomStringConvertible, CaseIterable {
     
-    case Sun = 1, Mon, Tue, Wed, Thu, Fri, Sat
+    case Sun = 1
+    case Mon
+    case Tue
+    case Wed
+    case Thu
+    case Fri
+    case Sat
 
     var description: String {
         switch self {
