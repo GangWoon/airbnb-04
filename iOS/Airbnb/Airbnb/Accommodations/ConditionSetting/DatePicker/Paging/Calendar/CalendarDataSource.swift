@@ -11,6 +11,14 @@ import UIKit
 class CalendarDataSource: NSObject, UICollectionViewDataSource {
     
     private let numberOfDays: Int = 42
+    private let index: Int
+    private var month: Date? {
+        Date().monthLater(value: index)
+    }
+    
+    init(index: Int) {
+        self.index = index
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfDays

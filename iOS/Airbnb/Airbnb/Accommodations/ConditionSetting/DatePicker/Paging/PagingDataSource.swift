@@ -11,7 +11,6 @@ import UIKit
 final class PagingDataSource: NSObject, UICollectionViewDataSource {
     
     private let numberOfMonths: Int = 6
-    // 현재 월
     
     // MARK: - Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -22,9 +21,9 @@ final class PagingDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: PagingCell.identifier,
                                  for: indexPath) as? PagingCell else { return UICollectionViewCell() }
-        // 현재 월 + 인덱스를 하면
+        cell.apply(dataSource: CalendarDataSource(index: indexPath.item))
+        
         return cell
     }
 }
-
 

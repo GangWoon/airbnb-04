@@ -29,6 +29,11 @@ final class PagingCell: UICollectionViewCell {
     }
     
     // MARK: - Methods
+    func apply(dataSource: CalendarDataSource) {
+        calendarDataSource = dataSource
+        calendar.dataSource = calendarDataSource
+    }
+    
     // MARK: Configure
     func configure() {
         configureCalendarView()
@@ -39,8 +44,6 @@ final class PagingCell: UICollectionViewCell {
             .register(CalendarHeaderView.self,
                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                       withReuseIdentifier: CalendarHeaderView.identifier)
-        calendarDataSource = CalendarDataSource()
-        calendar.dataSource = calendarDataSource
         calendar.delegate = self
     }
     
