@@ -27,7 +27,13 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier,
-                                 for: indexPath) as? CalendarCell else { return UICollectionViewCell() }
+                                 for: indexPath) as? CalendarCell,
+            let month = month else { return UICollectionViewCell() }
+        
+        if DateCalculator.firstWeekday(of: month) < indexPath.item + 2,
+            (indexPath.item + 2) - DateCalculator.firstWeekday(of: month) <= DateCalculator.end(of: month) {
+            cell.dayLabel.text = String((indexPath.item + 2) - DateCalculator.firstWeekday(of: month))
+        }
         
         return cell
     }

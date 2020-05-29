@@ -29,4 +29,17 @@ struct DateCalculator {
         
         return String(year)
     }
+    
+    static func firstWeekday(of month: Date) -> Int {
+        guard let firstDay = calendar
+            .date(from: Calendar.current.dateComponents([.year,.month], from: month))?.addingTimeInterval(3600 * 9) else { return 0 }
+        
+        return calendar.component(.weekday, from: firstDay)
+    }
+    
+    static func end(of month: Date) -> Int {
+        guard let monthRange = calendar.range(of: .day, in: .month, for: month) else { return 0 }
+        
+        return monthRange.count
+    }
 }

@@ -25,11 +25,15 @@ final class CalendarCell: UICollectionViewCell {
         makeConstraints()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dayLabel.text = ""
+    }
+    
     private func configure() {
         backgroundColor = .systemBackground
         dayLabel = UILabel()
         dayLabel.textAlignment = .center
-        dayLabel.text = "\(Int.random(in: 1...30))"
         dayLabel.font = .boldSystemFont(ofSize: 11)
         addSubview(dayLabel)
     }
