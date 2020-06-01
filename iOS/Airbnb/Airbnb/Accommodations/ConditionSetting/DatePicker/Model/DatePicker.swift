@@ -19,8 +19,8 @@ class DatePicker {
     
     func update(date: CalendarCell?) {
         if startCell != nil, endCell != nil {
-            startCell?.contentView.backgroundColor = .systemBackground
-            endCell?.contentView.backgroundColor = .systemBackground
+            startCell?.toggle(state: false)
+            endCell?.toggle(state: false)
             startCell = date
             endCell = nil
             return
@@ -32,6 +32,7 @@ class DatePicker {
         }
         
         if (startCell?.date)! > date!.date! {
+            startCell?.toggle(state: false)
             startCell = date
         } else {
             endCell = date

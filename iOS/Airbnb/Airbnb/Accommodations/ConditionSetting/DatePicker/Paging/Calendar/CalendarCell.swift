@@ -30,7 +30,7 @@ final class CalendarCell: UICollectionViewCell {
         super.prepareForReuse()
         dayButton.setTitle("", for: .normal)
         dayButton.isSelected = false
-        toggle(state: dayButton.isSelected)
+        toggle(state: false)
     }
     
     // MARK: - Methods
@@ -39,8 +39,7 @@ final class CalendarCell: UICollectionViewCell {
     }
     
     @objc func dayButtonTapped(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        toggle(state: sender.isSelected)
+        toggle(state: true)
         DatePicker.shared.update(date: self)
     }
     
