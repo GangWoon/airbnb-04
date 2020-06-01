@@ -11,7 +11,7 @@ import UIKit
 final class CalendarCell: UICollectionViewCell {
     
     static let identifier: String = "CalendarCell"
-    var dayLabel: UILabel!
+    var dayButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,20 +27,21 @@ final class CalendarCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dayLabel.text = ""
+        dayButton.setTitle("", for: .normal)
     }
     
     private func configure() {
         backgroundColor = .systemBackground
-        dayLabel = UILabel()
-        dayLabel.textAlignment = .center
-        dayLabel.font = .boldSystemFont(ofSize: 11)
-        addSubview(dayLabel)
+        dayButton = UIButton()
+        dayButton.setTitleColor(.black, for: .normal)
+        dayButton.titleLabel?.textAlignment = .center
+        dayButton.titleLabel?.font = .boldSystemFont(ofSize: 11)
+        addSubview(dayButton)
     }
 
     // MARK: Constraints
     private func makeConstraints() {
-        dayLabel.snp.makeConstraints { make in
+        dayButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
