@@ -25,32 +25,44 @@ final class DatePickerViewController: ConditionSettingViewController {
     
     // MARK: - Methods
     private func configure() {
+        configureDatePickerView()
+        configureInterfaceView()
+        configureSubscription()
+    }
+    
+    func configureDatePickerView() {
         datePickerView = DatePickerView()
-        interfaceView.addConditionView(datePickerView)
         datePickerView.pagingView.register(PagingCell.self,
                       forCellWithReuseIdentifier: PagingCell.identifier)
         pagingDataSource = PagingDataSource()
         datePickerView.pagingView.dataSource = pagingDataSource
         datePickerView.pagingView.delegate = self
+    }
+    
+    func configureInterfaceView() {
+        interfaceView.addConditionView(datePickerView)
         interfaceView.titleLabel.text = titleText
-        
+        interfaceView.resetButton
+            .addTarget(self,
+                       action: #selector(resetButtonTapped(_:)),
+                       for: .touchUpInside)
+    }
+    
+    func configureSubscription() {
         subscription = Publishers
             .CombineLatest(DatePicker.shared.$startDate,
                            DatePicker.shared.$endDate)
-            .sink { start, end in
-                let formatter = DateFormatter()
-                formatter.dateFormat = "MM월 dd일"
-                
-                guard let start = start else {
-                    self.interfaceView.titleLabel.text = self.titleText
-                    return
-                }
-                self.interfaceView.titleLabel.text = "\(formatter.string(from: start))"
-                guard let end = end else { return }
-                self.interfaceView.titleLabel.text = "\(formatter.string(from: start)) - \(formatter.string(from: end))"
+            .sink { self.applyTitleLabel(start: $0.0, end: $0.1) }
+    }
+    
+    func applyTitleLabel(start: Date?, end: Date?) {
+        guard let start = start else {
+            interfaceView.titleLabel.text = titleText
+            return
         }
-        
-        interfaceView.resetButton.addTarget(self, action: #selector(resetButtonTapped(_:)), for: .touchUpInside)
+        interfaceView.titleLabel.text = "\(DateCalculator.formattingDate(start))"
+        guard let end = end else { return }
+        interfaceView.titleLabel.text = "\(DateCalculator.formattingDate(start)) - \(DateCalculator.formattingDate(end))"
     }
     
     // MARK: Objc

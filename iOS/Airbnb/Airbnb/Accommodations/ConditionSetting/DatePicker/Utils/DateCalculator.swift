@@ -78,4 +78,11 @@ struct DateCalculator {
         
         return monthRange.count
     }
+    
+    static func formattingDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM월 dd일"
+        
+        return formatter.string(from: date)
+    }
 }

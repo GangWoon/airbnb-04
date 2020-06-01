@@ -42,7 +42,10 @@ class ConditionSettingViewController: UIViewController {
     }
     
     private func configureDismissButton() {
-        interfaceView.dismissButton.addTarget(self, action: #selector(dismissButtonTapped(_:)), for: .touchUpInside)
+        interfaceView.dismissButton
+            .addTarget(self,
+                       action: #selector(dismissButtonTapped(_:)),
+                       for: .touchUpInside)
     }
     
     // MARK: Constraints
