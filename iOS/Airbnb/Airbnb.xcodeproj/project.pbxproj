@@ -40,6 +40,7 @@
 		AE19100F247E5694003EE161 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19100E247E5694003EE161 /* Dependencies.swift */; };
 		AE191011247E58DC003EE161 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE191010247E58DC003EE161 /* CalendarCell.swift */; };
 		AE1910722480D542003EE161 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1910712480D542003EE161 /* WeekDays.swift */; };
+		AE39C0EC24851C14003BE3FB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE39C0EB24851C14003BE3FB /* DatePicker.swift */; };
 		AE46E8D9247D46E900914CEB /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8D8247D46E900914CEB /* DatePickerView.swift */; };
 		AE46E8DC247E233A00914CEB /* ConditionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */; };
 		AE46E8DE247E2D2A00914CEB /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */; };
@@ -84,6 +85,7 @@
 		AE19100E247E5694003EE161 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		AE191010247E58DC003EE161 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		AE1910712480D542003EE161 /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
+		AE39C0EB24851C14003BE3FB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		AE46E8D8247D46E900914CEB /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingViewController.swift; sourceTree = "<group>"; };
 		AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				AE1910712480D542003EE161 /* WeekDays.swift */,
 				442028332480E48F00B3DF42 /* Month.swift */,
+				AE39C0EB24851C14003BE3FB /* DatePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */,
 				444D75C1247E78BD0088523E /* CalendarDataSource.swift in Sources */,
 				AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */,
+				AE39C0EC24851C14003BE3FB /* DatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
