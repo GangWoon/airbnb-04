@@ -55,7 +55,10 @@ final class CalendarCell: UICollectionViewCell {
         dayButton.setTitleColor(.black, for: .normal)
         dayButton.titleLabel?.textAlignment = .center
         dayButton.titleLabel?.font = .boldSystemFont(ofSize: 11)
-        dayButton.addTarget(self, action: #selector(dayButtonTapped(_:)), for: .touchUpInside)
+        dayButton
+            .addTarget(self,
+                       action: #selector(dayButtonTapped(_:)),
+                       for: .touchUpInside)
         addSubview(dayButton)
     }
     

@@ -33,8 +33,13 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         if DateCalculator.firstWeekday(of: month) < indexPath.item + 2,
             (indexPath.item + 2) - DateCalculator.firstWeekday(of: month) <= DateCalculator.end(of: month) {
             let day = String((indexPath.item + 2) - DateCalculator.firstWeekday(of: month))
-            cell.dayButton.setTitle(day, for: .normal)
+            cell.dayButton
+                .setTitle(day, for: .normal)
+            cell.dayButton.isEnabled = true
+        } else {
+            cell.dayButton.isEnabled = false
         }
+        
         
         return cell
     }
