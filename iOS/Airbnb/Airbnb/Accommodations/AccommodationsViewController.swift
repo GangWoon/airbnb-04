@@ -20,10 +20,14 @@ final class AccommodationsViewController: UIViewController {
                           forHeaderFooterViewReuseIdentifier: AccommodationsHeaderView.identifier)
         }
     }
+    @IBOutlet var conditionButtons: [UIButton]!
     
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
+    private let conditionViewControllers = [0: DatePickerViewController(),
+                                            1: ConditionSettingViewController(),
+                                            2: ConditionSettingViewController()]
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,7 +37,8 @@ final class AccommodationsViewController: UIViewController {
     }
     
     @IBAction func showConditionViewController(_ sender: UIButton) {
-        let conditionSettingViewController = DatePickerViewController()
+        guard let buttonIndex = conditionButtons.firstIndex(of: sender),
+            let conditionSettingViewController = conditionViewControllers[buttonIndex] else { return }
         conditionSettingViewController.modalPresentationStyle = .overFullScreen
         present(conditionSettingViewController,
                 animated: true)
