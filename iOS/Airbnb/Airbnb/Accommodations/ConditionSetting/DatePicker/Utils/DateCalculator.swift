@@ -18,6 +18,12 @@ struct DateCalculator {
         return calendar.date(byAdding: .month, value: value, to: Date())
     }
     
+    static func day(of date: Date) -> String {
+        let day = calendar.component(.day, from: date)
+        
+        return String(day)
+    }
+    
     static func month(from date: Date) -> String? {
         let month = calendar.component(.month, from: date)
         
@@ -30,11 +36,16 @@ struct DateCalculator {
         return String(year)
     }
     
-    static func firstWeekday(of month: Date) -> Int {
-        guard let firstDay = calendar
-            .date(from: Calendar.current.dateComponents([.year,.month], from: month))?.addingTimeInterval(3600 * 9) else { return 0 }
+    static func firstDay(of month: Date) -> Date? {
+        let firstDay = calendar
+            .date(from: Calendar.current.dateComponents([.year,.month], from: month))?
+            .addingTimeInterval(3600 * 9)
         
-        return calendar.component(.weekday, from: firstDay)
+        return firstDay
+    }
+    
+    static func weekday(of date: Date) -> Int {
+        return calendar.component(.weekday, from: date)
     }
     
     static func end(of month: Date) -> Int {

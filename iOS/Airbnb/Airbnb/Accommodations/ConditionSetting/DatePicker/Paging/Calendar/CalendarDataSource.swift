@@ -28,18 +28,20 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier,
                                  for: indexPath) as? CalendarCell,
-            let month = month else { return UICollectionViewCell() }
+            let month = month,
+            let firstDay = DateCalculator.firstDay(of: month) else { return UICollectionViewCell() }
         
-        if DateCalculator.firstWeekday(of: month) < indexPath.item + 2,
-            (indexPath.item + 2) - DateCalculator.firstWeekday(of: month) <= DateCalculator.end(of: month) {
-            let day = String((indexPath.item + 2) - DateCalculator.firstWeekday(of: month))
+        if DateCalculator.weekday(of: firstDay) < indexPath.item + 2,
+            (indexPath.item + 2) - DateCalculator.weekday(of: firstDay) <= DateCalculator.end(of: month) {
+            let index = (indexPath.item + 1) - DateCalculator.weekday(of: firstDay)
+            let date = firstDay.addingTimeInterval(TimeInterval(index * 86400))
+            
             cell.dayButton
-                .setTitle(day, for: .normal)
+                .setTitle(DateCalculator.day(of: date), for: .normal)
             cell.dayButton.isEnabled = true
         } else {
             cell.dayButton.isEnabled = false
         }
-        
         
         return cell
     }
