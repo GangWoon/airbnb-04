@@ -39,6 +39,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             cell.dayButton.setTitleColor(weekDay?.color(), for: .normal)
             cell.dayButton
                 .setTitle(DateCalculator.day(of: date), for: .normal)
+            cell.apply(date: date)
             guard DateCalculator.today() <= date else {
                 cell.dayButton.setTitleColor(.systemGray, for: .normal)
                 

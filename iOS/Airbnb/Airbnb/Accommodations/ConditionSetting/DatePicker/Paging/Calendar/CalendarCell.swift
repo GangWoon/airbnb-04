@@ -12,6 +12,7 @@ final class CalendarCell: UICollectionViewCell {
     
     static let identifier: String = "CalendarCell"
     var dayButton: UIButton!
+    var date: Date?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,10 +34,14 @@ final class CalendarCell: UICollectionViewCell {
     }
     
     // MARK: - Methods
+    func apply(date: Date) {
+        self.date = date
+    }
     
     @objc func dayButtonTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
         toggle(state: sender.isSelected)
+        DatePicker.shared.update(date: self)
     }
     
     func toggle(state: Bool) {

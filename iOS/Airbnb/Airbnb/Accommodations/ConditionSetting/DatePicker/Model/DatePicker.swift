@@ -6,32 +6,35 @@
 //  Copyright © 2020 Cloud. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DatePicker {
     
     static let shared: DatePicker = .init()
-    private var startDate: Date?
-    private var endDate: Date?
+    private var startCell: CalendarCell?
+    private var endCell: CalendarCell?
+    
     
     private init() { }
     
-    func update(date: Date?) {
-        if startDate != nil, endDate != nil {
-            startDate = date
-            endDate = nil
+    func update(date: CalendarCell?) {
+        if startCell != nil, endCell != nil {
+            startCell?.contentView.backgroundColor = .systemBackground
+            endCell?.contentView.backgroundColor = .systemBackground
+            startCell = date
+            endCell = nil
             return
         }
         
-        if startDate == nil {
-            startDate = date
+        if startCell == nil {
+            startCell = date
             return
         }
         
-        if startDate! > date! {
-            startDate = date
+        if (startCell?.date)! > date!.date! {
+            startCell = date
         } else {
-            endDate = date
+            endCell = date
         }
     }
 }
