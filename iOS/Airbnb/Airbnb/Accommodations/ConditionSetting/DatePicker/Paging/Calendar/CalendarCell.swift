@@ -39,9 +39,7 @@ final class CalendarCell: UICollectionViewCell {
     }
     
     @objc func dayButtonTapped(_ sender: UIButton) {
-        DatePicker.shared.update(date: date) {
-            (self.superview as! UICollectionView).reloadData()
-        }
+        DatePicker.shared.update(date: date)
     }
     
     func toggle(state: Bool) {

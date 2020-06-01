@@ -50,6 +50,13 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             if date == DatePicker.shared.startDate || date == DatePicker.shared.endDate {
                 cell.toggle(state: true)
             }
+            
+            guard let startDate = DatePicker.shared.startDate,
+                let endDate = DatePicker.shared.endDate else { return cell }
+            
+            if startDate...endDate ~= date {
+                cell.contentView.backgroundColor = .systemGray
+            }
         }
         
         return cell

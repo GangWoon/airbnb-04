@@ -6,28 +6,27 @@
 //  Copyright © 2020 Cloud. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import Combine
 
 class DatePicker {
     
     static let shared: DatePicker = .init()
-    var startDate: Date?
-    var endDate: Date?
+    @Published var startDate: Date?
+    @Published var endDate: Date?
     
     
     private init() { }
     
-    func update(date: Date?, completion: @escaping () -> ()) {
+    func update(date: Date?) {
         if startDate != nil, endDate != nil {
             startDate = date
             endDate = nil
-            completion()
             return
         }
         
         if startDate == nil {
             startDate = date
-            completion()
             return
         }
         
@@ -36,7 +35,6 @@ class DatePicker {
         } else {
             endDate = date
         }
-        completion()
     }
 }
 
