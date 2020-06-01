@@ -44,7 +44,7 @@ enum WeekDays: Int, CustomStringConvertible, CaseIterable {
         case .Sat:
             return .systemBlue
         default:
-            return .systemGray
+            return .black
         }
     }
 }

@@ -35,9 +35,15 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             (indexPath.item + 2) - DateCalculator.weekday(of: firstDay) <= DateCalculator.end(of: month) {
             let index = (indexPath.item + 1) - DateCalculator.weekday(of: firstDay)
             let date = DateCalculator.date(byAdding: .day, value: index, to: firstDay)
+            let weekDay = WeekDays(rawValue: DateCalculator.weekday(of: date))
+            cell.dayButton.setTitleColor(weekDay?.color(), for: .normal)
             cell.dayButton
                 .setTitle(DateCalculator.day(of: date), for: .normal)
-            guard DateCalculator.today() <= date else { return cell }
+            guard DateCalculator.today() <= date else {
+                cell.dayButton.setTitleColor(.systemGray, for: .normal)
+                
+                return cell
+            }
             cell.dayButton.isEnabled = true
         }
         
