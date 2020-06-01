@@ -10,12 +10,15 @@ import UIKit
 
 final class CalendarCell: UICollectionViewCell {
     
+    // MARK: - Properties
     static let identifier: String = "CalendarCell"
-     var leftBackgroundView: UIView!
-     var rightBackgroundView: UIView!
+    private let selectedColor: UIColor = UIColor.lightGray.withAlphaComponent(0.1)
+    private var leftBackgroundView: UIView!
+    private var rightBackgroundView: UIView!
+    private var date: Date?
     var dayButton: UIButton!
-    var date: Date?
     
+    // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -30,8 +33,9 @@ final class CalendarCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dayButton.setTitle("", for: .normal)
-        dayButton.isSelected = false
+        dayButton.setTitle("",
+                           for: .normal)
+        dayButton.isEnabled = false
         toggle(state: false)
         leftBackgroundView.backgroundColor = .systemBackground
         rightBackgroundView.backgroundColor = .systemBackground
@@ -40,17 +44,24 @@ final class CalendarCell: UICollectionViewCell {
     // MARK: - Methods
     func apply(date: Date) {
         self.date = date
-    }
-    
-    @objc func dayButtonTapped(_ sender: UIButton) {
-        DatePicker.shared.update(date: date)
+        let color = WeekDays(rawValue: DateCalculator.weekday(of: date))?.color()
+        let day = DateCalculator.day(of: date)
+        dayButton.setTitleColor(color,
+                                for: .normal)
+        dayButton.setTitle(day,
+                           for: .normal)
     }
     
     func toggle(state: Bool) {
         dayButton.setTitleColor(state ? .white : .black,
-                                for: .normal)
+                           for: .normal)
         contentView.layer.cornerRadius = state ? contentView.frame.height / 2 : 0
         contentView.backgroundColor = state ? .black : .clear
+    }
+    
+    func applyBackgroundColor(isStart: Bool = false, isEnd: Bool = false) {
+        rightBackgroundView.backgroundColor = isStart ? selectedColor : .clear
+        leftBackgroundView.backgroundColor = isEnd ? selectedColor : .clear
     }
     
     // MARK: Configure
@@ -60,16 +71,15 @@ final class CalendarCell: UICollectionViewCell {
         configureDayButton()
         configureLeftBackgroundView()
         configureRightBackgroundView()
-        
     }
     
     private func configureDayButton() {
         dayButton = UIButton()
-        dayButton.setTitleColor(.black, for: .normal)
+        dayButton.setTitleColor(.black,
+                                for: .normal)
         dayButton.titleLabel?.textAlignment = .center
         dayButton.titleLabel?.font = .boldSystemFont(ofSize: 11)
-        dayButton
-            .addTarget(self,
+        dayButton.addTarget(self,
                        action: #selector(dayButtonTapped(_:)),
                        for: .touchUpInside)
         addSubview(dayButton)
@@ -77,17 +87,14 @@ final class CalendarCell: UICollectionViewCell {
     
     private func configureLeftBackgroundView() {
         leftBackgroundView = UIView()
-        insertSubview(leftBackgroundView, at: 0)
-        
-        leftBackgroundView.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview()
-            make.width.equalTo(frame.width / 2)
-        }
+        insertSubview(leftBackgroundView,
+                      at: 0)
     }
     
     private func configureRightBackgroundView() {
         rightBackgroundView = UIView()
-        insertSubview(rightBackgroundView, at: 0)
+        insertSubview(rightBackgroundView,
+                      at: 0)
         
         rightBackgroundView.snp.makeConstraints { make in
             make.trailing.top.bottom.equalToSuperview()
@@ -97,8 +104,33 @@ final class CalendarCell: UICollectionViewCell {
     
     // MARK: Constraints
     private func makeConstraints() {
+        makeConstraintsDayButton()
+        makeConstraintsLeftBackgroundView()
+        makeConstraintsRightBackgroundView()
+    }
+    
+    private func makeConstraintsDayButton() {
         dayButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func makeConstraintsLeftBackgroundView() {
+        leftBackgroundView.snp.makeConstraints { make in
+            make.leading.top.bottom.equalToSuperview()
+            make.width.equalTo(frame.width / 2)
+        }
+    }
+    
+    private func makeConstraintsRightBackgroundView() {
+        rightBackgroundView.snp.makeConstraints { make in
+            make.trailing.top.bottom.equalToSuperview()
+            make.width.equalTo(frame.width / 2)
+        }
+    }
+    
+    // MARK: Objc
+    @objc func dayButtonTapped(_ sender: UIButton) {
+        DatePicker.shared.update(date: date)
     }
 }

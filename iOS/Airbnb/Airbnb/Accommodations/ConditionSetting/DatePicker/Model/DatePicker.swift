@@ -22,22 +22,28 @@ class DatePicker {
     
     // MARK: - Methods
     func update(date: Date?) {
-        if startDate != nil, endDate != nil {
-            startDate = date
-            endDate = nil
+        guard let date = date else { return }
+        
+        guard startDate == nil ||
+            endDate == nil else {
+                self.startDate = date
+                endDate = nil
+                
+                return
+        }
+        
+        guard let startDate = startDate else {
+            self.startDate = date
+            
             return
         }
         
-        if startDate == nil {
-            startDate = date
-            return
-        }
-        
-        if startDate! > date! {
-            startDate = date
-        } else {
+        guard startDate > date else {
             endDate = date
+            
+            return
         }
+        self.startDate = date
     }
 }
 

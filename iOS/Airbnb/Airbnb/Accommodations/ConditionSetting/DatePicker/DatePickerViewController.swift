@@ -23,10 +23,8 @@ final class DatePickerViewController: ConditionSettingViewController {
     // MARK: - Methods
     private func configure() {
         datePickerView = DatePickerView()
-        interfaceView
-            .addConditionView(datePickerView)
-        datePickerView.pagingView
-            .register(PagingCell.self,
+        interfaceView.addConditionView(datePickerView)
+        datePickerView.pagingView.register(PagingCell.self,
                       forCellWithReuseIdentifier: PagingCell.identifier)
         pagingDataSource = PagingDataSource()
         datePickerView.pagingView.dataSource = pagingDataSource

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarHeaderView: UICollectionReusableView {
+final class CalendarHeaderView: UICollectionReusableView {
     
     // MARK: - Properties
     static let identifier: String = "CalendarHeaderView"

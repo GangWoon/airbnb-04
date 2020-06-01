@@ -8,13 +8,15 @@
 
 import UIKit
 
-class CalendarView: UICollectionView {
+final class CalendarView: UICollectionView {
     
+    // MARK: - Properties
     var calendarCellSize: CGSize {
         CGSize(width: frame.width / 7,
                height: frame.height / 7)
     }
     
+    // MARK: - Lifecycle
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame,
                    collectionViewLayout: layout)
@@ -26,6 +28,7 @@ class CalendarView: UICollectionView {
         configure()
     }
     
+    // MARK: - Methods
     private func configure() {
         isScrollEnabled = false
     }

@@ -10,6 +10,7 @@ import UIKit
 
 final class PagingDataSource: NSObject, UICollectionViewDataSource {
     
+    // MARK: - Properties
     private let numberOfMonths: Int = 6
     
     // MARK: - Methods
