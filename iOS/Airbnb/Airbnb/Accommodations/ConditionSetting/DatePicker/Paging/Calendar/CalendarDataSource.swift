@@ -46,6 +46,10 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
                 return cell
             }
             cell.dayButton.isEnabled = true
+            
+            if date == DatePicker.shared.startDate || date == DatePicker.shared.endDate {
+                cell.toggle(state: true)
+            }
         }
         
         return cell

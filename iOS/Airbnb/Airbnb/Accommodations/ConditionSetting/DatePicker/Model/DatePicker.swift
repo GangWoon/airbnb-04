@@ -11,32 +11,32 @@ import UIKit
 class DatePicker {
     
     static let shared: DatePicker = .init()
-    private var startCell: CalendarCell?
-    private var endCell: CalendarCell?
+    var startDate: Date?
+    var endDate: Date?
     
     
     private init() { }
     
-    func update(date: CalendarCell?) {
-        if startCell != nil, endCell != nil {
-            startCell?.toggle(state: false)
-            endCell?.toggle(state: false)
-            startCell = date
-            endCell = nil
+    func update(date: Date?, completion: @escaping () -> ()) {
+        if startDate != nil, endDate != nil {
+            startDate = date
+            endDate = nil
+            completion()
             return
         }
         
-        if startCell == nil {
-            startCell = date
+        if startDate == nil {
+            startDate = date
+            completion()
             return
         }
         
-        if (startCell?.date)! > date!.date! {
-            startCell?.toggle(state: false)
-            startCell = date
+        if startDate! > date! {
+            startDate = date
         } else {
-            endCell = date
+            endDate = date
         }
+        completion()
     }
 }
 
