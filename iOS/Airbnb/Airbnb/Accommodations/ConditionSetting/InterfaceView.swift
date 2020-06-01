@@ -12,7 +12,7 @@ final class InterfaceView: UIView {
     
     // MARK: - Properties
     var dismissButton: UIButton!
-    private var titleLabel: UILabel!
+    var titleLabel: UILabel!
     private var resetButton: UIButton!
     private var doneButton: UIButton!
     
@@ -50,6 +50,8 @@ final class InterfaceView: UIView {
     private func configureTitleLabel() {
         titleLabel = UILabel()
         titleLabel.text = "Title"
+        titleLabel.textAlignment = .center
+        titleLabel.font = .boldSystemFont(ofSize: 16)
         addSubview(titleLabel)
     }
     

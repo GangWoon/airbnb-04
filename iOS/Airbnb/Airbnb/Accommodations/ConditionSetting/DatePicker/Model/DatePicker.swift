@@ -34,6 +34,7 @@ class DatePicker {
         
         guard let startDate = startDate else {
             self.startDate = date
+            self.endDate = nil
             
             return
         }
@@ -44,6 +45,7 @@ class DatePicker {
             return
         }
         self.startDate = date
+        self.endDate = nil
     }
 }
 
