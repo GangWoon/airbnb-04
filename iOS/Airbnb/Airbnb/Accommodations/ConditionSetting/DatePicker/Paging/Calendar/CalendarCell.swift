@@ -29,16 +29,19 @@ final class CalendarCell: UICollectionViewCell {
         super.prepareForReuse()
         dayButton.setTitle("", for: .normal)
         dayButton.isSelected = false
-        contentView.layer.cornerRadius = 0
-        contentView.backgroundColor = .systemBackground
+        toggle(state: dayButton.isSelected)
     }
     
     // MARK: - Methods
     
     @objc func dayButtonTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
-        contentView.layer.cornerRadius = contentView.frame.height / 2
-        contentView.backgroundColor = sender.isSelected ? .systemGray : .systemBackground
+        toggle(state: sender.isSelected)
+    }
+    
+    func toggle(state: Bool) {
+        contentView.layer.cornerRadius = state ? contentView.frame.height / 2 : 0
+        contentView.backgroundColor = state ? .systemGray : .systemBackground
     }
     
     // MARK: Configure
@@ -46,7 +49,7 @@ final class CalendarCell: UICollectionViewCell {
         backgroundColor = .systemBackground
         configureDayButton()
     }
-
+    
     private func configureDayButton() {
         dayButton = UIButton()
         dayButton.setTitleColor(.black, for: .normal)
