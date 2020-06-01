@@ -11,7 +11,7 @@ import UIKit
 final class InterfaceView: UIView {
     
     // MARK: - Properties
-    private var dismissButton: UIButton!
+    var dismissButton: UIButton!
     private var titleLabel: UILabel!
     private var resetButton: UIButton!
     private var doneButton: UIButton!
