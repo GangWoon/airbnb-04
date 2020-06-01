@@ -20,6 +20,7 @@ final class AccommodationsViewController: UIViewController {
                           forHeaderFooterViewReuseIdentifier: AccommodationsHeaderView.identifier)
         }
     }
+    @IBOutlet var conditionButtons: [UIButton]!
     
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
@@ -33,7 +34,12 @@ final class AccommodationsViewController: UIViewController {
     }
     
     @IBAction func showConditionViewController(_ sender: UIButton) {
-        let conditionSettingViewController = DatePickerViewController()
+        let conditionViewControllers = [0: DatePickerViewController(),
+                                        1: ConditionSettingViewController(),
+                                        2: ConditionSettingViewController()]
+        
+        guard let buttonIndex = conditionButtons.firstIndex(of: sender),
+            let conditionSettingViewController = conditionViewControllers[buttonIndex] else { return }
         conditionSettingViewController.modalPresentationStyle = .overFullScreen
         present(conditionSettingViewController,
                 animated: true)

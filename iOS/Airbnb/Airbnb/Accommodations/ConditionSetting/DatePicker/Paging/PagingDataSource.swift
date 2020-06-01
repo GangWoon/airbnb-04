@@ -10,6 +10,7 @@ import UIKit
 
 final class PagingDataSource: NSObject, UICollectionViewDataSource {
     
+    // MARK: - Properties
     private let numberOfMonths: Int = 6
     
     // MARK: - Methods
@@ -21,7 +22,9 @@ final class PagingDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: PagingCell.identifier,
                                  for: indexPath) as? PagingCell else { return UICollectionViewCell() }
-
+        cell.apply(dataSource: CalendarDataSource(index: indexPath.item))
+        
         return cell
     }
 }
+

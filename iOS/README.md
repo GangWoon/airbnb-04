@@ -6,6 +6,7 @@
 3. Lifecycle
 4. IBAction
 5. Methods
+6. Objc
 
 #### 프로퍼티 선언 순서
 1. Computed Property

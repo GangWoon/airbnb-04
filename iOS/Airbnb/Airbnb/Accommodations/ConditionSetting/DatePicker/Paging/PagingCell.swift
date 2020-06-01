@@ -12,8 +12,8 @@ final class PagingCell: UICollectionViewCell {
     
     // MARK: - Properties
     static let identifier: String = "PagingCell"
-    var calendar: CalendarView!
-    var calendarDataSource: CalendarDataSource?
+    private var calendar: CalendarView!
+    private var calendarDataSource: CalendarDataSource?
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {
@@ -29,18 +29,19 @@ final class PagingCell: UICollectionViewCell {
     }
     
     // MARK: - Methods
+    func apply(dataSource: CalendarDataSource) {
+        calendarDataSource = dataSource
+        calendar.dataSource = dataSource
+    }
+    
     // MARK: Configure
     func configure() {
         configureCalendarView()
-        calendar
-            .register(CalendarCell.self,
+        calendar.register(CalendarCell.self,
                       forCellWithReuseIdentifier: CalendarCell.identifier)
-        calendar
-            .register(CalendarHeaderView.self,
+        calendar.register(CalendarHeaderView.self,
                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                       withReuseIdentifier: CalendarHeaderView.identifier)
-        calendarDataSource = CalendarDataSource()
-        calendar.dataSource = calendarDataSource
         calendar.delegate = self
     }
     

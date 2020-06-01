@@ -27,6 +27,7 @@ class ConditionSettingViewController: UIViewController {
         view.backgroundColor = .clear
         configureDimmedView()
         configureInterfaceView()
+        configureDismissButton()
     }
     
     private func configureDimmedView() {
@@ -38,6 +39,13 @@ class ConditionSettingViewController: UIViewController {
     private func configureInterfaceView() {
         interfaceView = InterfaceView()
         view.addSubview(interfaceView)
+    }
+    
+    private func configureDismissButton() {
+        interfaceView.dismissButton
+            .addTarget(self,
+                       action: #selector(dismissButtonTapped(_:)),
+                       for: .touchUpInside)
     }
     
     // MARK: Constraints
@@ -58,5 +66,10 @@ class ConditionSettingViewController: UIViewController {
             make.width.equalTo(300)
             make.height.equalTo(399)
         }
+    }
+    
+    // MARK: Objc
+    @objc private func dismissButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 }

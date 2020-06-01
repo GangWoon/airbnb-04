@@ -11,9 +11,9 @@ import UIKit
 final class InterfaceView: UIView {
     
     // MARK: - Properties
-    private var dismissButton: UIButton!
-    private var titleLabel: UILabel!
-    private var resetButton: UIButton!
+    var dismissButton: UIButton!
+    var titleLabel: UILabel!
+    var resetButton: UIButton!
     private var doneButton: UIButton!
     
     // MARk: - Lifecycle
@@ -50,6 +50,8 @@ final class InterfaceView: UIView {
     private func configureTitleLabel() {
         titleLabel = UILabel()
         titleLabel.text = "Title"
+        titleLabel.textAlignment = .center
+        titleLabel.font = .boldSystemFont(ofSize: 16)
         addSubview(titleLabel)
     }
     
