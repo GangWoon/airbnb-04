@@ -11,13 +11,16 @@ import Combine
 
 class DatePicker {
     
+    // MARK: - Properties
     static let shared: DatePicker = .init()
     @Published var startDate: Date?
     @Published var endDate: Date?
     
     
+    // MARK: - Lifecycle
     private init() { }
     
+    // MARK: - Methods
     func update(date: Date?) {
         if startDate != nil, endDate != nil {
             startDate = date

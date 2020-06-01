@@ -31,6 +31,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             let month = month,
             let firstDay = DateCalculator.firstDay(of: month) else { return UICollectionViewCell() }
         cell.dayButton.isEnabled = false
+        
         if DateCalculator.weekday(of: firstDay) < indexPath.item + 2,
             (indexPath.item + 2) - DateCalculator.weekday(of: firstDay) <= DateCalculator.end(of: month) {
             let index = (indexPath.item + 1) - DateCalculator.weekday(of: firstDay)
@@ -50,12 +51,27 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             if date == DatePicker.shared.startDate || date == DatePicker.shared.endDate {
                 cell.toggle(state: true)
             }
-            
+
             guard let startDate = DatePicker.shared.startDate,
                 let endDate = DatePicker.shared.endDate else { return cell }
-            
+            let bgColor = UIColor.lightGray.withAlphaComponent(0.1)
             if startDate...endDate ~= date {
-                cell.contentView.backgroundColor = .systemGray
+                cell.leftBackgroundView.backgroundColor = bgColor
+                cell.rightBackgroundView.backgroundColor = bgColor
+            }
+            
+            if DatePicker.shared.startDate != nil && DatePicker.shared.endDate != nil {
+                if date == DatePicker.shared.startDate {
+                     
+                    cell.rightBackgroundView.backgroundColor = bgColor
+                    cell.leftBackgroundView.backgroundColor = .clear
+                    
+                }
+                if date == DatePicker.shared.endDate {
+                    cell.rightBackgroundView.backgroundColor = .clear
+                    cell.leftBackgroundView.backgroundColor = bgColor
+                    
+                }
             }
         }
         
