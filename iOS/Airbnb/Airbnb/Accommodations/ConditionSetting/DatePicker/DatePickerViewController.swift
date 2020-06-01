@@ -15,6 +15,7 @@ final class DatePickerViewController: ConditionSettingViewController {
     private var datePickerView: DatePickerView!
     private var pagingDataSource: PagingDataSource?
     private var subscription: AnyCancellable?
+    private let titleText: String = "체크인 - 체크아웃"
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ final class DatePickerViewController: ConditionSettingViewController {
         pagingDataSource = PagingDataSource()
         datePickerView.pagingView.dataSource = pagingDataSource
         datePickerView.pagingView.delegate = self
-        interfaceView.titleLabel.text = "체크인 - 체크아웃"
+        interfaceView.titleLabel.text = titleText
         
         subscription = Publishers
             .CombineLatest(DatePicker.shared.$startDate,
@@ -40,11 +41,21 @@ final class DatePickerViewController: ConditionSettingViewController {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "MM월 dd일"
                 
-                guard let start = start else { return }
+                guard let start = start else {
+                    self.interfaceView.titleLabel.text = self.titleText
+                    return
+                }
                 self.interfaceView.titleLabel.text = "\(formatter.string(from: start))"
                 guard let end = end else { return }
                 self.interfaceView.titleLabel.text = "\(formatter.string(from: start)) - \(formatter.string(from: end))"
         }
+        
+        interfaceView.resetButton.addTarget(self, action: #selector(resetButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    // MARK: Objc
+    @objc private func resetButtonTapped(_ sender: UIButton) {
+        DatePicker.shared.reset()
     }
 }
 

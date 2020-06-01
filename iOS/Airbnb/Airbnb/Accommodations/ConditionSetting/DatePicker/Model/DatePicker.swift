@@ -47,5 +47,10 @@ class DatePicker {
         self.startDate = date
         self.endDate = nil
     }
+    
+    func reset() {
+        startDate = nil
+        endDate = nil
+    }
 }
 

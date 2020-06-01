@@ -13,7 +13,7 @@ final class InterfaceView: UIView {
     // MARK: - Properties
     var dismissButton: UIButton!
     var titleLabel: UILabel!
-    private var resetButton: UIButton!
+    var resetButton: UIButton!
     private var doneButton: UIButton!
     
     // MARk: - Lifecycle
