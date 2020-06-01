@@ -30,17 +30,15 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
                                  for: indexPath) as? CalendarCell,
             let month = month,
             let firstDay = DateCalculator.firstDay(of: month) else { return UICollectionViewCell() }
-        
+        cell.dayButton.isEnabled = false
         if DateCalculator.weekday(of: firstDay) < indexPath.item + 2,
             (indexPath.item + 2) - DateCalculator.weekday(of: firstDay) <= DateCalculator.end(of: month) {
             let index = (indexPath.item + 1) - DateCalculator.weekday(of: firstDay)
-            let date = firstDay.addingTimeInterval(TimeInterval(index * 86400))
-            
+            let date = DateCalculator.date(byAdding: .day, value: index, to: firstDay)
             cell.dayButton
                 .setTitle(DateCalculator.day(of: date), for: .normal)
+            guard DateCalculator.today() <= date else { return cell }
             cell.dayButton.isEnabled = true
-        } else {
-            cell.dayButton.isEnabled = false
         }
         
         return cell

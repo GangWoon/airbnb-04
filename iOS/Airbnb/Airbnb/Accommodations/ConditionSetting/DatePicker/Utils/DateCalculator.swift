@@ -18,6 +18,10 @@ struct DateCalculator {
         return calendar.date(byAdding: .month, value: value, to: Date())
     }
     
+    static func today() -> Date {
+        return calendar.startOfDay(for: Date())
+    }
+    
     static func day(of date: Date) -> String {
         let day = calendar.component(.day, from: date)
         
@@ -34,6 +38,12 @@ struct DateCalculator {
         let year = calendar.component(.year, from: date)
         
         return String(year)
+    }
+    
+    static func date(byAdding: Calendar.Component, value: Int, to: Date) -> Date {
+        guard let date = calendar.date(byAdding: byAdding, value: value, to: to) else { return Date() }
+        
+        return date
     }
     
     static func firstDay(of month: Date) -> Date? {
