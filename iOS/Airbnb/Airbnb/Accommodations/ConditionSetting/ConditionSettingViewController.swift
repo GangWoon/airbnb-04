@@ -60,11 +60,9 @@ class ConditionSettingViewController: UIViewController {
         }
     }
     
-    private func makeConstriantsInterfaceView() {
+    func makeConstriantsInterfaceView() {
         interfaceView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.width.equalTo(300)
-            make.height.equalTo(399)
         }
     }
     
