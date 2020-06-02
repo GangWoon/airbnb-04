@@ -40,4 +40,11 @@ final class DatePickerTests: XCTestCase {
         XCTAssertEqual(datePicker.startDate, inputDate)
         XCTAssertNil(datePicker.endDate)
     }
+    
+    func testEndDateLessThanStartDate() {
+        datePicker.startDate = Date().addingTimeInterval(86400)
+        datePicker.update(date: inputDate)
+        XCTAssertEqual(datePicker.startDate, inputDate)
+        XCTAssertNil(datePicker.endDate)
+    }
 }
