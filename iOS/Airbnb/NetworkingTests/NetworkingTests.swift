@@ -22,12 +22,18 @@ class NetworkingTests: XCTestCase {
                                         rate: 4.99,
                                         reviewCount: 400,
                                         favorite: true)
+    var dummy: [Accommodations]!
     
+    override func setUp() {
+        super.setUp()
+        dummy = Array(repeating: accommodations, count: 100)
+    }
     
     func testSuccessNetworking() {
-        let dummy = Array(repeating: accommodations, count: 100)
+        
         let network = AirbnbMockNetworkSuccessImpl()
         let expectation = XCTestExpectation()
+        defer { wait(for: [expectation], timeout: 2) }
         subscription = network.request([Accommodations].self,
                                        requestProviding: Endpoint(path: .main))
             .sink(receiveCompletion: { completion in
@@ -38,9 +44,24 @@ class NetworkingTests: XCTestCase {
                     XCTFail()
                 }
             }) { response in
-                XCTAssertEqual(response, dummy)
+                XCTAssertEqual(response, self.dummy)
         }
+    }
+    
+    func testFailNetworking() {
         
-        wait(for: [expectation], timeout: 2)
+        let network = AirbnbMockNetworkFailImpl()
+        let expectation = XCTestExpectation()
+        defer { wait(for: [expectation], timeout: 2) }
+        subscription = network.request([Accommodations].self,
+                               requestProviding: Endpoint(path: .main))
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    XCTFail()
+                default:
+                    expectation.fulfill()
+                }
+            }) { _ in XCTFail() }
     }
 }
