@@ -9,12 +9,25 @@
 import XCTest
 @testable import Airbnb
 
-class DatePickerTests: XCTestCase {
+final class DatePickerTests: XCTestCase {
     
-    let datePicker = DatePicker.shared
+    private let datePicker = DatePicker.shared
+    private let inputDate = Date().addingTimeInterval(3600 * 9)
+    
+    override func setUp() {
+        super.setUp()
+        datePicker.reset()
+    }
+    
+    func testReset() {
+        datePicker.startDate = Date()
+        datePicker.endDate = Date()
+        datePicker.reset()
+        XCTAssertNil(datePicker.startDate)
+        XCTAssertNil(datePicker.endDate)
+    }
     
     func testBothExist() {
-        let inputDate = Date().addingTimeInterval(3600 * 9)
         datePicker.startDate = Date()
         datePicker.endDate = Date()
         datePicker.update(date: inputDate)
