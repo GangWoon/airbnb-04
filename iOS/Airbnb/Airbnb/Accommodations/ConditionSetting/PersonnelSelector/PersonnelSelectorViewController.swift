@@ -16,7 +16,6 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
     private var personnelSelector: PersonnelSelector = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
     
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +41,19 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
                 } else {
                     self.personnelSelector.updateInfant(isPlus: isPlus)
                 }
+        }
+        .store(in: &subscriptions)
+        
+        Publishers.CombineLatest3(personnelSelector.$adult,
+                                  personnelSelector.$youth,
+                                  personnelSelector.$infant)
+            .sink { adult, youth, infant in
+                self.personnelSelectorView.updateAdultLabel(number: String(adult))
+                self.personnelSelectorView.adultSelectionView.minusButton.isEnabled = adult > 0
+                self.personnelSelectorView.updateYouthLabel(number: String(youth))
+                self.personnelSelectorView.youthSelectionView.minusButton.isEnabled = youth > 0
+                self.personnelSelectorView.updateInfantLabel(number: String(infant))
+                self.personnelSelectorView.infantSelectionView.minusButton.isEnabled = infant > 0
         }
         .store(in: &subscriptions)
     }

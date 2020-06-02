@@ -30,6 +30,18 @@ class PersonnelSelectorView: UIView {
     }
     
     // MARK: - Methods
+    func updateAdultLabel(number: String) {
+        adultSelectionView.numberLabel.text = number
+    }
+    
+    func updateYouthLabel(number: String) {
+        youthSelectionView.numberLabel.text = number
+    }
+    
+    func updateInfantLabel(number: String) {
+        infantSelectionView.numberLabel.text = number
+    }
+    
     // MARK: Configure
     func configure() {
         configureSelectionStackView()

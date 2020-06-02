@@ -15,8 +15,8 @@ class DetailSelectionView: UIView {
     private var categoryLabel: UILabel!
     private var descriptionLabel: UILabel!
     private var plusButton: BorderButton!
-    private var minusButton: BorderButton!
-    private var numberLabel: UILabel!
+    var minusButton: BorderButton!
+    var numberLabel: UILabel!
     
     // MARK: - Lifecycle
     init(age: AgeGroup) {
@@ -93,6 +93,7 @@ class DetailSelectionView: UIView {
         numberLabel = UILabel()
         numberLabel.text = "0"
         numberLabel.font = .systemFont(ofSize: 14)
+        numberLabel.textAlignment = .center
         addSubview(numberLabel)
     }
     
@@ -135,6 +136,7 @@ class DetailSelectionView: UIView {
         numberLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalTo(plusButton.snp.leading).inset(-8)
+            make.width.height.equalTo(20)
         }
     }
     
