@@ -26,4 +26,10 @@ final class PersonnelSelector {
     func updateInfant(isPlus: Bool) {
         infant += isPlus ? 1 : -1
     }
+    
+    func reset() {
+        adult = .zero
+        youth = .zero
+        infant = .zero
+    }
 }

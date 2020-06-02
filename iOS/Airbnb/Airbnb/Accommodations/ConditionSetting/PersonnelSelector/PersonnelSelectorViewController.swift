@@ -25,11 +25,18 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
     // MARK: - Methods
     // MARK: Configure
     private func configure() {
+        configureInterfaceView()
+        bindViewToModel()
+        bindModelToView()
+    }
+    
+    private func configureInterfaceView() {
         personnelSelectorView = PersonnelSelectorView()
         interfaceView.addConditionView(personnelSelectorView)
         interfaceView.titleLabel.text = "인원"
-        bindViewToModel()
-        bindModelToView()
+        interfaceView.resetButton.addTarget(self,
+                                            action: #selector(resetButtonTapped(_:)),
+                                            for: .touchUpInside)
     }
     
     private func bindViewToModel() {
@@ -71,5 +78,10 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
             make.width.equalTo(300)
             make.height.equalTo(300)
         }
+    }
+    
+    //MARK: Objc
+    @objc private func resetButtonTapped(_ sender: UIButton) {
+        personnelSelector.reset()
     }
 }
