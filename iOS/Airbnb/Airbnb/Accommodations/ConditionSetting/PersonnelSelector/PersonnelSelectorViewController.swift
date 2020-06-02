@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 final class PersonnelSelectorViewController: ConditionSettingViewController {
-
+    
     // MARK: - Properties
     private var personnelSelectorView: PersonnelSelectorView!
     private var personnelSelector: PersonnelSelector = .init()
@@ -54,12 +54,12 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
                                   personnelSelector.$youth,
                                   personnelSelector.$infant)
             .sink { adult, youth, infant in
-                self.personnelSelectorView.updateAdultLabel(number: String(adult))
-                self.personnelSelectorView.adultSelectionView.minusButton.isEnabled = adult > 0
-                self.personnelSelectorView.updateYouthLabel(number: String(youth))
-                self.personnelSelectorView.youthSelectionView.minusButton.isEnabled = youth > 0
-                self.personnelSelectorView.updateInfantLabel(number: String(infant))
-                self.personnelSelectorView.infantSelectionView.minusButton.isEnabled = infant > 0
+                self.personnelSelectorView.updateLabels(String(adult),
+                                                        String(youth),
+                                                        String(infant))
+                self.personnelSelectorView.updateButtonState(adult > 0,
+                                                             youth > 0,
+                                                             infant > 0)
         }
         .store(in: &subscriptions)
     }

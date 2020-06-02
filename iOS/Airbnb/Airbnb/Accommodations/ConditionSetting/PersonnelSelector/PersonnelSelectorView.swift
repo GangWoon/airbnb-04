@@ -30,16 +30,16 @@ final class PersonnelSelectorView: UIView {
     }
     
     // MARK: - Methods
-    func updateAdultLabel(number: String) {
-        adultSelectionView.numberLabel.text = number
+    func updateLabels(_ adult: String, _ youth: String, _ infant: String) {
+        adultSelectionView.numberLabel.text = adult
+        youthSelectionView.numberLabel.text = youth
+        infantSelectionView.numberLabel.text = infant
     }
     
-    func updateYouthLabel(number: String) {
-        youthSelectionView.numberLabel.text = number
-    }
-    
-    func updateInfantLabel(number: String) {
-        infantSelectionView.numberLabel.text = number
+    func updateButtonState(_ adult: Bool, _ youth: Bool, _ infant: Bool  ) {
+        adultSelectionView.minusButton.isEnabled = adult
+        youthSelectionView.minusButton.isEnabled = youth
+        infantSelectionView.minusButton.isEnabled = infant
     }
     
     // MARK: Configure
