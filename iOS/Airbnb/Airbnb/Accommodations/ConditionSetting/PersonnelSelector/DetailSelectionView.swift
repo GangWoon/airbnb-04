@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailSelectionView: UIView {
-
+    
     // MARK: - Properties
     private var categoryLabel: UILabel!
     private var descriptionLabel: UILabel!
@@ -18,6 +18,13 @@ class DetailSelectionView: UIView {
     private var numberLabel: UILabel!
     
     // MARK: - Lifecycle
+    init(age: AgeGroup) {
+        super.init(frame: .zero)
+        configure()
+        apply(age)
+        makeConstraints()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -31,6 +38,11 @@ class DetailSelectionView: UIView {
     }
     
     // MARK: - Methods
+    func apply(_ age: AgeGroup) {
+        categoryLabel.text = age.category
+        descriptionLabel.text = age.description
+    }
+    
     // MARK: Configure
     func configure() {
         configureCategoryLabel()
@@ -42,24 +54,30 @@ class DetailSelectionView: UIView {
     
     func configureCategoryLabel() {
         categoryLabel = UILabel()
-        categoryLabel.text = "분류"
         categoryLabel.font = .boldSystemFont(ofSize: 16)
         addSubview(categoryLabel)
     }
-
+    
     func configureDescriptionLabel() {
         descriptionLabel = UILabel()
-        descriptionLabel.text = "설명"
         descriptionLabel.font = .systemFont(ofSize: 11)
+        descriptionLabel.textColor = .systemGray
         addSubview(descriptionLabel)
     }
     
+    func configureButton(image: UIImage?) -> BorderButton {
+        let button = BorderButton()
+        button.cornerRadius = 16
+        button.borderWidth = 2
+        button.borderColor = .systemGray
+        button.tintColor = .systemGray
+        button.setImage(image, for: .normal)
+        
+        return button
+    }
+    
     func configurePlusButton() {
-        plusButton = BorderButton()
-        plusButton.cornerRadius = 20
-        plusButton.borderWidth = 2
-        plusButton.borderColor = .systemGray
-        plusButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        plusButton = configureButton(image: UIImage(systemName: "plus"))
         addSubview(plusButton)
     }
     
@@ -71,11 +89,7 @@ class DetailSelectionView: UIView {
     }
     
     func configureMinusButton() {
-        minusButton = BorderButton()
-        minusButton.cornerRadius = 16
-        minusButton.borderWidth = 2
-        minusButton.borderColor = .systemGray
-        minusButton.setImage(UIImage(systemName: "minus"), for: .normal)
+        minusButton = configureButton(image: UIImage(systemName: "minus"))
         addSubview(minusButton)
     }
     

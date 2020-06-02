@@ -24,6 +24,7 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
     func configure() {
         personnelSelectorView = PersonnelSelectorView()
         interfaceView.addConditionView(personnelSelectorView)
+        interfaceView.titleLabel.text = "인원"
     }
     
     // MARK: Constraints

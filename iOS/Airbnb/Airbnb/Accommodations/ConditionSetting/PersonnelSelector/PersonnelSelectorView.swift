@@ -32,25 +32,35 @@ class PersonnelSelectorView: UIView {
     // MARK: - Methods
     // MARK: Configure
     func configure() {
-        configureSelectionViews()
         configureSelectionStackView()
-    }
-    
-    func configureSelectionViews() {
-        adultSelectionView = DetailSelectionView()
-        youthSelectionView = DetailSelectionView()
-        infantSelectionView = DetailSelectionView()
+        configureAdultSelectionView()
+        configureYouthSelectionView()
+        configureInfantSelectionView()
     }
     
     func configureSelectionStackView() {
         selectionStackView = UIStackView()
         selectionStackView.axis = .vertical
         selectionStackView.distribution = .fillEqually
-        selectionStackView.addArrangedSubview(adultSelectionView)
-        selectionStackView.addArrangedSubview(youthSelectionView)
-        selectionStackView.addArrangedSubview(infantSelectionView)
         addSubview(selectionStackView)
     }
+    
+    func configureAdultSelectionView() {
+        adultSelectionView = DetailSelectionView(age: .adult)
+        selectionStackView.addArrangedSubview(adultSelectionView)
+        
+    }
+    
+    func configureYouthSelectionView() {
+        youthSelectionView = DetailSelectionView(age: .youth)
+        selectionStackView.addArrangedSubview(youthSelectionView)
+    }
+    
+    func configureInfantSelectionView() {
+        infantSelectionView = DetailSelectionView(age: .infant)
+        selectionStackView.addArrangedSubview(infantSelectionView)
+    }
+    
     
     // MARK: Constraints
     func makeConstraints() {
@@ -60,4 +70,3 @@ class PersonnelSelectorView: UIView {
         }
     }
 }
-
