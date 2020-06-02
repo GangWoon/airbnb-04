@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class DetailSelectionView: UIView {
     
@@ -43,6 +44,12 @@ class DetailSelectionView: UIView {
         descriptionLabel.text = age.description
     }
     
+    @objc func buttonTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonTapped,
+                                        object: self,
+                                        userInfo: ["isPlus": sender === plusButton])
+    }
+    
     // MARK: Configure
     func configure() {
         configureCategoryLabel()
@@ -72,6 +79,7 @@ class DetailSelectionView: UIView {
         button.borderColor = .systemGray
         button.tintColor = .systemGray
         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         
         return button
     }

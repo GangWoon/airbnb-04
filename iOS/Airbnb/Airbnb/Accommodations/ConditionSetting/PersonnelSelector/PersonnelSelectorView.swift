@@ -12,9 +12,9 @@ class PersonnelSelectorView: UIView {
 
     // MARK: - Properties
     private var selectionStackView: UIStackView!
-    private var adultSelectionView: DetailSelectionView!
-    private var youthSelectionView: DetailSelectionView!
-    private var infantSelectionView: DetailSelectionView!
+    var adultSelectionView: DetailSelectionView!
+    var youthSelectionView: DetailSelectionView!
+    var infantSelectionView: DetailSelectionView!
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {

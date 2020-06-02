@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Combine
 
 final class PersonnelSelectorViewController: ConditionSettingViewController {
 
     // MARK: - Properties
     private var personnelSelectorView: PersonnelSelectorView!
+    private var personnelSelector: PersonnelSelector = .init()
+    private var subscriptions: Set<AnyCancellable> = .init()
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,6 +29,21 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
         personnelSelectorView = PersonnelSelectorView()
         interfaceView.addConditionView(personnelSelectorView)
         interfaceView.titleLabel.text = "인원"
+        
+        NotificationCenter.default.publisher(for: .buttonTapped)
+            .sink { notification in
+                guard let isPlus = notification.userInfo?["isPlus"] as? Bool,
+                    let sender = notification.object as? DetailSelectionView else { return }
+                
+                if sender === self.personnelSelectorView.adultSelectionView {
+                    self.personnelSelector.updateAdult(isPlus: isPlus)
+                } else if sender === self.personnelSelectorView.youthSelectionView {
+                    self.personnelSelector.updateYouth(isPlus: isPlus)
+                } else {
+                    self.personnelSelector.updateInfant(isPlus: isPlus)
+                }
+        }
+        .store(in: &subscriptions)
     }
     
     // MARK: Constraints
