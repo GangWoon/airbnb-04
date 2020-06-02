@@ -1,4 +1,5 @@
 package com.group4.airbnb.controller;
+import com.group4.airbnb.dto.HouseDetailDTO;
 import com.group4.airbnb.dto.HouseOverViewDTO;
 import com.group4.airbnb.service.HouseService;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,7 +14,7 @@ public class HouseController {
     public HouseController(HouseService houseService) {
         this.houseService = houseService;
     }
-    @GetMapping("/homes")
+    @GetMapping("/houses")
     public ResponseEntity<List<HouseOverViewDTO>> showHouses(@RequestParam(name = "offset", required = false, defaultValue = "0") Long houseId,
                                                              @RequestParam(name = "checkin", required = false, defaultValue = "1999-12-30")
                                                              @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
@@ -27,5 +28,10 @@ public class HouseController {
                                                              @RequestParam(name = "search", required = false, defaultValue = "") String search
                                                              ) {
         return ResponseEntity.ok().body(houseService.getAllHouses(houseId, checkInDate, checkOutDate, adults, children, infants, minPrice, maxPrice, search));
+    }
+
+    @GetMapping("/houses/{houseId}/details")
+    public ResponseEntity<HouseDetailDTO> showHouseDetails(@PathVariable Long houseId) {
+        return ResponseEntity.ok().body(houseService.getHouseDetail(houseId));
     }
 }
