@@ -35,7 +35,7 @@ final class AccommodationsViewController: UIViewController {
     
     @IBAction func showConditionViewController(_ sender: UIButton) {
         let conditionViewControllers = [0: DatePickerViewController(),
-                                        1: ConditionSettingViewController(),
+                                        1: PersonnelSelectorViewController(),
                                         2: ConditionSettingViewController()]
         
         guard let buttonIndex = conditionButtons.firstIndex(of: sender),
