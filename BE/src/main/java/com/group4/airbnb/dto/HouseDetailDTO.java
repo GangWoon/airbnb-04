@@ -1,23 +1,25 @@
 package com.group4.airbnb.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+import org.springframework.data.relational.core.mapping.Column;
 
 import java.util.List;
 import java.util.Map;
 
+@Setter
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 
 public class HouseDetailDTO {
+
     private Long houseId;
     private List<String> images;
-    private String name;
+    private String houseName;
     private String address;
     private int originalPrice;
     private int salePrice;
@@ -29,7 +31,9 @@ public class HouseDetailDTO {
     private int bedRoomCount;
     private int bedCount;
     private int bathCount;
-    private List<BadgeDTO> badges;
+    private BadgeDTO badge;
+    private float latitude;
+    private float longitude;
 
     private int rate;
     private int reviewCount;
