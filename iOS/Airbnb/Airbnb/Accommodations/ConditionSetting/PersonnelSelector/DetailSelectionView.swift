@@ -9,9 +9,10 @@
 import UIKit
 import Combine
 
-class DetailSelectionView: UIView {
+final class DetailSelectionView: UIView {
     
     // MARK: - Properties
+    static let isPlus: String = "isPlus"
     private var categoryLabel: UILabel!
     private var descriptionLabel: UILabel!
     private var plusButton: BorderButton!
@@ -47,11 +48,11 @@ class DetailSelectionView: UIView {
     @objc func buttonTapped(_ sender: UIButton) {
         NotificationCenter.default.post(name: .buttonTapped,
                                         object: self,
-                                        userInfo: ["isPlus": sender === plusButton])
+                                        userInfo: [DetailSelectionView.isPlus: sender === plusButton])
     }
     
     // MARK: Configure
-    func configure() {
+    private func configure() {
         configureCategoryLabel()
         configureDescriptionLabel()
         configurePlusButton()
@@ -59,20 +60,20 @@ class DetailSelectionView: UIView {
         configureMinusButton()
     }
     
-    func configureCategoryLabel() {
+    private func configureCategoryLabel() {
         categoryLabel = UILabel()
         categoryLabel.font = .boldSystemFont(ofSize: 16)
         addSubview(categoryLabel)
     }
     
-    func configureDescriptionLabel() {
+    private func configureDescriptionLabel() {
         descriptionLabel = UILabel()
         descriptionLabel.font = .systemFont(ofSize: 11)
         descriptionLabel.textColor = .systemGray
         addSubview(descriptionLabel)
     }
     
-    func configureButton(image: UIImage?) -> BorderButton {
+    private func configureButton(image: UIImage?) -> BorderButton {
         let button = BorderButton()
         button.cornerRadius = 16
         button.borderWidth = 2
@@ -84,12 +85,12 @@ class DetailSelectionView: UIView {
         return button
     }
     
-    func configurePlusButton() {
+    private func configurePlusButton() {
         plusButton = configureButton(image: UIImage(systemName: "plus"))
         addSubview(plusButton)
     }
     
-    func configureNumberLabel() {
+    private func configureNumberLabel() {
         numberLabel = UILabel()
         numberLabel.text = "0"
         numberLabel.font = .systemFont(ofSize: 14)
@@ -97,13 +98,13 @@ class DetailSelectionView: UIView {
         addSubview(numberLabel)
     }
     
-    func configureMinusButton() {
+    private func configureMinusButton() {
         minusButton = configureButton(image: UIImage(systemName: "minus"))
         addSubview(minusButton)
     }
     
     // MARK: Constraints
-    func makeConstraints() {
+    private func makeConstraints() {
         makeConstraintsCategoryLabel()
         makeConstraintsDescriptionsLabel()
         makeConstraintsPlusButton()
@@ -111,20 +112,20 @@ class DetailSelectionView: UIView {
         makeConstraintsMinusButton()
     }
     
-    func makeConstraintsCategoryLabel() {
+    private func makeConstraintsCategoryLabel() {
         categoryLabel.snp.makeConstraints { make in
             make.centerY.leading.equalToSuperview()
         }
     }
     
-    func makeConstraintsDescriptionsLabel() {
+    private func makeConstraintsDescriptionsLabel() {
         descriptionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalTo(categoryLabel.snp.bottom)
         }
     }
     
-    func makeConstraintsPlusButton() {
+    private func makeConstraintsPlusButton() {
         plusButton.snp.makeConstraints { make in
             make.centerY.trailing.equalToSuperview()
             make.width.equalTo(32)
@@ -132,7 +133,7 @@ class DetailSelectionView: UIView {
         }
     }
     
-    func makeConstraintsNumberLabel() {
+    private func makeConstraintsNumberLabel() {
         numberLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalTo(plusButton.snp.leading).inset(-8)
@@ -140,7 +141,7 @@ class DetailSelectionView: UIView {
         }
     }
     
-    func makeConstraintsMinusButton() {
+    private func makeConstraintsMinusButton() {
         minusButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.width.equalTo(32)

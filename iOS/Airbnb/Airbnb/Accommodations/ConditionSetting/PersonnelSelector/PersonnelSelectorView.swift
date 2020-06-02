@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonnelSelectorView: UIView {
+final class PersonnelSelectorView: UIView {
 
     // MARK: - Properties
     private var selectionStackView: UIStackView!
@@ -43,39 +43,39 @@ class PersonnelSelectorView: UIView {
     }
     
     // MARK: Configure
-    func configure() {
+    private func configure() {
         configureSelectionStackView()
         configureAdultSelectionView()
         configureYouthSelectionView()
         configureInfantSelectionView()
     }
     
-    func configureSelectionStackView() {
+    private func configureSelectionStackView() {
         selectionStackView = UIStackView()
         selectionStackView.axis = .vertical
         selectionStackView.distribution = .fillEqually
         addSubview(selectionStackView)
     }
     
-    func configureAdultSelectionView() {
+    private func configureAdultSelectionView() {
         adultSelectionView = DetailSelectionView(age: .adult)
         selectionStackView.addArrangedSubview(adultSelectionView)
         
     }
     
-    func configureYouthSelectionView() {
+    private func configureYouthSelectionView() {
         youthSelectionView = DetailSelectionView(age: .youth)
         selectionStackView.addArrangedSubview(youthSelectionView)
     }
     
-    func configureInfantSelectionView() {
+    private func configureInfantSelectionView() {
         infantSelectionView = DetailSelectionView(age: .infant)
         selectionStackView.addArrangedSubview(infantSelectionView)
     }
     
     
     // MARK: Constraints
-    func makeConstraints() {
+    private func makeConstraints() {
         selectionStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(24)

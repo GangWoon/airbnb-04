@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class PersonnelSelector {
+final class PersonnelSelector {
     
     @Published var adult: Int = .zero
     @Published var youth: Int = .zero

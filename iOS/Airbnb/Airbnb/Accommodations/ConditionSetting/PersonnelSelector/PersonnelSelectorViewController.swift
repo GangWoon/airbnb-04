@@ -24,14 +24,18 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
     
     // MARK: - Methods
     // MARK: Configure
-    func configure() {
+    private func configure() {
         personnelSelectorView = PersonnelSelectorView()
         interfaceView.addConditionView(personnelSelectorView)
         interfaceView.titleLabel.text = "인원"
-        
+        bindViewToModel()
+        bindModelToView()
+    }
+    
+    private func bindViewToModel() {
         NotificationCenter.default.publisher(for: .buttonTapped)
             .sink { notification in
-                guard let isPlus = notification.userInfo?["isPlus"] as? Bool,
+                guard let isPlus = notification.userInfo?[DetailSelectionView.isPlus] as? Bool,
                     let sender = notification.object as? DetailSelectionView else { return }
                 
                 if sender === self.personnelSelectorView.adultSelectionView {
@@ -43,7 +47,9 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
                 }
         }
         .store(in: &subscriptions)
-        
+    }
+    
+    private func bindModelToView() {
         Publishers.CombineLatest3(personnelSelector.$adult,
                                   personnelSelector.$youth,
                                   personnelSelector.$infant)
