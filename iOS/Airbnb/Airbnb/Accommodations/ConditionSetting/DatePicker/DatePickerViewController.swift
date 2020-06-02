@@ -65,6 +65,15 @@ final class DatePickerViewController: ConditionSettingViewController {
         interfaceView.titleLabel.text = "\(DateCalculator.formattingDate(start)) - \(DateCalculator.formattingDate(end))"
     }
     
+    // MARK: Constraints
+    override func makeConstraintsInterfaceView() {
+        super.makeConstraintsInterfaceView()
+        interfaceView.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(399)
+        }
+    }
+    
     // MARK: Objc
     @objc private func resetButtonTapped(_ sender: UIButton) {
         DatePicker.shared.reset()

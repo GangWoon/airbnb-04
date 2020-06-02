@@ -50,21 +50,19 @@ class ConditionSettingViewController: UIViewController {
     
     // MARK: Constraints
     private func makeConstraints() {
-        makeConstriantsDimmedView()
-        makeConstriantsInterfaceView()
+        makeConstraintsDimmedView()
+        makeConstraintsInterfaceView()
     }
     
-    private func makeConstriantsDimmedView() {
+    private func makeConstraintsDimmedView() {
         dimmedView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
-    private func makeConstriantsInterfaceView() {
+    func makeConstraintsInterfaceView() {
         interfaceView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.width.equalTo(300)
-            make.height.equalTo(399)
         }
     }
     

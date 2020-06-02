@@ -14,6 +14,9 @@
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
 		4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472506E247BAF09009D38EA /* AirbnbNetwork.swift */; };
 		44725071247BB027009D38EA /* AirbnbNetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44725070247BB027009D38EA /* AirbnbNetworkImpl.swift */; };
+		447E2F2E2486477900ED049F /* PersonnelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E2F2D2486477900ED049F /* PersonnelSelectorViewController.swift */; };
+		447E2F30248647D400ED049F /* PersonnelSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E2F2F248647D400ED049F /* PersonnelSelectorView.swift */; };
+		447E2F322486486F00ED049F /* DetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E2F312486486F00ED049F /* DetailSelectionView.swift */; };
 		4481A88C24766B0600B79F09 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481A88B24766B0600B79F09 /* ShadowView.swift */; };
 		449F2CE3247E39970036214A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F2CE2247E39970036214A /* DatePickerViewController.swift */; };
 		449F2CE6247E3F520036214A /* PagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F2CE5247E3F520036214A /* PagingDataSource.swift */; };
@@ -48,6 +51,7 @@
 		AE46E8DE247E2D2A00914CEB /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */; };
 		AE46E8E0247E503C00914CEB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DF247E503C00914CEB /* CalendarView.swift */; };
 		AEB5CB592477A30F009AD1E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB5CB582477A30F009AD1E2 /* Color.xcassets */; };
+		AEDAB0D924867BAF00D5970F /* AgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDAB0D824867BAF00D5970F /* AgeGroup.swift */; };
 		AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */; };
 		AEE36F19247BCD3E0063821D /* ThumbnailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F18247BCD3E0063821D /* ThumbnailScrollView.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +80,9 @@
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		4472506E247BAF09009D38EA /* AirbnbNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetwork.swift; sourceTree = "<group>"; };
 		44725070247BB027009D38EA /* AirbnbNetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetworkImpl.swift; sourceTree = "<group>"; };
+		447E2F2D2486477900ED049F /* PersonnelSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelSelectorViewController.swift; sourceTree = "<group>"; };
+		447E2F2F248647D400ED049F /* PersonnelSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelSelectorView.swift; sourceTree = "<group>"; };
+		447E2F312486486F00ED049F /* DetailSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSelectionView.swift; sourceTree = "<group>"; };
 		4481A88B24766B0600B79F09 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		449F2CE2247E39970036214A /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		449F2CE5247E3F520036214A /* PagingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingDataSource.swift; sourceTree = "<group>"; };
@@ -116,6 +123,7 @@
 		AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		AE46E8DF247E503C00914CEB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		AEB5CB582477A30F009AD1E2 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		AEDAB0D824867BAF00D5970F /* AgeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroup.swift; sourceTree = "<group>"; };
 		AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsInfoView.swift; sourceTree = "<group>"; };
 		AEE36F18247BCD3E0063821D /* ThumbnailScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +160,17 @@
 				442028362480EFCB00B3DF42 /* DateCalculator.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		447E2F2C2486473000ED049F /* PersonnelSelector */ = {
+			isa = PBXGroup;
+			children = (
+				AEDAB0D724867B9F00D5970F /* Model */,
+				447E2F2D2486477900ED049F /* PersonnelSelectorViewController.swift */,
+				447E2F2F248647D400ED049F /* PersonnelSelectorView.swift */,
+				447E2F312486486F00ED049F /* DetailSelectionView.swift */,
+			);
+			path = PersonnelSelector;
 			sourceTree = "<group>";
 		};
 		449F2CE4247E3F3F0036214A /* DatePicker */ = {
@@ -301,6 +320,7 @@
 			children = (
 				AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */,
 				AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */,
+				447E2F2C2486473000ED049F /* PersonnelSelector */,
 				449F2CE4247E3F3F0036214A /* DatePicker */,
 			);
 			path = ConditionSetting;
@@ -326,6 +346,14 @@
 				AE191010247E58DC003EE161 /* CalendarCell.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		AEDAB0D724867B9F00D5970F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEDAB0D824867BAF00D5970F /* AgeGroup.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,6 +502,7 @@
 				AEE36F19247BCD3E0063821D /* ThumbnailScrollView.swift in Sources */,
 				AE46E8E0247E503C00914CEB /* CalendarView.swift in Sources */,
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,
+				447E2F2E2486477900ED049F /* PersonnelSelectorViewController.swift in Sources */,
 				44725071247BB027009D38EA /* AirbnbNetworkImpl.swift in Sources */,
 				AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */,
 				44F0F0FD247FA49A00B75810 /* AirbnbMockNetworkFailImpl.swift in Sources */,
@@ -488,16 +517,19 @@
 				AE1343B82476753E0081E1D0 /* AccommodationsHeaderView.swift in Sources */,
 				AE184395247287F8007ABDB3 /* AppDelegate.swift in Sources */,
 				4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */,
+				447E2F322486486F00ED049F /* DetailSelectionView.swift in Sources */,
 				AE46E8D9247D46E900914CEB /* DatePickerView.swift in Sources */,
 				442028342480E48F00B3DF42 /* Month.swift in Sources */,
 				449F2CE8247E403D0036214A /* WeekDayView.swift in Sources */,
 				AE1910722480D542003EE161 /* WeekDays.swift in Sources */,
 				AE19100F247E5694003EE161 /* Dependencies.swift in Sources */,
+				447E2F30248647D400ED049F /* PersonnelSelectorView.swift in Sources */,
 				442028372480EFCB00B3DF42 /* DateCalculator.swift in Sources */,
 				44F0F0FB247FA47700B75810 /* AirbnbMockNetworkSuccessImpl.swift in Sources */,
 				AE134388247649480081E1D0 /* AccommodationsDataSource.swift in Sources */,
 				44ABE57B2477B0630052DBBD /* Accommodations.swift in Sources */,
 				AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */,
+				AEDAB0D924867BAF00D5970F /* AgeGroup.swift in Sources */,
 				AE184397247287F8007ABDB3 /* SceneDelegate.swift in Sources */,
 				444D75C1247E78BD0088523E /* CalendarDataSource.swift in Sources */,
 				AE1343502475537B0081E1D0 /* SearchTextField.swift in Sources */,
