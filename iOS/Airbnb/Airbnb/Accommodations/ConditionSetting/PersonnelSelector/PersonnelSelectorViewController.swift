@@ -27,8 +27,8 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
     }
     
     // MARK: Constraints
-    override func makeConstriantsInterfaceView() {
-        super.makeConstriantsInterfaceView()
+    override func makeConstraintsInterfaceView() {
+        super.makeConstraintsInterfaceView()
         interfaceView.snp.makeConstraints { make in
             make.width.equalTo(300)
             make.height.equalTo(300)
