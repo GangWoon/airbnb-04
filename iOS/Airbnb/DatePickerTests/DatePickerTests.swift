@@ -19,7 +19,7 @@ final class DatePickerTests: XCTestCase {
         datePicker.reset()
     }
     
-    func testReset() {
+    private func testReset() {
         datePicker.startDate = Date()
         datePicker.endDate = Date()
         datePicker.reset()
@@ -27,7 +27,7 @@ final class DatePickerTests: XCTestCase {
         XCTAssertNil(datePicker.endDate)
     }
     
-    func testBothExist() {
+    private func testBothExist() {
         datePicker.startDate = Date()
         datePicker.endDate = Date()
         datePicker.update(date: inputDate)
@@ -35,20 +35,20 @@ final class DatePickerTests: XCTestCase {
         XCTAssertNil(datePicker.endDate)
     }
     
-    func testStartNotExist() {
+    private func testStartNotExist() {
         datePicker.update(date: inputDate)
         XCTAssertEqual(datePicker.startDate, inputDate)
         XCTAssertNil(datePicker.endDate)
     }
     
-    func testEndDateLessThanStartDate() {
+    private func testEndDateLessThanStartDate() {
         datePicker.startDate = Date().addingTimeInterval(86400)
         datePicker.update(date: inputDate)
         XCTAssertEqual(datePicker.startDate, inputDate)
         XCTAssertNil(datePicker.endDate)
     }
     
-    func testNormalCase() {
+    private func testNormalCase() {
         let startDate = Date()
         datePicker.update(date: startDate)
         datePicker.update(date: inputDate)
