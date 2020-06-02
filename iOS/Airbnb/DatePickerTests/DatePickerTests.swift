@@ -34,4 +34,10 @@ final class DatePickerTests: XCTestCase {
         XCTAssertEqual(inputDate, datePicker.startDate)
         XCTAssertNil(datePicker.endDate)
     }
+    
+    func testStartNotExist() {
+        datePicker.update(date: inputDate)
+        XCTAssertEqual(datePicker.startDate, inputDate)
+        XCTAssertNil(datePicker.endDate)
+    }
 }
