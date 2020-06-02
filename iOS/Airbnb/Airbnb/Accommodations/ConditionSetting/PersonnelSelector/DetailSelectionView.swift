@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Combine
 
-class DetailSelectionView: UIView {
+final class DetailSelectionView: UIView {
     
     // MARK: - Properties
+    static let isPlus: String = "isPlus"
     private var categoryLabel: UILabel!
     private var descriptionLabel: UILabel!
     private var plusButton: BorderButton!
-    private var minusButton: BorderButton!
-    private var numberLabel: UILabel!
+    var minusButton: BorderButton!
+    var numberLabel: UILabel!
     
     // MARK: - Lifecycle
     init(age: AgeGroup) {
@@ -43,8 +45,14 @@ class DetailSelectionView: UIView {
         descriptionLabel.text = age.description
     }
     
+    @objc func buttonTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonTapped,
+                                        object: self,
+                                        userInfo: [DetailSelectionView.isPlus: sender === plusButton])
+    }
+    
     // MARK: Configure
-    func configure() {
+    private func configure() {
         configureCategoryLabel()
         configureDescriptionLabel()
         configurePlusButton()
@@ -52,49 +60,51 @@ class DetailSelectionView: UIView {
         configureMinusButton()
     }
     
-    func configureCategoryLabel() {
+    private func configureCategoryLabel() {
         categoryLabel = UILabel()
         categoryLabel.font = .boldSystemFont(ofSize: 16)
         addSubview(categoryLabel)
     }
     
-    func configureDescriptionLabel() {
+    private func configureDescriptionLabel() {
         descriptionLabel = UILabel()
         descriptionLabel.font = .systemFont(ofSize: 11)
         descriptionLabel.textColor = .systemGray
         addSubview(descriptionLabel)
     }
     
-    func configureButton(image: UIImage?) -> BorderButton {
+    private func configureButton(image: UIImage?) -> BorderButton {
         let button = BorderButton()
         button.cornerRadius = 16
         button.borderWidth = 2
         button.borderColor = .systemGray
         button.tintColor = .systemGray
         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         
         return button
     }
     
-    func configurePlusButton() {
+    private func configurePlusButton() {
         plusButton = configureButton(image: UIImage(systemName: "plus"))
         addSubview(plusButton)
     }
     
-    func configureNumberLabel() {
+    private func configureNumberLabel() {
         numberLabel = UILabel()
         numberLabel.text = "0"
         numberLabel.font = .systemFont(ofSize: 14)
+        numberLabel.textAlignment = .center
         addSubview(numberLabel)
     }
     
-    func configureMinusButton() {
+    private func configureMinusButton() {
         minusButton = configureButton(image: UIImage(systemName: "minus"))
         addSubview(minusButton)
     }
     
     // MARK: Constraints
-    func makeConstraints() {
+    private func makeConstraints() {
         makeConstraintsCategoryLabel()
         makeConstraintsDescriptionsLabel()
         makeConstraintsPlusButton()
@@ -102,20 +112,20 @@ class DetailSelectionView: UIView {
         makeConstraintsMinusButton()
     }
     
-    func makeConstraintsCategoryLabel() {
+    private func makeConstraintsCategoryLabel() {
         categoryLabel.snp.makeConstraints { make in
             make.centerY.leading.equalToSuperview()
         }
     }
     
-    func makeConstraintsDescriptionsLabel() {
+    private func makeConstraintsDescriptionsLabel() {
         descriptionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalTo(categoryLabel.snp.bottom)
         }
     }
     
-    func makeConstraintsPlusButton() {
+    private func makeConstraintsPlusButton() {
         plusButton.snp.makeConstraints { make in
             make.centerY.trailing.equalToSuperview()
             make.width.equalTo(32)
@@ -123,14 +133,15 @@ class DetailSelectionView: UIView {
         }
     }
     
-    func makeConstraintsNumberLabel() {
+    private func makeConstraintsNumberLabel() {
         numberLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalTo(plusButton.snp.leading).inset(-8)
+            make.width.height.equalTo(20)
         }
     }
     
-    func makeConstraintsMinusButton() {
+    private func makeConstraintsMinusButton() {
         minusButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.width.equalTo(32)

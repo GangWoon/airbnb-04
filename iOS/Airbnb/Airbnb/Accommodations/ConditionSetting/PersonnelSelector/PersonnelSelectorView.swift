@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PersonnelSelectorView: UIView {
+final class PersonnelSelectorView: UIView {
 
     // MARK: - Properties
     private var selectionStackView: UIStackView!
-    private var adultSelectionView: DetailSelectionView!
-    private var youthSelectionView: DetailSelectionView!
-    private var infantSelectionView: DetailSelectionView!
+    var adultSelectionView: DetailSelectionView!
+    var youthSelectionView: DetailSelectionView!
+    var infantSelectionView: DetailSelectionView!
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {
@@ -30,40 +30,52 @@ class PersonnelSelectorView: UIView {
     }
     
     // MARK: - Methods
+    func updateLabels(_ adult: String, _ youth: String, _ infant: String) {
+        adultSelectionView.numberLabel.text = adult
+        youthSelectionView.numberLabel.text = youth
+        infantSelectionView.numberLabel.text = infant
+    }
+    
+    func updateButtonState(_ adult: Bool, _ youth: Bool, _ infant: Bool  ) {
+        adultSelectionView.minusButton.isEnabled = adult
+        youthSelectionView.minusButton.isEnabled = youth
+        infantSelectionView.minusButton.isEnabled = infant
+    }
+    
     // MARK: Configure
-    func configure() {
+    private func configure() {
         configureSelectionStackView()
         configureAdultSelectionView()
         configureYouthSelectionView()
         configureInfantSelectionView()
     }
     
-    func configureSelectionStackView() {
+    private func configureSelectionStackView() {
         selectionStackView = UIStackView()
         selectionStackView.axis = .vertical
         selectionStackView.distribution = .fillEqually
         addSubview(selectionStackView)
     }
     
-    func configureAdultSelectionView() {
+    private func configureAdultSelectionView() {
         adultSelectionView = DetailSelectionView(age: .adult)
         selectionStackView.addArrangedSubview(adultSelectionView)
         
     }
     
-    func configureYouthSelectionView() {
+    private func configureYouthSelectionView() {
         youthSelectionView = DetailSelectionView(age: .youth)
         selectionStackView.addArrangedSubview(youthSelectionView)
     }
     
-    func configureInfantSelectionView() {
+    private func configureInfantSelectionView() {
         infantSelectionView = DetailSelectionView(age: .infant)
         selectionStackView.addArrangedSubview(infantSelectionView)
     }
     
     
     // MARK: Constraints
-    func makeConstraints() {
+    private func makeConstraints() {
         selectionStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(24)
