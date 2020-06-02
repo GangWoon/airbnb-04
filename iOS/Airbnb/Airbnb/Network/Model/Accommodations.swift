@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Accommodations: Codable {
+struct Accommodations: Codable, Equatable {
     
     var id: Int
     var images: [String]

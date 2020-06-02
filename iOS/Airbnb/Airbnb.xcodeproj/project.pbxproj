@@ -41,6 +41,8 @@
 		AE191011247E58DC003EE161 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE191010247E58DC003EE161 /* CalendarCell.swift */; };
 		AE1910722480D542003EE161 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1910712480D542003EE161 /* WeekDays.swift */; };
 		AE39C0EC24851C14003BE3FB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE39C0EB24851C14003BE3FB /* DatePicker.swift */; };
+		AE39C15E24863733003BE3FB /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE39C15D24863733003BE3FB /* NetworkingTests.swift */; };
+		AE39C16E24863E41003BE3FB /* DatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE39C16D24863E41003BE3FB /* DatePickerTests.swift */; };
 		AE46E8D9247D46E900914CEB /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8D8247D46E900914CEB /* DatePickerView.swift */; };
 		AE46E8DC247E233A00914CEB /* ConditionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */; };
 		AE46E8DE247E2D2A00914CEB /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */; };
@@ -49,6 +51,23 @@
 		AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */; };
 		AEE36F19247BCD3E0063821D /* ThumbnailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F18247BCD3E0063821D /* ThumbnailScrollView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE39C16024863733003BE3FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE184389247287F8007ABDB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE184390247287F8007ABDB3;
+			remoteInfo = Airbnb;
+		};
+		AE39C17024863E41003BE3FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE184389247287F8007ABDB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE184390247287F8007ABDB3;
+			remoteInfo = Airbnb;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		442028332480E48F00B3DF42 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
@@ -86,6 +105,12 @@
 		AE191010247E58DC003EE161 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		AE1910712480D542003EE161 /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
 		AE39C0EB24851C14003BE3FB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		AE39C15B24863733003BE3FB /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE39C15D24863733003BE3FB /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
+		AE39C15F24863733003BE3FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE39C16B24863E41003BE3FB /* DatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE39C16D24863E41003BE3FB /* DatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTests.swift; sourceTree = "<group>"; };
+		AE39C16F24863E41003BE3FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE46E8D8247D46E900914CEB /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		AE46E8DB247E233A00914CEB /* ConditionSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingViewController.swift; sourceTree = "<group>"; };
 		AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
@@ -101,6 +126,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				441CC1F6247D3AE600B0F977 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE39C15824863733003BE3FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE39C16824863E41003BE3FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				AE184393247287F8007ABDB3 /* Airbnb */,
+				AE39C15C24863733003BE3FB /* NetworkingTests */,
+				AE39C16C24863E41003BE3FB /* DatePickerTests */,
 				AE184392247287F8007ABDB3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -203,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				AE184391247287F8007ABDB3 /* Airbnb.app */,
+				AE39C15B24863733003BE3FB /* NetworkingTests.xctest */,
+				AE39C16B24863E41003BE3FB /* DatePickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +276,24 @@
 				AE39C0EB24851C14003BE3FB /* DatePicker.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AE39C15C24863733003BE3FB /* NetworkingTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE39C15D24863733003BE3FB /* NetworkingTests.swift */,
+				AE39C15F24863733003BE3FB /* Info.plist */,
+			);
+			path = NetworkingTests;
+			sourceTree = "<group>";
+		};
+		AE39C16C24863E41003BE3FB /* DatePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE39C16D24863E41003BE3FB /* DatePickerTests.swift */,
+				AE39C16F24863E41003BE3FB /* Info.plist */,
+			);
+			path = DatePickerTests;
 			sourceTree = "<group>";
 		};
 		AE46E8DA247E22C700914CEB /* ConditionSetting */ = {
@@ -290,18 +351,62 @@
 			productReference = AE184391247287F8007ABDB3 /* Airbnb.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AE39C15A24863733003BE3FB /* NetworkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE39C16424863733003BE3FB /* Build configuration list for PBXNativeTarget "NetworkingTests" */;
+			buildPhases = (
+				AE39C15724863733003BE3FB /* Sources */,
+				AE39C15824863733003BE3FB /* Frameworks */,
+				AE39C15924863733003BE3FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE39C16124863733003BE3FB /* PBXTargetDependency */,
+			);
+			name = NetworkingTests;
+			productName = NetworkingTests;
+			productReference = AE39C15B24863733003BE3FB /* NetworkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AE39C16A24863E41003BE3FB /* DatePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE39C17224863E42003BE3FB /* Build configuration list for PBXNativeTarget "DatePickerTests" */;
+			buildPhases = (
+				AE39C16724863E41003BE3FB /* Sources */,
+				AE39C16824863E41003BE3FB /* Frameworks */,
+				AE39C16924863E41003BE3FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE39C17124863E41003BE3FB /* PBXTargetDependency */,
+			);
+			name = DatePickerTests;
+			productName = DatePickerTests;
+			productReference = AE39C16B24863E41003BE3FB /* DatePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AE184389247287F8007ABDB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Cloud;
 				TargetAttributes = {
 					AE184390247287F8007ABDB3 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					AE39C15A24863733003BE3FB = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = AE184390247287F8007ABDB3;
+					};
+					AE39C16A24863E41003BE3FB = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = AE184390247287F8007ABDB3;
 					};
 				};
 			};
@@ -322,6 +427,8 @@
 			projectRoot = "";
 			targets = (
 				AE184390247287F8007ABDB3 /* Airbnb */,
+				AE39C15A24863733003BE3FB /* NetworkingTests */,
+				AE39C16A24863E41003BE3FB /* DatePickerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -335,6 +442,20 @@
 				AEB5CB592477A30F009AD1E2 /* Color.xcassets in Resources */,
 				AE18439E247287FA007ABDB3 /* Assets.xcassets in Resources */,
 				AE18439C247287F8007ABDB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE39C15924863733003BE3FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE39C16924863E41003BE3FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +505,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE39C15724863733003BE3FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE39C15E24863733003BE3FB /* NetworkingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE39C16724863E41003BE3FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE39C16E24863E41003BE3FB /* DatePickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE39C16124863733003BE3FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE184390247287F8007ABDB3 /* Airbnb */;
+			targetProxy = AE39C16024863733003BE3FB /* PBXContainerItemProxy */;
+		};
+		AE39C17124863E41003BE3FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE184390247287F8007ABDB3 /* Airbnb */;
+			targetProxy = AE39C17024863E41003BE3FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE18439A247287F8007ABDB3 /* Main.storyboard */ = {
@@ -556,6 +706,90 @@
 			};
 			name = Release;
 		};
+		AE39C16224863733003BE3FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6HG325P9V2;
+				INFOPLIST_FILE = NetworkingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cLoud.NetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airbnb.app/Airbnb";
+			};
+			name = Debug;
+		};
+		AE39C16324863733003BE3FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6HG325P9V2;
+				INFOPLIST_FILE = NetworkingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cLoud.NetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airbnb.app/Airbnb";
+			};
+			name = Release;
+		};
+		AE39C17324863E42003BE3FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6HG325P9V2;
+				INFOPLIST_FILE = DatePickerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cLoud.DatePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airbnb.app/Airbnb";
+			};
+			name = Debug;
+		};
+		AE39C17424863E42003BE3FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6HG325P9V2;
+				INFOPLIST_FILE = DatePickerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cLoud.DatePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airbnb.app/Airbnb";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,6 +807,24 @@
 			buildConfigurations = (
 				AE1843B1247287FA007ABDB3 /* Debug */,
 				AE1843B2247287FA007ABDB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE39C16424863733003BE3FB /* Build configuration list for PBXNativeTarget "NetworkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE39C16224863733003BE3FB /* Debug */,
+				AE39C16324863733003BE3FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE39C17224863E42003BE3FB /* Build configuration list for PBXNativeTarget "DatePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE39C17324863E42003BE3FB /* Debug */,
+				AE39C17424863E42003BE3FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
