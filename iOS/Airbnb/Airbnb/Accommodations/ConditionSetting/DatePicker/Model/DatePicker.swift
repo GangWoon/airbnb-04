@@ -21,7 +21,7 @@ class DatePicker {
     private init() { }
     
     // MARK: - Methods
-    func update(date: Date?) {
+    func select(date: Date?) {
         guard let date = date else { return }
         
         guard startDate == nil ||

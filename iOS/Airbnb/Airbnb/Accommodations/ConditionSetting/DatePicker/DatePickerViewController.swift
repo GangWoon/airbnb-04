@@ -30,7 +30,7 @@ final class DatePickerViewController: ConditionSettingViewController {
         configureSubscription()
     }
     
-    func configureDatePickerView() {
+    private func configureDatePickerView() {
         datePickerView = DatePickerView()
         datePickerView.pagingView.register(PagingCell.self,
                       forCellWithReuseIdentifier: PagingCell.identifier)
@@ -39,7 +39,7 @@ final class DatePickerViewController: ConditionSettingViewController {
         datePickerView.pagingView.delegate = self
     }
     
-    func configureInterfaceView() {
+    private func configureInterfaceView() {
         interfaceView.addConditionView(datePickerView)
         interfaceView.titleLabel.text = titleText
         interfaceView.resetButton
@@ -48,14 +48,17 @@ final class DatePickerViewController: ConditionSettingViewController {
                        for: .touchUpInside)
     }
     
-    func configureSubscription() {
+    private func configureSubscription() {
         subscription = Publishers
             .CombineLatest(DatePicker.shared.$startDate,
                            DatePicker.shared.$endDate)
-            .sink { self.applyTitleLabel(start: $0.0, end: $0.1) }
+            .sink {
+                self.applyTitleLabel(start: $0.0, end: $0.1)
+                self.datePickerView.pagingView.reloadData()
+        }
     }
     
-    func applyTitleLabel(start: Date?, end: Date?) {
+    private func applyTitleLabel(start: Date?, end: Date?) {
         guard let start = start else {
             interfaceView.titleLabel.text = titleText
             return

@@ -10,10 +10,7 @@ import UIKit
 import Combine
 
 final class PagingView: UICollectionView {
-    
-    // MARK: - Properties
-    private var subscription: AnyCancellable?
-    
+        
     // MARK: - Lifecycle
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame,
@@ -33,13 +30,5 @@ final class PagingView: UICollectionView {
         showsHorizontalScrollIndicator = false
         guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
         flowlayout.scrollDirection = .horizontal
-        configureSubscription()
-    }
-    
-    private func configureSubscription() {
-        subscription = Publishers
-            .CombineLatest(DatePicker.shared.$startDate,
-                           DatePicker.shared.$endDate)
-            .sink { _ in self.reloadData() }
     }
 }
