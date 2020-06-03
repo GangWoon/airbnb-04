@@ -13,7 +13,7 @@ class AccommodationsCellViewModel {
     // MARK: - Properties
     private var accommodations: Accommodations
     var badge: String {
-        accommodations.badge
+        accommodations.badge ? "SUPERHOST" : "NEWHOST"
     }
     var roomType: String {
         configureRoomType()
@@ -38,7 +38,7 @@ class AccommodationsCellViewModel {
     
     // MARK: - Methods
     private func configureRoomType() -> String {
-        return accommodations.roomType + " ・ " + accommodations.bedroomCount
+        return accommodations.roomType + " ・ " + String(accommodations.bedRoomCount)
     }
     
     private func configureRate() -> NSMutableAttributedString {
@@ -53,8 +53,6 @@ class AccommodationsCellViewModel {
     }
     
     private func configureImages() -> [UIImage] {
-        return accommodations.images.map {
-            UIImage(named: $0) ?? UIImage()
-        }
+        return []
     }
 }
