@@ -37,4 +37,8 @@ public class BookingService {
         bookingDTO.calculate();
         return bookingDTO;
     }
+
+    public void cancelBooking(Long bookingId) {
+        bookingDAO.deleteBooking(bookingId);
+    }
 }

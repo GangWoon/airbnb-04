@@ -74,4 +74,10 @@ public class HouseController {
     public ResponseEntity<BookingDTO> showBookingPage(@PathVariable Long userId) {
         return ResponseEntity.ok().body(bookingService.getBooking(userId));
     }
+
+    @DeleteMapping("/{bookingId}/cancel")
+    public ResponseEntity<String> cancelBooking(@PathVariable Long bookingId) {
+        bookingService.cancelBooking(bookingId);
+        return ResponseEntity.ok().build();
+    }
 }

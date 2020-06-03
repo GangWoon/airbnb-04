@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class BookingDTO {
 
+    private Long bookingId;
     private String roomType;
     private String url;
     private LocalDate checkInDate;
