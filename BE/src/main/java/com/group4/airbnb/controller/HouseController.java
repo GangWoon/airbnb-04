@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 @RestController
-@RequestMapping("/api/airbnb/houses")
+@RequestMapping("/api/airbnb/")
 public class HouseController {
 
     private final HouseService houseService;
@@ -24,7 +24,7 @@ public class HouseController {
         this.bookingService = bookingService;
         this.bookmarkService = bookmarkService;
     }
-    @GetMapping("")
+    @GetMapping("/houses")
     public ResponseEntity<List<HouseOverViewDTO>> showHouses(@RequestParam(name = "offset", required = false, defaultValue = "0") Long houseId,
                                                              @RequestParam(name = "checkin", required = false, defaultValue = "1999-12-30")
                                                              @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
@@ -40,12 +40,12 @@ public class HouseController {
         return ResponseEntity.ok().body(houseService.getAllHouses(houseId, checkInDate, checkOutDate, adults, children, infants, minPrice, maxPrice, search));
     }
 
-    @GetMapping("/{houseId}/details")
+    @GetMapping("/houses/{houseId}/details")
     public ResponseEntity<HouseDetailDTO> showHouseDetails(@PathVariable Long houseId) {
         return ResponseEntity.ok().body(houseService.getHouseDetail(houseId));
     }
 
-    @PostMapping("/{houseId}/book")
+    @PostMapping("/houses/{houseId}/reserve")
     public ResponseEntity<String> reserve(@PathVariable Long houseId,
                                           @RequestParam(name = "checkin", defaultValue = "1999-12-30")
                                           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
@@ -59,23 +59,22 @@ public class HouseController {
         return ResponseEntity.ok().body("예약 성공");
     }
 
-    @PostMapping("/{houseId}/bookmark")
+    @PostMapping("/houses/{houseId}/bookmark")
     public ResponseEntity<String> makeBookmark(@PathVariable Long houseId) {
         return ResponseEntity.ok().body(bookmarkService.updateBookmark(houseId));
     }
 
-    //TODO: 현지야 오오쓰해!
-    @GetMapping("/{userId}/favorites")
+    @GetMapping("users/{userId}/bookmarks")
     public ResponseEntity<List<HouseOverViewDTO>> getFavorites(@PathVariable Long userId) {
         return ResponseEntity.ok().body(bookmarkService.getBookmarks(userId));
     }
 
-    @GetMapping("/{userId}/bookings")
+    @GetMapping("users/{userId}/reservations")
     public ResponseEntity<BookingDTO> showBookingPage(@PathVariable Long userId) {
         return ResponseEntity.ok().body(bookingService.getBooking(userId));
     }
 
-    @DeleteMapping("/{bookingId}/cancel")
+    @DeleteMapping("reservations/{bookingId}/cancel")
     public ResponseEntity<String> cancelBooking(@PathVariable Long bookingId) {
         bookingService.cancelBooking(bookingId);
         return ResponseEntity.ok().build();
