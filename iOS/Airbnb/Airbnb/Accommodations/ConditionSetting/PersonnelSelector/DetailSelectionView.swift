@@ -20,10 +20,9 @@ final class DetailSelectionView: UIView {
     var numberLabel: UILabel!
     
     // MARK: - Lifecycle
-    init(age: AgeGroup) {
+    init() {
         super.init(frame: .zero)
         configure()
-        apply(age)
         makeConstraints()
     }
     
@@ -40,9 +39,9 @@ final class DetailSelectionView: UIView {
     }
     
     // MARK: - Methods
-    func apply(_ age: AgeGroup) {
-        categoryLabel.text = age.category
-        descriptionLabel.text = age.description
+    func apply(_ category: Informationable) {
+        categoryLabel.text = category.category
+        descriptionLabel.text = category.description
     }
     
     @objc func buttonTapped(_ sender: UIButton) {

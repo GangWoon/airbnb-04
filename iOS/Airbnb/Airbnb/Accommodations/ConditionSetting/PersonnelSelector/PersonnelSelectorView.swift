@@ -58,18 +58,21 @@ final class PersonnelSelectorView: UIView {
     }
     
     private func configureAdultSelectionView() {
-        adultSelectionView = DetailSelectionView(age: .adult)
+        adultSelectionView = DetailSelectionView()
+        adultSelectionView.apply(AgeGroup.adult)
         selectionStackView.addArrangedSubview(adultSelectionView)
         
     }
     
     private func configureYouthSelectionView() {
-        youthSelectionView = DetailSelectionView(age: .youth)
+        youthSelectionView = DetailSelectionView()
+        youthSelectionView.apply(AgeGroup.youth)
         selectionStackView.addArrangedSubview(youthSelectionView)
     }
     
     private func configureInfantSelectionView() {
-        infantSelectionView = DetailSelectionView(age: .infant)
+        infantSelectionView = DetailSelectionView()
+        infantSelectionView.apply(AgeGroup.infant)
         selectionStackView.addArrangedSubview(infantSelectionView)
     }
     
