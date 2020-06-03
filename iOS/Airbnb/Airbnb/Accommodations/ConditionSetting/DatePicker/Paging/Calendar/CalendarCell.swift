@@ -44,12 +44,10 @@ final class CalendarCell: UICollectionViewCell {
     // MARK: - Methods
     func apply(date: Date) {
         self.date = date
-        let color = WeekDays(rawValue: DateCalculator.weekday(of: date))?.color()
-        let day = DateCalculator.day(of: date)
-        dayButton.setTitleColor(color,
-                                for: .normal)
-        dayButton.setTitle(day,
+        dayButton.setTitle(date.dayString,
                            for: .normal)
+        dayButton.setTitleColor(date.weekdayColor,
+                                for: .normal)
     }
     
     func toggle(state: Bool) {

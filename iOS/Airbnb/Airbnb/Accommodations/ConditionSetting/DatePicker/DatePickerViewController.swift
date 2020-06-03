@@ -70,9 +70,9 @@ final class DatePickerViewController: ConditionSettingViewController {
             interfaceView.titleLabel.text = titleText
             return
         }
-        interfaceView.titleLabel.text = "\(DateCalculator.formattingDate(start))"
+        interfaceView.titleLabel.text = start.description
         guard let end = end else { return }
-        interfaceView.titleLabel.text = "\(DateCalculator.formattingDate(start)) - \(DateCalculator.formattingDate(end))"
+        interfaceView.titleLabel.text = start.description + " - " + end.description
     }
     
     // MARK: Constraints

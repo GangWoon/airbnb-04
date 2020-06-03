@@ -13,15 +13,11 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
     // MARK: - Properties
     private let datePicker: DatePicker
     private let numberOfDays: Int = 42
-    private let index: Int
-    private var month: Date? {
-        DateCalculator.monthLater(value: index)
-    }
     
     // MARK: - Lifecycle
     init(index: Int, datePicker: DatePicker) {
-        self.index = index
         self.datePicker = datePicker
+        datePicker.updateMonth(with: index)
     }
     
     // MARK: - Methods
@@ -34,10 +30,10 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier,
                                  for: indexPath) as? CalendarCell else { return UICollectionViewCell() }
-        guard DateCalculator.isInclude(date: indexDays, into: month) else { return cell }
-        let day = DateCalculator.convertDate(from: indexDays, month: month)
+        guard datePicker.isIncludeInMonth(date: indexDays) else { return cell }
+        let day = datePicker.convertDate(from: indexDays)
         cell.apply(date: day)
-        guard DateCalculator.isPastDay(date: day) else {
+        guard datePicker.isPastDay(date: day) else {
             cell.dayButton
                 .setTitleColor(.systemGray,
                                for: .normal)
@@ -51,9 +47,8 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let startDate = datePicker.startDate,
             let endDate = datePicker.endDate,
             startDate != endDate else { return cell }
-        let isInRange = DateCalculator.nextDay(of: startDate)..<endDate ~= day
-        cell.applyBackgroundColor(isStart: day == startDate || isInRange,
-                                  isEnd: day == endDate || isInRange)
+        cell.applyBackgroundColor(isStart: day == startDate || datePicker.isInRange(date: day),
+                                  isEnd: day == endDate || datePicker.isInRange(date: day))
         
         return cell
     }
@@ -62,10 +57,9 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let headerView = collectionView
             .dequeueReusableSupplementaryView(ofKind: kind,
                                               withReuseIdentifier: CalendarHeaderView.identifier,
-                                              for: indexPath) as? CalendarHeaderView,
-            let month = month else { return UICollectionReusableView() }
-        headerView.applyDate(month: DateCalculator.month(from: month),
-                       year: DateCalculator.year(from: month))
+                                              for: indexPath) as? CalendarHeaderView else { return UICollectionReusableView() }
+        headerView.applyDate(month: datePicker.monthString,
+                       year: datePicker.yearString)
         
         return headerView
     }
