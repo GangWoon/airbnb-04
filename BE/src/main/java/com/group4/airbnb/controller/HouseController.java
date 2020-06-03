@@ -1,4 +1,5 @@
 package com.group4.airbnb.controller;
+import com.group4.airbnb.dto.BookingDTO;
 import com.group4.airbnb.dto.HouseDetailDTO;
 import com.group4.airbnb.dto.HouseOverViewDTO;
 import com.group4.airbnb.service.BookingService;
@@ -68,5 +69,9 @@ public class HouseController {
     public ResponseEntity<List<HouseOverViewDTO>> getFavorites(@PathVariable Long userId) {
         return ResponseEntity.ok().body(bookmarkService.getBookmarks(userId));
     }
-    
+
+    @GetMapping("/{userId}/bookings")
+    public ResponseEntity<BookingDTO> showBookingPage(@PathVariable Long userId) {
+        return ResponseEntity.ok().body(bookingService.getBooking(userId));
+    }
 }

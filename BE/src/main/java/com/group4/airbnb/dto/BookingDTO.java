@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class BookingDTO {
 
     private String roomType;
-    private String houseUrl;
+    private String url;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
     private int guestCount;
@@ -26,5 +26,27 @@ public class BookingDTO {
     private int taxes;
     private int total;
 
+    public void calculate() {
+        calculateRoomCharge();
+        calculateServiceFee();
+        calculateTaxes();
+        calculateTotal();
+    }
+
+    public void calculateRoomCharge() {
+        this.roomCharge = salePrice * nightCount;
+    }
+
+    public void calculateServiceFee() {
+        this.serviceFee = (int) (roomCharge * 0.08);
+    }
+
+    public void calculateTaxes() {
+        this.taxes = (int) (roomCharge * 0.1);
+    }
+
+    public void calculateTotal() {
+        this.total = roomCharge + serviceFee + taxes + cleaningFee;
+    }
 
 }

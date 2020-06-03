@@ -1,5 +1,7 @@
 package com.group4.airbnb.dao;
 
+import com.group4.airbnb.dto.BookingDTO;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -30,5 +32,17 @@ public class BookingDAO {
                 .addValue("guest_count", guestCount);
         namedParameterJdbcTemplate.update(sql, sqlParameterSource);
 
+    }
+
+    public BookingDTO findBooking(Long userId) {
+        String sql = "SELECT h.room_type, h.review_count, h.rate, h.cleaning_fee, h.original_price, h.sale_price, " +
+                "i.url, b.check_in_date, b.check_out_date, b.night_count, b.guest_count " +
+                "FROM house h " +
+                "JOIN house_image i " +
+                "ON h.house_id = i.house_id " +
+                "JOIN booking b " +
+                "ON h.house_id = b.house_id " +
+                "WHERE b.user_id = ? LIMIT 1";
+        return jdbcTemplate.queryForObject(sql, new Object[]{userId}, BeanPropertyRowMapper.newInstance(BookingDTO.class));
     }
 }
