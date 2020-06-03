@@ -97,65 +97,7 @@ public class HouseDAO {
         return jdbcTemplate.queryForObject(sql, new Object[]{},BeanPropertyRowMapper.newInstance(BadgeDTO.class));
     }
 
-    public void makeReservation(Long houseId, LocalDate checkInDate, LocalDate checkOutDate, int guestCount, int nightCount) {
-        String sql =
-                "insert into booking (house_id, user_id, check_in_date, check_out_date, guest_count, night_count) " +
-                "values (:house_id, 1, :check_in_date, :check_out_date, :guest_count, :night_count) ";
-        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("house_id", houseId)
-                                                                    .addValue("check_in_date", checkInDate)
-                                                                    .addValue("check_out_date", checkOutDate)
-                                                                    .addValue("night_count", nightCount)
-                                                                    .addValue("guest_count", guestCount);
-        namedParameterJdbcTemplate.update(sql, sqlParameterSource);
 
-    }
 
-    public void makeBookmark(Long houseId) {
-        String sql = "insert into favorite (house_id, user_id) values (:house_id, :user_id)";
-        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("house_id", houseId).addValue("user_id", 1);
-        namedParameterJdbcTemplate.update(sql, sqlParameterSource);
-    }
 
-    public void removeBookmark(Long houseId) {
-        String sql = "delete from favorite WHERE house_id = :house_id AND user_id = :user_id";
-        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("house_id", houseId).addValue("user_id", 1);
-        namedParameterJdbcTemplate.update(sql, sqlParameterSource);
-    }
-
-    public int findBookmark(Long houseId) {
-        String sql = "SELECT count(favorite_id) FROM favorite WHERE house_id = :house_id AND user_id = :user_id";
-        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("house_id", houseId).addValue("user_id", 1);
-        return namedParameterJdbcTemplate.queryForObject(sql, sqlParameterSource, Integer.class);
-    }
-
-    public List<HouseOverViewDTO> findFavorites(Long userId) {
-        String sql = "SELECT DISTINCT house.house_id, house_name, host_is_super, room_type, bed_room_count, rate, review_count, latitude, longitude " +
-                "FROM house " +
-                "JOIN favorite f " +
-                "ON house.house_id = f.house_id " +
-                "WHERE f.user_id = :user_id " +
-                "ORDER BY house_id ";
-
-        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("user_id", userId);
-
-        List<HouseOverViewDTO> houses = namedParameterJdbcTemplate.query(sql,sqlParameterSource,new RowMapper<HouseOverViewDTO>() {
-            @Override
-            public HouseOverViewDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-                HouseOverViewDTO house = new HouseOverViewDTO();
-                house.setHouseId(rs.getLong("house_id"));
-                house.setHouseName(rs.getString("house_name"));
-                house.setHostIsSuper(rs.getBoolean("host_is_super"));
-                house.setRoomType(rs.getString("room_type"));
-                house.setBedRoomCount(rs.getInt("bed_room_count"));
-                house.setRate(rs.getInt("rate"));
-                house.setReviewCount(rs.getInt("review_count"));
-                house.setLatitude(rs.getFloat("latitude"));
-                house.setLongitude(rs.getFloat("longitude"));
-                house.setImages(findImages(rs.getLong("house_id")));
-                house.setFavorite(true);
-                return house;
-            }
-        });
-        return houses;
-    }
 }
