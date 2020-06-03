@@ -82,6 +82,7 @@ final class CalendarCell: UICollectionViewCell {
         dayButton.addTarget(self,
                        action: #selector(dayButtonTapped(_:)),
                        for: .touchUpInside)
+        dayButton.isEnabled = false
         addSubview(dayButton)
     }
     
