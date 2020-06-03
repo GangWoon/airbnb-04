@@ -29,7 +29,7 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetch(provider: AirbnbMockNetworkSuccessImpl())
+        fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main))
         bindViewModelToView()
     }
     
@@ -46,10 +46,10 @@ final class AccommodationsViewController: UIViewController {
     }
     
     // MARK: - Methods
-    private func fetch(provider: AirbnbNetwork) {
+    private func fetch(provider: AirbnbNetwork, endpoint: RequestPorviding) {
         provider
             .request([Accommodations].self,
-                     requestProviding: Endpoint(path: .main))
+                     requestProviding: endpoint)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: {
                 guard case .failure(let error) = $0 else { return }
@@ -58,7 +58,7 @@ final class AccommodationsViewController: UIViewController {
                   receiveValue: { accomodations in
                     self.dataSource.accomodations = accomodations
             })
-            .cancel()
+            .store(in: &subscriptions)
     }
     
     private func bindViewModelToView() {
