@@ -34,14 +34,10 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier,
                                  for: indexPath) as? CalendarCell else { return UICollectionViewCell() }
-        guard let month = month,
-            let firstDay = DateCalculator.firstDay(of: month) else { return cell }
-        guard DateCalculator.weekday(of: firstDay) <= indexDays,
-            indexDays - DateCalculator.weekday(of: firstDay) < DateCalculator.end(of: month) else { return cell }
-        let index = indexDays - DateCalculator.weekday(of: firstDay)
-        let day = DateCalculator.date(byAdding: .day, value: index, to: firstDay)
+        guard DateCalculator.isInclude(date: indexDays, into: month) else { return cell }
+        let day = DateCalculator.convertDate(from: indexDays, month: month)
         cell.apply(date: day)
-        guard DateCalculator.today() <= day else {
+        guard DateCalculator.isPastDay(date: day) else {
             cell.dayButton
                 .setTitleColor(.systemGray,
                                for: .normal)
@@ -49,7 +45,7 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
             return cell
         }
         cell.dayButton.isEnabled = true
-        if day == datePicker.startDate || day == datePicker.endDate {
+        if datePicker.isSelectedDate(date: day) {
             cell.toggle(state: true)
         }
         guard let startDate = datePicker.startDate,

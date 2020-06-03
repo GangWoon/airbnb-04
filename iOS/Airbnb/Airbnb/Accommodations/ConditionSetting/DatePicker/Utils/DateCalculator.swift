@@ -19,10 +19,6 @@ struct DateCalculator {
                              value: value, to: Date())
     }
     
-    static func today() -> Date {
-        return calendar.startOfDay(for: Date())
-    }
-    
     static func day(of date: Date) -> String {
         let day = calendar.component(.day,
                                      from: date)
@@ -44,11 +40,29 @@ struct DateCalculator {
         return String(year)
     }
     
-    static func date(byAdding: Calendar.Component, value: Int, to: Date) -> Date {
-        guard let date = calendar.date(byAdding: byAdding,
-                                       value: value, to: to) else { return Date() }
+    static func isPastDay(date: Date) -> Bool {
+        return calendar.startOfDay(for: Date()) <= date
+    }
+    
+    static func date(byAdding: Calendar.Component, value: Int, to: Date?) -> Date {
+        guard let to = to,
+            let date = calendar.date(byAdding: byAdding,
+                                     value: value, to: to) else { return Date() }
         
         return date
+    }
+    
+    static func isInclude(date: Int, into month: Date?) -> Bool {
+        let firstofMonth = firstDay(of: month)
+        let firstWeekDay = weekday(of: firstofMonth)
+        let endofMonth = end(of: month)
+        return firstWeekDay <= date && date - firstWeekDay < endofMonth
+    }
+    
+    static func convertDate(from index: Int, month: Date?) -> Date {
+        let firstofMonth = firstDay(of: month)
+        let index = index - weekday(of: firstofMonth)
+        return date(byAdding: .day, value: index, to: firstofMonth)
     }
     
     static func nextDay(of date: Date) -> Date {
@@ -59,22 +73,25 @@ struct DateCalculator {
         return date
     }
     
-    static func firstDay(of month: Date) -> Date? {
+    static func firstDay(of month: Date?) -> Date? {
+        guard let month = month else { return nil }
         let firstDay = calendar.date(from: calendar.dateComponents([.year,.month],
-                                                        from: month))
+                                                                   from: month))
         
         return firstDay
     }
     
-    static func weekday(of date: Date) -> Int {
+    static func weekday(of date: Date?) -> Int {
+        guard let date = date else { return .zero }
         return calendar.component(.weekday,
                                   from: date)
     }
     
-    static func end(of month: Date) -> Int {
-        guard let monthRange = calendar.range(of: .day,
-                                              in: .month,
-                                              for: month) else { return 0 }
+    static func end(of month: Date?) -> Int {
+        guard let month = month,
+            let monthRange = calendar.range(of: .day,
+                                            in: .month,
+                                            for: month) else { return 0 }
         
         return monthRange.count
     }

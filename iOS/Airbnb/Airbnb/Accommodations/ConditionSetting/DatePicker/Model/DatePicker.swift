@@ -47,5 +47,9 @@ class DatePicker {
         startDate = nil
         endDate = nil
     }
+    
+    func isSelectedDate(date: Date) -> Bool {
+        return date == startDate || date == endDate
+    }
 }
 
