@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Combine
 
 class AccommodationsCellViewModel {
     
     // MARK: - Properties
     private var accommodations: Accommodations
     var badge: String {
-        accommodations.badge
+        accommodations.badge ? "SUPERHOST" : "NEWHOST"
     }
     var roomType: String {
         configureRoomType()
@@ -25,7 +26,7 @@ class AccommodationsCellViewModel {
         accommodations.name
     }
     var images: [UIImage] {
-        configureImages()
+        []
     }
     var isFavorite: Bool {
         accommodations.favorite
@@ -38,7 +39,7 @@ class AccommodationsCellViewModel {
     
     // MARK: - Methods
     private func configureRoomType() -> String {
-        return accommodations.roomType + " ・ " + accommodations.bedroomCount
+        return accommodations.roomType + " ・ " + String(accommodations.bedRoomCount)
     }
     
     private func configureRate() -> NSMutableAttributedString {
@@ -52,9 +53,13 @@ class AccommodationsCellViewModel {
         return attributedString
     }
     
-    private func configureImages() -> [UIImage] {
-        return accommodations.images.map {
-            UIImage(named: $0) ?? UIImage()
+    private func configureImages(completion: @escaping ([UIImage]) -> Void) {
+        var images: [UIImage] = .init()
+        accommodations.images.forEach {
+            URLSession.shared.dataTask(with: $0) { data, _, _ in
+                images.append(UIImage(data: data!)!)
+            }.resume()
         }
+        completion(images)
     }
 }

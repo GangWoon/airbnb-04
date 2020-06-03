@@ -28,10 +28,10 @@ struct AirbnbNetworkImpl: AirbnbNetwork {
             }
             
             return session.dataTaskPublisher(for: url)
-                .mapError { _ in AirbnbNetworkError.error("airbnb API 에러") }
+                .mapError { error in AirbnbNetworkError.error("\(error)") }
                 .map { $0.data }
                 .decode(type: T.self, decoder: JSONDecoder())
-                .mapError { _ in .error("JSON parsing 에러") }
+                .mapError { error in .error("\(error)") }
                 .eraseToAnyPublisher()
     }
 }
