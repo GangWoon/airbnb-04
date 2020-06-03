@@ -13,6 +13,7 @@ final class DetailSelectionView: UIView {
     
     // MARK: - Properties
     static let isPlus: String = "isPlus"
+    private var category: Informationable?
     private var categoryLabel: UILabel!
     private var descriptionLabel: UILabel!
     private var plusButton: BorderButton!
@@ -40,13 +41,14 @@ final class DetailSelectionView: UIView {
     
     // MARK: - Methods
     func apply(_ category: Informationable) {
+        self.category = category
         categoryLabel.text = category.category
         descriptionLabel.text = category.description
     }
     
     @objc func buttonTapped(_ sender: UIButton) {
         NotificationCenter.default.post(name: .buttonTapped,
-                                        object: self,
+                                        object: category,
                                         userInfo: [DetailSelectionView.isPlus: sender === plusButton])
     }
     

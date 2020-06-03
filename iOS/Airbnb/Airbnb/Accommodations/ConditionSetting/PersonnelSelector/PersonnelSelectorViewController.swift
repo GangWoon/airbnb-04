@@ -43,15 +43,8 @@ final class PersonnelSelectorViewController: ConditionSettingViewController {
         NotificationCenter.default.publisher(for: .buttonTapped)
             .sink { notification in
                 guard let isPlus = notification.userInfo?[DetailSelectionView.isPlus] as? Bool,
-                    let sender = notification.object as? DetailSelectionView else { return }
-                
-                if sender === self.personnelSelectorView.adultSelectionView {
-                    self.personnelSelector.updateAdult(isPlus: isPlus)
-                } else if sender === self.personnelSelectorView.youthSelectionView {
-                    self.personnelSelector.updateYouth(isPlus: isPlus)
-                } else {
-                    self.personnelSelector.updateInfant(isPlus: isPlus)
-                }
+                    let category = notification.object as? AgeGroup else { return }
+                self.personnelSelector.update(category: category, isPlus: isPlus)
         }
         .store(in: &subscriptions)
     }
