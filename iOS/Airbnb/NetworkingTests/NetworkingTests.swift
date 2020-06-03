@@ -29,7 +29,7 @@ final class NetworkingTests: XCTestCase {
         dummy = Array(repeating: accommodations, count: 100)
     }
     
-    private func testSuccessNetworking() {
+    func testSuccessNetworking() {
         let network = AirbnbMockNetworkSuccessImpl()
         let expectation = XCTestExpectation()
         defer { wait(for: [expectation], timeout: 2) }
@@ -47,7 +47,7 @@ final class NetworkingTests: XCTestCase {
         }
     }
     
-    private func testFailNetworking() {
+    func testFailNetworking() {
         let network = AirbnbMockNetworkFailImpl()
         let expectation = XCTestExpectation()
         defer { wait(for: [expectation], timeout: 2) }
