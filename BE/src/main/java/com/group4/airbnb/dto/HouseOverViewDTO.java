@@ -19,4 +19,6 @@ public class HouseOverViewDTO {
     private int rate;
     private int reviewCount;
     private boolean favorite;
+    private float latitude;
+    private float longitude;
 }

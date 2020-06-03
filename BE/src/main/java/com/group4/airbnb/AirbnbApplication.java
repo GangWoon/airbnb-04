@@ -11,14 +11,6 @@ public class AirbnbApplication {
 
     public static void main(String[] args) {
 
-        LocalDate start = LocalDate.now();
-        LocalDate end = LocalDate.now().plusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
-
-        System.out.println("start date : " + start);
-        System.out.println("end date : " + end);
-
-        Practice practice = new Practice(start, end);
-        System.out.println("dates : " + practice.toList());
         SpringApplication.run(AirbnbApplication.class, args);
 
     }
