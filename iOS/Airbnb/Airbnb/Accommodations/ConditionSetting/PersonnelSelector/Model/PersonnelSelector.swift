@@ -15,16 +15,15 @@ final class PersonnelSelector {
     @Published var youth: Int = .zero
     @Published var infant: Int = .zero
     
-    func updateAdult(isPlus: Bool) {
-        adult += isPlus ? 1 : -1
-    }
-    
-    func updateYouth(isPlus: Bool) {
-        youth += isPlus ? 1 : -1
-    }
-    
-    func updateInfant(isPlus: Bool) {
-        infant += isPlus ? 1 : -1
+    func update(category: AgeGroup, isPlus: Bool) {
+        switch category {
+        case .adult:
+            adult += isPlus ? 1 : -1
+        case .youth:
+            youth += isPlus ? 1 : -1
+        case .infant:
+            infant += isPlus ? 1 : -1
+        }
     }
     
     func reset() {

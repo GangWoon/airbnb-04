@@ -11,48 +11,55 @@ import XCTest
 
 final class DatePickerTests: XCTestCase {
     
-    private let datePicker = DatePicker.shared
-    private let inputDate = Date().addingTimeInterval(3600 * 9)
+    private let datePicker: DatePicker = DatePicker.shared
+    private let pastDate: Date = Date()
+    private let futureDate: Date = Date().addingTimeInterval(86400)
     
     override func setUp() {
         super.setUp()
         datePicker.reset()
     }
     
-    private func testReset() {
-        datePicker.startDate = Date()
-        datePicker.endDate = Date()
+    func testReset() {
+        datePicker.startDate = pastDate
+        datePicker.endDate = futureDate
         datePicker.reset()
         XCTAssertNil(datePicker.startDate)
         XCTAssertNil(datePicker.endDate)
     }
     
-    private func testBothExist() {
+    func testBothExist() {
         datePicker.startDate = Date()
         datePicker.endDate = Date()
-        datePicker.update(date: inputDate)
-        XCTAssertEqual(inputDate, datePicker.startDate)
+        datePicker.select(date: pastDate)
+        XCTAssertEqual(pastDate, datePicker.startDate)
         XCTAssertNil(datePicker.endDate)
     }
     
-    private func testStartNotExist() {
-        datePicker.update(date: inputDate)
-        XCTAssertEqual(datePicker.startDate, inputDate)
+    func testInputStartDate() {
+        datePicker.select(date: pastDate)
+        XCTAssertEqual(datePicker.startDate,
+                       pastDate)
         XCTAssertNil(datePicker.endDate)
     }
     
-    private func testEndDateLessThanStartDate() {
-        datePicker.startDate = Date().addingTimeInterval(86400)
-        datePicker.update(date: inputDate)
-        XCTAssertEqual(datePicker.startDate, inputDate)
+    func testEndDateLessThanStartDate() {
+        datePicker.startDate = futureDate
+        datePicker.select(date: pastDate)
+        XCTAssertEqual(datePicker.startDate, pastDate)
         XCTAssertNil(datePicker.endDate)
     }
     
-    private func testNormalCase() {
-        let startDate = Date()
-        datePicker.update(date: startDate)
-        datePicker.update(date: inputDate)
-        XCTAssertEqual(datePicker.startDate, startDate)
-        XCTAssertEqual(datePicker.endDate, inputDate)
+    func testNormalCase() {
+        datePicker.select(date: pastDate)
+        datePicker.select(date: futureDate)
+        XCTAssertEqual(datePicker.startDate, pastDate)
+        XCTAssertEqual(datePicker.endDate, futureDate)
+    }
+    
+    func testDuplicateDateSelect() {
+        datePicker.select(date: pastDate)
+        datePicker.select(date: pastDate)
+        XCTAssertEqual(datePicker.startDate, datePicker.endDate)
     }
 }

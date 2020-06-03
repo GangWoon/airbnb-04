@@ -8,7 +8,13 @@
 
 import Foundation
 
-enum AgeGroup {
+protocol Informationable {
+    
+    var category: String { get }
+    var description: String { get }
+}
+
+enum AgeGroup: Informationable {
     
     case adult
     case youth
