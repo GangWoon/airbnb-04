@@ -32,8 +32,7 @@ public class HouseDetailDTO {
     private int bedCount;
     private int bathCount;
     private BadgeDTO badge;
-    private float latitude;
-    private float longitude;
+
 
     private int rate;
     private int reviewCount;
