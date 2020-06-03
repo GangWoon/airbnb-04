@@ -1,8 +1,9 @@
 package com.group4.airbnb.controller;
 import com.group4.airbnb.dto.HouseDetailDTO;
 import com.group4.airbnb.dto.HouseOverViewDTO;
+import com.group4.airbnb.service.BookingService;
+import com.group4.airbnb.service.BookmarkService;
 import com.group4.airbnb.service.HouseService;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +12,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/airbnb/houses")
 public class HouseController {
+
     private final HouseService houseService;
-    public HouseController(HouseService houseService) {
+    private final BookingService bookingService;
+    private final BookmarkService bookmarkService;
+
+
+    public HouseController(HouseService houseService, BookingService bookingService, BookmarkService bookmarkService) {
         this.houseService = houseService;
+        this.bookingService = bookingService;
+        this.bookmarkService = bookmarkService;
     }
     @GetMapping("")
     public ResponseEntity<List<HouseOverViewDTO>> showHouses(@RequestParam(name = "offset", required = false, defaultValue = "0") Long houseId,
@@ -36,7 +44,7 @@ public class HouseController {
         return ResponseEntity.ok().body(houseService.getHouseDetail(houseId));
     }
 
-    @PostMapping("/{houseId}/reservation")
+    @PostMapping("/{houseId}/book")
     public ResponseEntity<String> reserve(@PathVariable Long houseId,
                                           @RequestParam(name = "checkin", defaultValue = "1999-12-30")
                                           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
@@ -46,20 +54,19 @@ public class HouseController {
                                           @RequestParam(name = "children", defaultValue = "0") int children,
                                           @RequestParam(name = "infants", defaultValue = "0") int infants
                                           ) {
-        houseService.updateBooking(houseId, checkInDate, checkOutDate, adults, children, infants);
+        bookingService.updateBooking(houseId, checkInDate, checkOutDate, adults, children, infants);
         return ResponseEntity.ok().body("예약 성공");
     }
 
     @PostMapping("/{houseId}/bookmark")
     public ResponseEntity<String> makeBookmark(@PathVariable Long houseId) {
-        return ResponseEntity.ok().body(houseService.updateBookmark(houseId));
+        return ResponseEntity.ok().body(bookmarkService.updateBookmark(houseId));
     }
 
     //TODO: 현지야 오오쓰해!
     @GetMapping("/{userId}/favorites")
     public ResponseEntity<List<HouseOverViewDTO>> getFavorites(@PathVariable Long userId) {
-        return ResponseEntity.ok().body(houseService.getFavorites(userId));
+        return ResponseEntity.ok().body(bookmarkService.getBookmarks(userId));
     }
-
-    @GetMapping("/{userId}/")
+    
 }
