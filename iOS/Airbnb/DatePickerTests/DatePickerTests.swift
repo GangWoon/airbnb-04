@@ -56,4 +56,10 @@ final class DatePickerTests: XCTestCase {
         XCTAssertEqual(datePicker.startDate, pastDate)
         XCTAssertEqual(datePicker.endDate, futureDate)
     }
+    
+    func testDuplicateDateSelect() {
+        datePicker.select(date: pastDate)
+        datePicker.select(date: pastDate)
+        XCTAssertEqual(datePicker.startDate, datePicker.endDate)
+    }
 }
