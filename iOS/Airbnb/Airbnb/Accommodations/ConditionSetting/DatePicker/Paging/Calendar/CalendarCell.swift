@@ -131,6 +131,6 @@ final class CalendarCell: UICollectionViewCell {
     
     // MARK: Objc
     @objc func dayButtonTapped(_ sender: UIButton) {
-        DatePicker.shared.select(date: date)
+        NotificationCenter.default.post(name: .dateSelect, object: date)
     }
 }

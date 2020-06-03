@@ -11,6 +11,7 @@ import UIKit
 final class CalendarDataSource: NSObject, UICollectionViewDataSource {
     
     // MARK: - Properties
+    private let datePicker: DatePicker
     private let numberOfDays: Int = 42
     private let index: Int
     private var month: Date? {
@@ -18,8 +19,9 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
     }
     
     // MARK: - Lifecycle
-    init(index: Int) {
+    init(index: Int, datePicker: DatePicker) {
         self.index = index
+        self.datePicker = datePicker
     }
     
     // MARK: - Methods
@@ -47,11 +49,11 @@ final class CalendarDataSource: NSObject, UICollectionViewDataSource {
             return cell
         }
         cell.dayButton.isEnabled = true
-        if day == DatePicker.shared.startDate || day == DatePicker.shared.endDate {
+        if day == datePicker.startDate || day == datePicker.endDate {
             cell.toggle(state: true)
         }
-        guard let startDate = DatePicker.shared.startDate,
-            let endDate = DatePicker.shared.endDate,
+        guard let startDate = datePicker.startDate,
+            let endDate = datePicker.endDate,
             startDate != endDate else { return cell }
         let isInRange = DateCalculator.nextDay(of: startDate)..<endDate ~= day
         cell.applyBackgroundColor(isStart: day == startDate || isInRange,

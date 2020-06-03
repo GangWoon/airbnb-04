@@ -11,7 +11,13 @@ import UIKit
 final class PagingDataSource: NSObject, UICollectionViewDataSource {
     
     // MARK: - Properties
+    private let datePicker: DatePicker
     private let numberOfMonths: Int = 6
+    
+    // MARK: - Lifecycle
+    init(datePicker: DatePicker) {
+        self.datePicker = datePicker
+    }
     
     // MARK: - Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -22,7 +28,7 @@ final class PagingDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: PagingCell.identifier,
                                  for: indexPath) as? PagingCell else { return UICollectionViewCell() }
-        cell.apply(dataSource: CalendarDataSource(index: indexPath.item))
+        cell.apply(dataSource: CalendarDataSource(index: indexPath.item, datePicker: datePicker))
         
         return cell
     }

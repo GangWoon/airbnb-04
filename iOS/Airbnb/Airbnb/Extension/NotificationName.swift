@@ -10,5 +10,6 @@ import Foundation
 
 extension Notification.Name {
     
+    static let dateSelect: Notification.Name = .init("dateSelect")
     static let buttonTapped: Notification.Name = .init("buttonTapped")
 }

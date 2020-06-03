@@ -14,8 +14,9 @@ final class DatePickerViewController: ConditionSettingViewController {
     // MARK: - Properties
     private var datePickerView: DatePickerView!
     private var pagingDataSource: PagingDataSource?
-    private var subscription: AnyCancellable?
+    private var subscriptions: Set<AnyCancellable> = .init()
     private let titleText: String = "체크인 - 체크아웃"
+    private let datePicker: DatePicker = .init()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ final class DatePickerViewController: ConditionSettingViewController {
         datePickerView = DatePickerView()
         datePickerView.pagingView.register(PagingCell.self,
                       forCellWithReuseIdentifier: PagingCell.identifier)
-        pagingDataSource = PagingDataSource()
+        pagingDataSource = PagingDataSource(datePicker: datePicker)
         datePickerView.pagingView.dataSource = pagingDataSource
         datePickerView.pagingView.delegate = self
     }
@@ -49,13 +50,19 @@ final class DatePickerViewController: ConditionSettingViewController {
     }
     
     private func configureSubscription() {
-        subscription = Publishers
-            .CombineLatest(DatePicker.shared.$startDate,
-                           DatePicker.shared.$endDate)
+        Publishers
+            .CombineLatest(datePicker.$startDate,
+                           datePicker.$endDate)
             .sink {
                 self.applyTitleLabel(start: $0.0, end: $0.1)
                 self.datePickerView.pagingView.reloadData()
-        }
+        }.store(in: &subscriptions)
+        
+        NotificationCenter.default.publisher(for: .dateSelect)
+            .sink { notification in
+                guard let selectedDate = notification.object as? Date else { return }
+                self.datePicker.select(date: selectedDate)
+        }.store(in: &subscriptions)
     }
     
     private func applyTitleLabel(start: Date?, end: Date?) {
@@ -79,7 +86,7 @@ final class DatePickerViewController: ConditionSettingViewController {
     
     // MARK: Objc
     @objc private func resetButtonTapped(_ sender: UIButton) {
-        DatePicker.shared.reset()
+        datePicker.reset()
     }
 }
 
