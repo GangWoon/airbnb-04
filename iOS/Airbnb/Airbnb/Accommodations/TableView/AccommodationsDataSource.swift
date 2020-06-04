@@ -30,7 +30,15 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
             .dequeueReusableCell(withIdentifier: AccommodationsCell.identifier,
                                  for: indexPath) as? AccommodationsCell else { return UITableViewCell() }
         let item = accomodations[indexPath.row]
-        cell.apply(with: AccommodationsCellViewModel(accommodations: item))
+        let viewModel = AccommodationsCellViewModel(accommodations: item)
+        item.images.forEach {
+            let name = $0.filterRegex(.imageName)
+                .replacingOccurrences(of: "?aki_policy=large",
+                                      with: "")
+            guard let image = ImageManager.load(from: name) else { return }
+            viewModel.images.append(image)
+        }
+            cell.apply(with: AccommodationsCellViewModel(accommodations: item))
         
         return cell
     }

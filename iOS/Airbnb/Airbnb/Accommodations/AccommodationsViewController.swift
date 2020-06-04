@@ -81,7 +81,12 @@ final class AccommodationsViewController: UIViewController {
                         self.errorAlert(message: error.message)
                     },
                           receiveValue: { data in
-                            ImageManager.cache(imageData: data, name: url.filterRegex(#"(.*(\/))"#))
+                            let name = url.filterRegex(.imageName)
+                                .replacingOccurrences(of: "?aki_policy=large",
+                                                      with: "")
+                            ImageManager.cache(imageData: data,
+                                               name: name)
+                            
                     })
                     .store(in: &subscriptions)
             }

@@ -12,6 +12,7 @@ class AccommodationsCellViewModel {
     
     // MARK: - Properties
     private var accommodations: Accommodations
+    var images: [UIImage] = .init()
     var badge: String {
         accommodations.badge ? "SUPERHOST" : "NEWHOST"
     }
@@ -23,9 +24,6 @@ class AccommodationsCellViewModel {
     }
     var title: String {
         accommodations.name
-    }
-    var images: [UIImage] {
-        configureImages()
     }
     var isFavorite: Bool {
         accommodations.favorite
@@ -50,9 +48,5 @@ class AccommodationsCellViewModel {
                           range: (rate as NSString).range(of: "✭"))
         
         return attributedString
-    }
-    
-    private func configureImages() -> [UIImage] {
-        return []
     }
 }

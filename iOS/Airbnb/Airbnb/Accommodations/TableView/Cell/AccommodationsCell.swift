@@ -60,9 +60,12 @@ final class AccommodationsCell: UITableViewCell {
                                      roomType: viewModel.roomType,
                                      rate: viewModel.rate,
                                      title: viewModel.title)
-        viewModel.images.forEach {
-            scrollView.addThumbnail(image: $0)
+        DispatchQueue.main.async {
+            viewModel.images.forEach {
+                self.scrollView.addThumbnail(image: $0)
+            }
         }
+        
         favoritesButton.isSelected = viewModel.isFavorite
     }
 }
