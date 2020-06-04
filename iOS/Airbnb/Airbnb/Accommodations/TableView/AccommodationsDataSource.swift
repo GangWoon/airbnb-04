@@ -38,7 +38,9 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
             guard let image = ImageManager.load(from: name) else { return }
             viewModel.images.append(image)
         }
-        cell.apply(with: viewModel)
+        DispatchQueue.main.async {
+            cell.apply(with: viewModel)
+        }
         
         return cell
     }

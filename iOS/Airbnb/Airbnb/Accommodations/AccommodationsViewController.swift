@@ -76,6 +76,9 @@ final class AccommodationsViewController: UIViewController {
             accommodations.images.forEach { url in
                 AirbnbNetworkImpl().load(from: url)
                     .sink(receiveCompletion: {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                         guard case .failure(let error) = $0 else { return }
                         self.errorAlert(message: error.message)
                     },
@@ -85,7 +88,6 @@ final class AccommodationsViewController: UIViewController {
                                                       with: "")
                             ImageManager.cache(imageData: data,
                                                name: name)
-                            
                     })
                     .store(in: &subscriptions)
             }

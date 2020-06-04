@@ -52,20 +52,17 @@ final class AccommodationsCell: UITableViewCell {
     // MARK: - Methods
     private func configurePageControl() {
         pageControl.currentPage = 0
-        pageControl.numberOfPages = 3
     }
     
     func apply(with viewModel: AccommodationsCellViewModel) {
+        pageControl.numberOfPages = 5
         accommodationsInfoView.apply(badge: viewModel.badge,
                                      roomType: viewModel.roomType,
                                      rate: viewModel.rate,
                                      title: viewModel.title)
-        DispatchQueue.main.async {
-            viewModel.images.forEach {
-                self.scrollView.addThumbnail(image: $0)
-            }
+        viewModel.images.forEach {
+            self.scrollView.addThumbnail(image: $0)
         }
-        
         favoritesButton.isSelected = viewModel.isFavorite
     }
 }
