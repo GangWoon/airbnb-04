@@ -26,6 +26,8 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
+    private var previousCount: Int = .zero
+    private var lock: Bool = true
     @Published var searchWord: String?
     
     // MARK: - Lifecycle
@@ -59,8 +61,9 @@ final class AccommodationsViewController: UIViewController {
                 guard case .failure(let error) = $0 else { return }
                 self.errorAlert(message: error.message)
             },
-                  receiveValue: { accomodations in
-                    self.dataSource.accomodations = accomodations
+                  receiveValue: { accommodations in
+                    self.previousCount = self.dataSource.accomodations.count
+                    self.dataSource.accomodations.append(contentsOf: accommodations)
             })
             .store(in: &subscriptions)
     }
@@ -68,15 +71,17 @@ final class AccommodationsViewController: UIViewController {
     private func bindViewModelToView() {
         dataSource.$accomodations
             .receive(on: RunLoop.main)
-            .sink { accommodations in
-                self.tableView.reloadData()
-                self.fetchImages(accommodations: accommodations)
-        }
+        .sink(receiveValue: { accommodations in
+            guard !self.dataSource.accomodations.isEmpty else { return }
+            let indexPathArray = (self.previousCount..<self.dataSource.accomodations.count).map { IndexPath(row: $0, section: 1) }
+            self.tableView.insertRows(at: indexPathArray, with: .automatic)
+            self.fetchImages(accommodations: accommodations)
+            self.lock = true
+        })
         .store(in: &subscriptions)
     }
     
     private func fetchImages(accommodations: [Accommodations]) {
-        
         let imagePublishers = accommodations.map { item -> (Accommodations, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
             let publishers = item.images
                 .filter { !ImageManager.fileExist(fileName: $0) }
@@ -146,6 +151,13 @@ extension AccommodationsViewController: UITableViewDelegate {
         guard let headerView = view as? AccommodationsHeaderView else { return }
         headerView
             .configure(text: "날짜와 인원을 선택하시면 가격별 숙소를 추천해드립니다.")
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.contentOffset.y + scrollView.bounds.size.height > scrollView.contentSize.height + 10.0,
+            lock else { return }
+        lock = false
+        fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main, queryItems: [.offset: "\(dataSource.accomodations.count)"]))
     }
 }
 
