@@ -29,6 +29,7 @@ final class AccommodationsViewController: UIViewController {
     private var previousCount: Int = .zero
     private var lock: Bool = true
     @Published var searchWord: String?
+    var isSearching: Bool = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -68,17 +69,44 @@ final class AccommodationsViewController: UIViewController {
             .store(in: &subscriptions)
     }
     
+    private func search(provider: AirbnbNetwork, endpoint: RequestPorviding) {
+        provider
+            .request([Accommodations].self,
+                     requestProviding: endpoint)
+            .sink(receiveCompletion: {
+                guard case .failure(let error) = $0 else { return }
+                self.errorAlert(message: error.message)
+            },
+                  receiveValue: { accommodations in
+                    self.previousCount = .zero
+                    self.dataSource.accomodations = accommodations
+            })
+            .store(in: &subscriptions)
+    }
+    
     private func bindViewModelToView() {
         dataSource.$accomodations
             .receive(on: RunLoop.main)
-        .sink(receiveValue: { accommodations in
-            guard !self.dataSource.accomodations.isEmpty else { return }
-            let indexPathArray = (self.previousCount..<self.dataSource.accomodations.count).map { IndexPath(row: $0, section: 1) }
-            self.tableView.insertRows(at: indexPathArray, with: .automatic)
-            self.fetchImages(accommodations: accommodations)
-            self.lock = true
-        })
-        .store(in: &subscriptions)
+            .sink(receiveValue: { accommodations in
+                guard !self.dataSource.accomodations.isEmpty else {
+                    self.tableView.reloadData()
+                    return
+                }
+                if self.isSearching {
+                    self.tableView.reloadData()
+                } else {
+                    let indexPathArray = (self.previousCount..<self.dataSource.accomodations.count).map { IndexPath(row: $0, section: 1) }
+                    if self.previousCount == 0 {
+                        self.tableView.reloadData()
+                    } else {
+                        self.tableView.insertRows(at: indexPathArray, with: .automatic)
+                    }
+                    self.fetchImages(accommodations: accommodations)
+                    self.lock = true
+                }
+                
+            })
+            .store(in: &subscriptions)
     }
     
     private func fetchImages(accommodations: [Accommodations]) {
@@ -124,9 +152,12 @@ final class AccommodationsViewController: UIViewController {
             .removeDuplicates()
             .sink {
                 guard let word = $0 else { return }
-                self.fetch(provider: AirbnbNetworkImpl(),
-                           endpoint: Endpoint(path: .main, queryItems: [.search: word]))
-        }.store(in: &subscriptions)
+                self.isSearching = !word.isEmpty
+                self.search(provider: AirbnbNetworkImpl(),
+                            endpoint: Endpoint(path: .main,
+                                               queryItems: [.search: word]))
+        }
+        .store(in: &subscriptions)
     }
 }
 
@@ -155,7 +186,8 @@ extension AccommodationsViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView.contentOffset.y + scrollView.bounds.size.height > scrollView.contentSize.height + 10.0,
-            lock else { return }
+            lock,
+            !isSearching else { return }
         lock = false
         fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main, queryItems: [.offset: "\(dataSource.accomodations.count)"]))
     }
