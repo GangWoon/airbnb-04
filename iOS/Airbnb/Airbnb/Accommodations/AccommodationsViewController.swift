@@ -64,17 +64,16 @@ final class AccommodationsViewController: UIViewController {
     private func bindViewModelToView() {
         dataSource.$accomodations
             .receive(on: RunLoop.main)
-            .sink {
+            .sink { accommodations in
                 self.tableView.reloadData()
-                self.fetchImages(accommodations: $0)
+                self.fetchImages(accommodations: accommodations)
         }
         .store(in: &subscriptions)
     }
     
     private func fetchImages(accommodations: [Accommodations]) {
-        accommodations.forEach {
-            $0.images.forEach {
-                let url = $0
+        accommodations.forEach { accommodations in
+            accommodations.images.forEach { url in
                 AirbnbNetworkImpl().load(from: url)
                     .sink(receiveCompletion: {
                         guard case .failure(let error) = $0 else { return }

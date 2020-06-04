@@ -31,14 +31,14 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
                                  for: indexPath) as? AccommodationsCell else { return UITableViewCell() }
         let item = accomodations[indexPath.row]
         let viewModel = AccommodationsCellViewModel(accommodations: item)
-        item.images.forEach {
-            let name = $0.filterRegex(.imageName)
+        item.images.forEach { url in
+            let name = url.filterRegex(.imageName)
                 .replacingOccurrences(of: "?aki_policy=large",
                                       with: "")
             guard let image = ImageManager.load(from: name) else { return }
             viewModel.images.append(image)
         }
-            cell.apply(with: AccommodationsCellViewModel(accommodations: item))
+        cell.apply(with: viewModel)
         
         return cell
     }
