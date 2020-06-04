@@ -34,4 +34,17 @@ struct AirbnbNetworkImpl: AirbnbNetwork {
                 .mapError { _ in .error("JSON parsing 에러") }
                 .eraseToAnyPublisher()
     }
+    
+    func load(from imageURL: String) -> AnyPublisher<Data, AirbnbNetworkError> {
+        
+        guard let url = URL(string: imageURL.replacingOccurrences(of: "\r", with: "")) else {
+            return Fail(error: .error("잘못된 이미지 URL"))
+                .eraseToAnyPublisher()
+        }
+        
+        return session.dataTaskPublisher(for: url)
+            .mapError { _ in AirbnbNetworkError.error("이미지 URL 에러") }
+            .map { $0.data }
+            .eraseToAnyPublisher()
+    }
 }
