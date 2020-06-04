@@ -79,4 +79,6 @@ public class HouseController {
         bookingService.cancelBooking(bookingId);
         return ResponseEntity.ok().build();
     }
+
+
 }

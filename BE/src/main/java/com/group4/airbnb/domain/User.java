@@ -2,12 +2,11 @@ package com.group4.airbnb.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
-import java.util.ArrayList;
-import java.util.List;
 
-@Getter
+@Getter @Setter @ToString
 public class User {
 
     @Id
