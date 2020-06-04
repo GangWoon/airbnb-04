@@ -44,6 +44,9 @@
                                         <color key="value" name="Color-3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SMq-Tj-J8H"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-Sv-fN4">
                                 <rect key="frame" x="146" y="122" width="122" height="30"/>
@@ -354,6 +357,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="Color"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="0DT-CL-gIh"/>
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7AP-IT-oIn"/>
@@ -368,6 +372,9 @@
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="p9f-Mn-9ls"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="16o-py-FGl" appends="YES" id="Mgd-TW-oMd"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UnU-k4-3yb"/>
                     <connections>
@@ -379,6 +386,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="16o-py-FGl">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="4Oj-Qi-N8B"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-846.37681159420299" y="910.71428571428567"/>
         </scene>

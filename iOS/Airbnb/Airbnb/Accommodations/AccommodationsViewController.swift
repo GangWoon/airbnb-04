@@ -51,6 +51,9 @@ final class AccommodationsViewController: UIViewController {
         present(conditionSettingViewController,
                 animated: true)
     }
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     // MARK: - Methods
     private func fetch(provider: AirbnbNetwork, endpoint: RequestPorviding) {
@@ -193,3 +196,9 @@ extension AccommodationsViewController: UITableViewDelegate {
     }
 }
 
+extension AccommodationsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+}
