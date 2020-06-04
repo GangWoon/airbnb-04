@@ -11,12 +11,22 @@ import Combine
 
 struct ImageManager {
     
-    
     func cache(imageData: Data, name: String) {
                 guard let directory = try? FileManager.default.url(for: .cachesDirectory,
                                                            in: .userDomainMask,
                                                            appropriateFor: nil,
                                                            create: false) as URL else { return }
         try? imageData.write(to: directory.appendingPathComponent(name))
+    }
+    
+    func load(from imageName: String) -> UIImage? {
+        guard let directory = try? FileManager.default.url(for: .cachesDirectory,
+                                                           in: .userDomainMask,
+                                                           appropriateFor: nil,
+                                                           create: false) else { return .none }
+        let path = URL(fileURLWithPath: directory.absoluteString).appendingPathComponent(imageName).path
+        let image = UIImage(contentsOfFile: path)
+        
+        return image
     }
 }
