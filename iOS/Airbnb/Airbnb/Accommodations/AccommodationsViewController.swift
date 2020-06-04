@@ -64,8 +64,28 @@ final class AccommodationsViewController: UIViewController {
     private func bindViewModelToView() {
         dataSource.$accomodations
             .receive(on: RunLoop.main)
-            .sink { _ in self.tableView.reloadData() }
-            .store(in: &subscriptions)
+            .sink {
+                self.tableView.reloadData()
+                self.fetchImages(accommodations: $0)
+        }
+        .store(in: &subscriptions)
+    }
+    
+    private func fetchImages(accommodations: [Accommodations]) {
+        accommodations.forEach {
+            $0.images.forEach {
+                let url = $0
+                AirbnbNetworkImpl().load(from: url)
+                    .sink(receiveCompletion: {
+                        guard case .failure(let error) = $0 else { return }
+                        self.errorAlert(message: error.message)
+                    },
+                          receiveValue: { data in
+                            ImageManager.cache(imageData: data, name: url.filterRegex(#"(.*(\/))"#))
+                    })
+                    .store(in: &subscriptions)
+            }
+        }
     }
     
     private func errorAlert(message: String?) {
