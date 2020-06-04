@@ -63,6 +63,7 @@ final class AccommodationsViewController: UIViewController {
     
     private func bindViewModelToView() {
         dataSource.$accomodations
+            .receive(on: RunLoop.main)
             .sink { _ in self.tableView.reloadData() }
             .store(in: &subscriptions)
     }
