@@ -11,7 +11,7 @@ import Foundation
 struct Accommodations: Codable, Equatable {
     
     var id: Int
-    var images: [URL]
+    var images: [String]
     var name: String
     var badge: Bool
     var roomType: String
