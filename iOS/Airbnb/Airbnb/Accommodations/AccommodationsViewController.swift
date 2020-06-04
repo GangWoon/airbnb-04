@@ -26,7 +26,10 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
+    private var previousCount: Int = .zero
+    private var lock: Bool = true
     @Published var searchWord: String?
+    var isSearching: Bool = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -48,6 +51,9 @@ final class AccommodationsViewController: UIViewController {
         present(conditionSettingViewController,
                 animated: true)
     }
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     // MARK: - Methods
     private func fetch(provider: AirbnbNetwork, endpoint: RequestPorviding) {
@@ -59,8 +65,24 @@ final class AccommodationsViewController: UIViewController {
                 guard case .failure(let error) = $0 else { return }
                 self.errorAlert(message: error.message)
             },
-                  receiveValue: { accomodations in
-                    self.dataSource.accomodations = accomodations
+                  receiveValue: { accommodations in
+                    self.previousCount = self.dataSource.accomodations.count
+                    self.dataSource.accomodations.append(contentsOf: accommodations)
+            })
+            .store(in: &subscriptions)
+    }
+    
+    private func search(provider: AirbnbNetwork, endpoint: RequestPorviding) {
+        provider
+            .request([Accommodations].self,
+                     requestProviding: endpoint)
+            .sink(receiveCompletion: {
+                guard case .failure(let error) = $0 else { return }
+                self.errorAlert(message: error.message)
+            },
+                  receiveValue: { accommodations in
+                    self.previousCount = .zero
+                    self.dataSource.accomodations = accommodations
             })
             .store(in: &subscriptions)
     }
@@ -68,15 +90,29 @@ final class AccommodationsViewController: UIViewController {
     private func bindViewModelToView() {
         dataSource.$accomodations
             .receive(on: RunLoop.main)
-            .sink { accommodations in
-                self.tableView.reloadData()
-                self.fetchImages(accommodations: accommodations)
-        }
-        .store(in: &subscriptions)
+            .sink(receiveValue: { accommodations in
+                guard !self.dataSource.accomodations.isEmpty else {
+                    self.tableView.reloadData()
+                    return
+                }
+                if self.isSearching {
+                    self.tableView.reloadData()
+                } else {
+                    let indexPathArray = (self.previousCount..<self.dataSource.accomodations.count).map { IndexPath(row: $0, section: 1) }
+                    if self.previousCount == 0 {
+                        self.tableView.reloadData()
+                    } else {
+                        self.tableView.insertRows(at: indexPathArray, with: .automatic)
+                    }
+                    self.fetchImages(accommodations: accommodations)
+                    self.lock = true
+                }
+                
+            })
+            .store(in: &subscriptions)
     }
     
     private func fetchImages(accommodations: [Accommodations]) {
-        
         let imagePublishers = accommodations.map { item -> (Accommodations, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
             let publishers = item.images
                 .filter { !ImageManager.fileExist(fileName: $0) }
@@ -119,9 +155,12 @@ final class AccommodationsViewController: UIViewController {
             .removeDuplicates()
             .sink {
                 guard let word = $0 else { return }
-                self.fetch(provider: AirbnbNetworkImpl(),
-                           endpoint: Endpoint(path: .main, queryItems: [.search: word]))
-        }.store(in: &subscriptions)
+                self.isSearching = !word.isEmpty
+                self.search(provider: AirbnbNetworkImpl(),
+                            endpoint: Endpoint(path: .main,
+                                               queryItems: [.search: word]))
+        }
+        .store(in: &subscriptions)
     }
 }
 
@@ -147,5 +186,19 @@ extension AccommodationsViewController: UITableViewDelegate {
         headerView
             .configure(text: "날짜와 인원을 선택하시면 가격별 숙소를 추천해드립니다.")
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.contentOffset.y + scrollView.bounds.size.height > scrollView.contentSize.height + 10.0,
+            lock,
+            !isSearching else { return }
+        lock = false
+        fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main, queryItems: [.offset: "\(dataSource.accomodations.count)"]))
+    }
 }
 
+extension AccommodationsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+}

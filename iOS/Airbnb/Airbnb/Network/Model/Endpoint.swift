@@ -28,11 +28,14 @@ struct Endpoint: RequestPorviding {
     
     enum QueryItem: CustomStringConvertible {
         case search
+        case offset
         
         var description: String {
             switch self {
             case .search:
                 return "search"
+            case .offset:
+                return "offset"
             }
         }
     }
