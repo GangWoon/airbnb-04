@@ -11,7 +11,7 @@ import Combine
 
 struct ImageManager {
     
-    func cache(imageData: Data, name: String) {
+    static func cache(imageData: Data, name: String) {
                 guard let directory = try? FileManager.default.url(for: .cachesDirectory,
                                                            in: .userDomainMask,
                                                            appropriateFor: nil,
@@ -19,7 +19,7 @@ struct ImageManager {
         try? imageData.write(to: directory.appendingPathComponent(name))
     }
     
-    func load(from imageName: String) -> UIImage? {
+    static func load(from imageName: String) -> UIImage? {
         guard let directory = try? FileManager.default.url(for: .cachesDirectory,
                                                            in: .userDomainMask,
                                                            appropriateFor: nil,
