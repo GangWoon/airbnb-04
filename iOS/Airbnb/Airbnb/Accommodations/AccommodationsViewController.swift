@@ -21,16 +21,19 @@ final class AccommodationsViewController: UIViewController {
         }
     }
     @IBOutlet var conditionButtons: [UIButton]!
+    @IBOutlet weak var searchTextField: SearchTextField!
     
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
+    @Published var searchWord: String?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main))
         bindViewModelToView()
+        bindSearchTextField()
     }
     
     @IBAction func showConditionViewController(_ sender: UIButton) {
@@ -98,6 +101,14 @@ final class AccommodationsViewController: UIViewController {
         let cancel = UIAlertAction(title: "Close", style: .cancel)
         alert.addAction(cancel)
         present(alert, animated: true)
+    }
+    
+    private func bindSearchTextField() {
+        searchTextField.notificationPublisher
+            .sink(receiveValue: { notification in
+                guard let textField = notification.object as? UITextField else { return }
+                self.searchWord = textField.text
+            }).store(in: &subscriptions)
     }
 }
 
