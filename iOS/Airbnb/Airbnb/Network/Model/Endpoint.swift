@@ -26,11 +26,35 @@ struct Endpoint: RequestPorviding {
         }
     }
     
+    enum QueryItem: CustomStringConvertible {
+        case search
+        
+        var description: String {
+            switch self {
+            case .search:
+                return "search"
+            }
+        }
+    }
+    
+    init(path: Path, queryItems: [QueryItem: String] = [:]) {
+        self.path = path
+        self.queryItems = queryItems
+    }
+    
     // MARK: - Properties
     private let baseURL: String = "52.78.186.18:8080/api/airbnb"
     let path: Path
     let scheme: String = "http"
+    let queryItems: [QueryItem: String]
     var url: URL? {
-        URL(string: "\(scheme)://\(baseURL)\(path.description)")
+        guard !queryItems.isEmpty else { return URL(string: "\(scheme)://\(baseURL)\(path.description)") }
+        var urlString = "\(scheme)://\(baseURL)\(path.description)?"
+        let queryString = queryItems
+            .map { "\($0)=\($1)"}
+            .joined(separator: "&")
+        urlString.append(queryString)
+        
+        return URL(string: urlString)
     }
 }
