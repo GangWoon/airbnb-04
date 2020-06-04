@@ -12,6 +12,7 @@
 		44480C5A24879BF400D68BEA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44480C5924879BF400D68BEA /* Date.swift */; };
 		444D75C1247E78BD0088523E /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D75C0247E78BD0088523E /* CalendarDataSource.swift */; };
 		446544DA24755685002D84A1 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446544D924755685002D84A1 /* BorderButton.swift */; };
+		446E50EF24893187003C2657 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E50EE24893187003C2657 /* UITextField.swift */; };
 		4472506F247BAF09009D38EA /* AirbnbNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472506E247BAF09009D38EA /* AirbnbNetwork.swift */; };
 		44725071247BB027009D38EA /* AirbnbNetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44725070247BB027009D38EA /* AirbnbNetworkImpl.swift */; };
 		447E2F2E2486477900ED049F /* PersonnelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E2F2D2486477900ED049F /* PersonnelSelectorViewController.swift */; };
@@ -82,6 +83,7 @@
 		44480C5924879BF400D68BEA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		444D75C0247E78BD0088523E /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		446544D924755685002D84A1 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		446E50EE24893187003C2657 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4472506E247BAF09009D38EA /* AirbnbNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetwork.swift; sourceTree = "<group>"; };
 		44725070247BB027009D38EA /* AirbnbNetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbNetworkImpl.swift; sourceTree = "<group>"; };
 		447E2F2D2486477900ED049F /* PersonnelSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelSelectorViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				447E2F36248688EE00ED049F /* NotificationName.swift */,
 				AE0B9AC02488D43000681A5F /* String.swift */,
 				44480C5924879BF400D68BEA /* Date.swift */,
+				446E50EE24893187003C2657 /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				446544DA24755685002D84A1 /* BorderButton.swift in Sources */,
 				447E2F2E2486477900ED049F /* PersonnelSelectorViewController.swift in Sources */,
 				44725071247BB027009D38EA /* AirbnbNetworkImpl.swift in Sources */,
+				446E50EF24893187003C2657 /* UITextField.swift in Sources */,
 				AE1343862476475C0081E1D0 /* AccommodationsCell.swift in Sources */,
 				44F0F0FD247FA49A00B75810 /* AirbnbMockNetworkFailImpl.swift in Sources */,
 				AE134384247646CE0081E1D0 /* AccommodationsViewController.swift in Sources */,

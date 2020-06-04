@@ -21,16 +21,20 @@ final class AccommodationsViewController: UIViewController {
         }
     }
     @IBOutlet var conditionButtons: [UIButton]!
+    @IBOutlet weak var searchTextField: SearchTextField!
     
     // MARK: - Properties
     private var dataSource: AccommodationsDataSource = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
+    @Published var searchWord: String?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main))
         bindViewModelToView()
+        bindSearchTextField()
+        bindSearchRequest()
     }
     
     @IBAction func showConditionViewController(_ sender: UIButton) {
@@ -73,18 +77,19 @@ final class AccommodationsViewController: UIViewController {
     
     private func fetchImages(accommodations: [Accommodations]) {
         
-        let imagePublishers = accommodations.map { item -> (Int, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
+        let imagePublishers = accommodations.map { item -> (Accommodations, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
             let publishers = item.images
                 .filter { !ImageManager.fileExist(fileName: $0) }
                 .map { AirbnbNetworkImpl().load(from: $0) }
-            return (item.id, publishers)
+            return (item, publishers)
         }
         
-        imagePublishers.forEach { id, publishers in
+        imagePublishers.forEach { item, publishers in
             Publishers.MergeMany(publishers)
-                .receive(on: RunLoop.main)
+                .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { _ in
-                    self.tableView.reloadRows(at: [IndexPath(item: id - 1, section: 1)],
+                    guard let index = accommodations.firstIndex(of: item) else { return }
+                    self.tableView.reloadRows(at: [IndexPath(item: index, section: 1)],
                                               with: .automatic)
                 }) { url, data in
                     ImageManager.cache(imageData: data,
@@ -98,6 +103,25 @@ final class AccommodationsViewController: UIViewController {
         let cancel = UIAlertAction(title: "Close", style: .cancel)
         alert.addAction(cancel)
         present(alert, animated: true)
+    }
+    
+    private func bindSearchTextField() {
+        searchTextField.notificationPublisher
+            .sink(receiveValue: { notification in
+                guard let textField = notification.object as? UITextField else { return }
+                self.searchWord = textField.text
+            }).store(in: &subscriptions)
+    }
+    
+    private func bindSearchRequest() {
+        $searchWord
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink {
+                guard let word = $0 else { return }
+                self.fetch(provider: AirbnbNetworkImpl(),
+                           endpoint: Endpoint(path: .main, queryItems: [.search: word]))
+        }.store(in: &subscriptions)
     }
 }
 

@@ -371,6 +371,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="숙소" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UnU-k4-3yb"/>
                     <connections>
+                        <outlet property="searchTextField" destination="OSx-Vn-QPP" id="Iv6-zO-jZV"/>
                         <outlet property="tableView" destination="rZ3-kf-nfJ" id="ZFD-pT-Ynn"/>
                         <outletCollection property="conditionButtons" destination="MjR-nt-m6a" collectionClass="NSMutableArray" id="NtY-q8-RoS"/>
                         <outletCollection property="conditionButtons" destination="ZJd-iJ-E4M" collectionClass="NSMutableArray" id="UGg-JN-0zp"/>
