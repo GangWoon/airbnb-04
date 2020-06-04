@@ -23,14 +23,16 @@ struct AirbnbMockNetworkSuccessImpl: AirbnbNetwork {
     func request<T>(_ type: T.Type, requestProviding: RequestPorviding) -> AnyPublisher<T, AirbnbNetworkError>
         where T : Decodable {
             let accommodations = Accommodations(id: 1,
-                                                images: ["1", "2", "3"],
+                                                images: [],
                                                 name: "좋은 집",
-                                                badge: "SUPERHOST",
+                                                badge: true,
                                                 roomType: "Entire apartment",
-                                                bedroomCount: "4",
+                                                bedRoomCount: 4,
                                                 rate: 4.99,
                                                 reviewCount: 400,
-                                                favorite: true)
+                                                favorite: true,
+                                                latitude: 123.456,
+                                                longitude: 99.99)
             let result = Array(repeating: accommodations, count: 100) as! T
             
             return Future { promise in

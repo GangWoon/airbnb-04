@@ -21,20 +21,16 @@ struct Endpoint: RequestPorviding {
         var description: String {
             switch self {
             case .main:
-                return "/main"
+                return "/houses"
             }
         }
     }
     
     // MARK: - Properties
-    private let baseURL: String = "api/airbnb"
+    private let baseURL: String = "52.78.186.18:8080/api/airbnb"
     let path: Path
+    let scheme: String = "http"
     var url: URL? {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = baseURL
-        components.path = path.description
-        
-        return components.url
+        URL(string: "\(scheme)://\(baseURL)\(path.description)")
     }
 }

@@ -31,6 +31,7 @@ final class AccommodationsCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         scrollView.resetThumbnails()
+        pageControl.currentPage = 0
     }
     
     // MARK: - IBActions
@@ -52,16 +53,17 @@ final class AccommodationsCell: UITableViewCell {
     // MARK: - Methods
     private func configurePageControl() {
         pageControl.currentPage = 0
-        pageControl.numberOfPages = 3
     }
     
     func apply(with viewModel: AccommodationsCellViewModel) {
+        scrollView.resetThumbnails()
+        pageControl.numberOfPages = viewModel.images.count
         accommodationsInfoView.apply(badge: viewModel.badge,
                                      roomType: viewModel.roomType,
                                      rate: viewModel.rate,
                                      title: viewModel.title)
         viewModel.images.forEach {
-            scrollView.addThumbnail(image: $0)
+            self.scrollView.addThumbnail(image: $0)
         }
         favoritesButton.isSelected = viewModel.isFavorite
     }

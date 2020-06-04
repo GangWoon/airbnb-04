@@ -29,7 +29,7 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetch(provider: AirbnbMockNetworkSuccessImpl())
+        fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main))
         bindViewModelToView()
     }
     
@@ -46,10 +46,10 @@ final class AccommodationsViewController: UIViewController {
     }
     
     // MARK: - Methods
-    private func fetch(provider: AirbnbNetwork) {
+    private func fetch(provider: AirbnbNetwork, endpoint: RequestPorviding) {
         provider
             .request([Accommodations].self,
-                     requestProviding: Endpoint(path: .main))
+                     requestProviding: endpoint)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: {
                 guard case .failure(let error) = $0 else { return }
@@ -58,13 +58,39 @@ final class AccommodationsViewController: UIViewController {
                   receiveValue: { accomodations in
                     self.dataSource.accomodations = accomodations
             })
-            .cancel()
+            .store(in: &subscriptions)
     }
     
     private func bindViewModelToView() {
         dataSource.$accomodations
-            .sink { _ in self.tableView.reloadData() }
-            .store(in: &subscriptions)
+            .receive(on: RunLoop.main)
+            .sink { accommodations in
+                self.tableView.reloadData()
+                self.fetchImages(accommodations: accommodations)
+        }
+        .store(in: &subscriptions)
+    }
+    
+    private func fetchImages(accommodations: [Accommodations]) {
+        
+        let imagePublishers = accommodations.map { item -> (Int, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
+            let publishers = item.images
+                .filter { !ImageManager.fileExist(fileName: $0) }
+                .map { AirbnbNetworkImpl().load(from: $0) }
+            return (item.id, publishers)
+        }
+        
+        imagePublishers.forEach { id, publishers in
+            Publishers.MergeMany(publishers)
+                .receive(on: RunLoop.main)
+                .sink(receiveCompletion: { _ in
+                    self.tableView.reloadRows(at: [IndexPath(item: id - 1, section: 1)],
+                                              with: .automatic)
+                }) { url, data in
+                    ImageManager.cache(imageData: data,
+                                       urlString: url)
+            }.store(in: &subscriptions)
+        }
     }
     
     private func errorAlert(message: String?) {
