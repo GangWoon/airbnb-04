@@ -31,6 +31,7 @@ final class AccommodationsCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         scrollView.resetThumbnails()
+        pageControl.currentPage = 0
     }
     
     // MARK: - IBActions
@@ -55,7 +56,8 @@ final class AccommodationsCell: UITableViewCell {
     }
     
     func apply(with viewModel: AccommodationsCellViewModel) {
-        pageControl.numberOfPages = 5
+        scrollView.resetThumbnails()
+        pageControl.numberOfPages = viewModel.images.count
         accommodationsInfoView.apply(badge: viewModel.badge,
                                      roomType: viewModel.roomType,
                                      rate: viewModel.rate,

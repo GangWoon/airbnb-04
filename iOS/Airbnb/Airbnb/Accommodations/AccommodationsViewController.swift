@@ -72,25 +72,22 @@ final class AccommodationsViewController: UIViewController {
     }
     
     private func fetchImages(accommodations: [Accommodations]) {
-        accommodations.forEach { accommodations in
-            accommodations.images.forEach { url in
-                AirbnbNetworkImpl().load(from: url)
-                    .sink(receiveCompletion: {
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                        guard case .failure(let error) = $0 else { return }
-                        self.errorAlert(message: error.message)
-                    },
-                          receiveValue: { data in
-                            let name = url.filterRegex(.imageName)
-                                .replacingOccurrences(of: "?aki_policy=large",
-                                                      with: "")
-                            ImageManager.cache(imageData: data,
-                                               name: name)
-                    })
-                    .store(in: &subscriptions)
-            }
+        
+        let imagePublishers = accommodations.map { item -> (Int, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
+            let publishers = item.images.map { url in AirbnbNetworkImpl().load(from: url) }
+            return (item.id, publishers)
+        }
+        
+        imagePublishers.forEach { id, publishers in
+            Publishers.MergeMany(publishers)
+                .receive(on: RunLoop.main)
+                .sink(receiveCompletion: { _ in
+                    self.tableView.reloadRows(at: [IndexPath(item: id - 1, section: 1)],
+                                              with: .automatic)
+                }) { url, data in
+                    ImageManager.cache(imageData: data,
+                                       name: url)
+            }.store(in: &subscriptions)
         }
     }
     
