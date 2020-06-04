@@ -32,10 +32,7 @@ final class AccommodationsDataSource: NSObject, UITableViewDataSource {
         let item = accomodations[indexPath.row]
         let viewModel = AccommodationsCellViewModel(accommodations: item)
         item.images.forEach { url in
-            let name = url.filterRegex(.imageName)
-                .replacingOccurrences(of: "?aki_policy=large",
-                                      with: "")
-            guard let image = ImageManager.load(from: name) else { return }
+            guard let image = ImageManager.load(from: url) else { return }
             viewModel.images.append(image)
         }
         DispatchQueue.main.async {

@@ -74,7 +74,9 @@ final class AccommodationsViewController: UIViewController {
     private func fetchImages(accommodations: [Accommodations]) {
         
         let imagePublishers = accommodations.map { item -> (Int, [AnyPublisher<(String, Data), AirbnbNetworkError>] )in
-            let publishers = item.images.map { url in AirbnbNetworkImpl().load(from: url) }
+            let publishers = item.images
+                .filter { !ImageManager.fileExist(fileName: $0) }
+                .map { AirbnbNetworkImpl().load(from: $0) }
             return (item.id, publishers)
         }
         
@@ -86,7 +88,7 @@ final class AccommodationsViewController: UIViewController {
                                               with: .automatic)
                 }) { url, data in
                     ImageManager.cache(imageData: data,
-                                       name: url)
+                                       urlString: url)
             }.store(in: &subscriptions)
         }
     }
