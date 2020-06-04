@@ -33,6 +33,10 @@ class ConditionSettingViewController: UIViewController {
     private func configureDimmedView() {
         dimmedView = UIView()
         dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+        let recognizer = UITapGestureRecognizer()
+        recognizer.addTarget(self,
+                             action: #selector(dismissViewController))
+        dimmedView.addGestureRecognizer(recognizer)
         view.addSubview(dimmedView)
     }
     
@@ -44,7 +48,7 @@ class ConditionSettingViewController: UIViewController {
     private func configureDismissButton() {
         interfaceView.dismissButton
             .addTarget(self,
-                       action: #selector(dismissButtonTapped(_:)),
+                       action: #selector(dismissViewController),
                        for: .touchUpInside)
     }
     
@@ -67,7 +71,7 @@ class ConditionSettingViewController: UIViewController {
     }
     
     // MARK: Objc
-    @objc private func dismissButtonTapped(_ sender: UIButton) {
+    @objc private func dismissViewController() {
         dismiss(animated: true)
     }
 }
