@@ -354,6 +354,9 @@
                                         <size key="value" width="2" height="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="zLm-KC-O4P" kind="show" id="Wqn-6m-7pz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="Color"/>
@@ -393,6 +396,36 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-846.37681159420299" y="910.71428571428567"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Yle-Dg-VFY">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="zLm-KC-O4P" customClass="MapViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R8i-jL-g82">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-N6-jCZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mge-N6-jCZ" firstAttribute="top" secondItem="fa7-QJ-vFn" secondAttribute="top" id="EeK-Bg-hz8"/>
+                            <constraint firstItem="Mge-N6-jCZ" firstAttribute="leading" secondItem="fa7-QJ-vFn" secondAttribute="leading" id="Jre-5q-q2V"/>
+                            <constraint firstItem="fa7-QJ-vFn" firstAttribute="bottom" secondItem="Mge-N6-jCZ" secondAttribute="bottom" id="XVH-Us-GvS"/>
+                            <constraint firstItem="fa7-QJ-vFn" firstAttribute="trailing" secondItem="Mge-N6-jCZ" secondAttribute="trailing" id="h8O-Sy-T2r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fa7-QJ-vFn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bgq-X0-mU5"/>
+                    <connections>
+                        <outlet property="mapView" destination="Mge-N6-jCZ" id="JbK-xR-JZH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWz-hm-jEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-846" y="1621"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="u3m-nN-FcU">
