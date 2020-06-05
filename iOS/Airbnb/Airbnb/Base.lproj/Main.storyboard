@@ -355,7 +355,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="zLm-KC-O4P" kind="show" id="Wqn-6m-7pz"/>
+                                    <action selector="presentMapViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plb-Ol-zub"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,7 +400,7 @@
         <!--Map View Controller-->
         <scene sceneID="Yle-Dg-VFY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="zLm-KC-O4P" customClass="MapViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" modalPresentationStyle="fullScreen" id="zLm-KC-O4P" customClass="MapViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R8i-jL-g82">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

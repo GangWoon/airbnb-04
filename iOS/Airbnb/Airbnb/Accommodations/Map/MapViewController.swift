@@ -12,7 +12,16 @@ import MapKit
 class MapViewController: UIViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!{
+        didSet {
+            let coordinate = MKCoordinateRegion(center: centerLocation!, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(coordinate, animated: true)
+        }
+    }
+    
+    //MARK: - Properties
+    static let identifier: String = "MapViewController"
+    private var centerLocation: CLLocationCoordinate2D?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -22,5 +31,10 @@ class MapViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func dismissViewController(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    // MARK: - Methods
+    func updateCenterLocation(_ location: (Double, Double)) {
+        centerLocation = CLLocationCoordinate2D(latitude: location.0, longitude: location.1)
     }
 }

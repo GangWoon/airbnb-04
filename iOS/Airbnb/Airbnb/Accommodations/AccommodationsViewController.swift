@@ -52,8 +52,15 @@ final class AccommodationsViewController: UIViewController {
         present(conditionSettingViewController,
                 animated: true)
     }
+    
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    @IBAction func presentMapViewController(_ sender: UIButton) {
+        guard let mapViewController = storyboard?.instantiateViewController(identifier: MapViewController.identifier) as? MapViewController else { return }
+        mapViewController.updateCenterLocation(location)
+        present(mapViewController, animated: true)
     }
     
     // MARK: - Methods
