@@ -49,10 +49,10 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-Sv-fN4">
-                                <rect key="frame" x="146" y="122" width="122" height="30"/>
+                                <rect key="frame" x="116" y="122" width="182" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjR-nt-m6a" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                         <color key="backgroundColor" name="Color-2"/>
                                         <state key="normal" title="날짜">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-iJ-E4M" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="46" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="66" y="0.0" width="50" height="30"/>
                                         <color key="backgroundColor" name="Color-2"/>
                                         <state key="normal" title="인원">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,7 +112,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov6-mJ-Bo3" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="92" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="132" y="0.0" width="50" height="30"/>
                                         <color key="backgroundColor" name="Color-2"/>
                                         <state key="normal" title="가격">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,7 +163,7 @@
                                                             <rect key="frame" x="20" y="220" width="334" height="142"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="8" width="70.5" height="13.5"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -185,19 +185,19 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire apartment ・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpP-Ef-xuY">
-                                                                    <rect key="frame" x="78.5" y="9" width="120" height="12"/>
+                                                                    <rect key="frame" x="88.5" y="10" width="120" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="✭ 4.83 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKN-oP-FH4">
-                                                                    <rect key="frame" x="260" y="7.5" width="74" height="14.5"/>
+                                                                    <rect key="frame" x="260" y="8.5" width="74" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                                    <rect key="frame" x="0.0" y="25" width="334" height="117"/>
+                                                                    <rect key="frame" x="0.0" y="26" width="334" height="116"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -408,13 +408,29 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-N6-jCZ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-RD-MNN">
+                                <rect key="frame" x="16" y="60" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JYF-RD-MNN" secondAttribute="height" multiplier="1:1" id="HIa-Uv-0tI"/>
+                                    <constraint firstAttribute="width" constant="32" id="Y2W-Ws-rGA"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissViewController:" destination="zLm-KC-O4P" eventType="touchUpInside" id="M6c-gP-Qsr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="JYF-RD-MNN" firstAttribute="top" secondItem="fa7-QJ-vFn" secondAttribute="top" constant="16" id="ARB-bc-tQx"/>
                             <constraint firstItem="Mge-N6-jCZ" firstAttribute="top" secondItem="fa7-QJ-vFn" secondAttribute="top" id="EeK-Bg-hz8"/>
                             <constraint firstItem="Mge-N6-jCZ" firstAttribute="leading" secondItem="fa7-QJ-vFn" secondAttribute="leading" id="Jre-5q-q2V"/>
                             <constraint firstItem="fa7-QJ-vFn" firstAttribute="bottom" secondItem="Mge-N6-jCZ" secondAttribute="bottom" id="XVH-Us-GvS"/>
                             <constraint firstItem="fa7-QJ-vFn" firstAttribute="trailing" secondItem="Mge-N6-jCZ" secondAttribute="trailing" id="h8O-Sy-T2r"/>
+                            <constraint firstItem="JYF-RD-MNN" firstAttribute="leading" secondItem="fa7-QJ-vFn" secondAttribute="leading" constant="16" id="riY-Yt-bjD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fa7-QJ-vFn"/>
                     </view>
@@ -425,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWz-hm-jEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="1621"/>
+            <point key="canvasLocation" x="-846.37681159420299" y="1620.5357142857142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="u3m-nN-FcU">
@@ -488,6 +504,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Color">
             <color red="0.9570000171661377" green="0.93300002813339233" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
