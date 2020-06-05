@@ -29,6 +29,7 @@ final class AccommodationsViewController: UIViewController {
     private var previousCount: Int = .zero
     private var lock: Bool = true
     @Published var searchWord: String?
+    var location: (Double, Double) = (0, 0)
     var isSearching: Bool = false
     
     // MARK: - Lifecycle
@@ -66,6 +67,9 @@ final class AccommodationsViewController: UIViewController {
                 self.errorAlert(message: error.message)
             },
                   receiveValue: { accommodations in
+                    if self.location == (0, 0) {
+                        self.location = (accommodations.first!.latitude, accommodations.first!.longitude)
+                    }
                     self.previousCount = self.dataSource.accomodations.count
                     self.dataSource.accomodations.append(contentsOf: accommodations)
             })
@@ -188,6 +192,10 @@ extension AccommodationsViewController: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let tableView = scrollView as! UITableView
+        let indexPath = tableView.indexPathsForVisibleRows?.first
+        location = (dataSource.accomodations[indexPath!.row].latitude, dataSource.accomodations[indexPath!.row].longitude)
+
         guard scrollView.contentOffset.y + scrollView.bounds.size.height > scrollView.contentSize.height + 10.0,
             lock,
             !isSearching else { return }
