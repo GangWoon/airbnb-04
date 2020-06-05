@@ -35,6 +35,7 @@ final class AccommodationsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchTextField()
         fetch(provider: AirbnbNetworkImpl(), endpoint: Endpoint(path: .main))
         bindViewModelToView()
         bindSearchTextField()
@@ -173,6 +174,13 @@ final class AccommodationsViewController: UIViewController {
                                                queryItems: [.search: word]))
         }
         .store(in: &subscriptions)
+    }
+    
+    private func configureSearchTextField() {
+        let centeredParagraphStyle = NSMutableParagraphStyle()
+        centeredParagraphStyle.alignment = .center
+        let attributedPlaceholder = NSAttributedString(string: "어디로 여행가세요?", attributes: [NSAttributedString.Key.paragraphStyle: centeredParagraphStyle])
+        searchTextField.attributedPlaceholder = attributedPlaceholder
     }
 }
 
