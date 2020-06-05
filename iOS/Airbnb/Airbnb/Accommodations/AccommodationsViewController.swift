@@ -137,7 +137,8 @@ final class AccommodationsViewController: UIViewController {
             Publishers.MergeMany(publishers)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { _ in
-                    guard let index = accommodations.firstIndex(of: item) else { return }
+                    guard let index = accommodations.firstIndex(of: item),
+                        index > self.previousCount - 1 else { return }
                     self.tableView.reloadRows(at: [IndexPath(item: index, section: 1)],
                                               with: .automatic)
                 }) { url, data in
