@@ -14,6 +14,8 @@ final class AccommodationsCell: UITableViewCell {
     @IBOutlet weak var scrollView: ThumbnailScrollView! {
         didSet {
             scrollView.delegate = self
+            scrollView.layer.masksToBounds = true
+            scrollView.layer.cornerRadius = 8
         }
     }
     @IBOutlet weak var pageControl: UIPageControl! {

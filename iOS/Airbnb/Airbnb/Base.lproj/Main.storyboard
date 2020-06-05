@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,31 +16,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSx-Vn-QPP" customClass="SearchTextField" customModule="Airbnb" customModuleProvider="target">
-                                <rect key="frame" x="24" y="76" width="366" height="30"/>
+                                <rect key="frame" x="24" y="76" width="366" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ffB-gD-Uo8"/>
+                                    <constraint firstAttribute="height" constant="40" id="ffB-gD-Uo8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="2" height="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="value" width="0.0" height="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="7.5"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" name="Color-3"/>
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -49,32 +45,38 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-Sv-fN4">
-                                <rect key="frame" x="116" y="122" width="182" height="30"/>
+                                <rect key="frame" x="113" y="132" width="188" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjR-nt-m6a" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
-                                        <color key="backgroundColor" name="Color-2"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="날짜">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.69999999999999996"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="2" height="5"/>
+                                                <size key="value" width="0.0" height="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingWidth">
-                                                <real key="value" value="20"/>
+                                                <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" name="Color-3"/>
+                                                <color key="value" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingHeight">
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -82,29 +84,35 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-iJ-E4M" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="66" y="0.0" width="50" height="30"/>
-                                        <color key="backgroundColor" name="Color-2"/>
+                                        <rect key="frame" x="68" y="0.0" width="52" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="인원">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.69999999999999996"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="2" height="5"/>
+                                                <size key="value" width="0.0" height="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingWidth">
-                                                <real key="value" value="20"/>
+                                                <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" name="Color-3"/>
+                                                <color key="value" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingHeight">
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -112,30 +120,36 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov6-mJ-Bo3" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="0.0" width="50" height="30"/>
-                                        <color key="backgroundColor" name="Color-2"/>
+                                        <rect key="frame" x="136" y="0.0" width="52" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="가격">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.69999999999999996"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="2" height="5"/>
+                                                <size key="value" width="0.0" height="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingWidth">
-                                                <real key="value" value="20"/>
+                                                <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" name="Color-3"/>
+                                                <color key="value" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingHeight">
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -145,25 +159,24 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rZ3-kf-nfJ">
-                                <rect key="frame" x="12" y="176" width="390" height="637"/>
-                                <color key="backgroundColor" name="Color"/>
-                                <color key="separatorColor" name="Color"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="624"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AccommodationsCell" rowHeight="390" id="edH-pV-TOT" customClass="AccommodationsCell" customModule="Airbnb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="390"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="390"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edH-pV-TOT" id="Kc9-dW-JLm">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-Zk-7Y7" customClass="ShadowView" customModule="Airbnb" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="374" height="374"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-oz-fu5" customClass="AccommodationsInfoView" customModule="Airbnb" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="220" width="334" height="142"/>
+                                                            <rect key="frame" x="20" y="240" width="374" height="138"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SUPERHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="8" width="80.5" height="15.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-h2-EAA" customClass="BorderLabel" customModule="Airbnb" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="8" width="13" height="15.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -184,20 +197,20 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire apartment ・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpP-Ef-xuY">
-                                                                    <rect key="frame" x="88.5" y="10" width="120" height="12"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpP-Ef-xuY">
+                                                                    <rect key="frame" x="21" y="10" width="3" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="✭ 4.83 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKN-oP-FH4">
-                                                                    <rect key="frame" x="260" y="8.5" width="74" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKN-oP-FH4">
+                                                                    <rect key="frame" x="370.5" y="8.5" width="3.5" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해운대/ 펜트하우스/더탑플로어/Hauendae/PentHouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
-                                                                    <rect key="frame" x="0.0" y="26" width="334" height="116"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-NC-J1O">
+                                                                    <rect key="frame" x="0.0" y="26" width="374" height="112"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -225,13 +238,13 @@
                                                             </connections>
                                                         </view>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06v-2l-ZZF" customClass="ThumbnailScrollView" customModule="Airbnb" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="20" width="334" height="200"/>
+                                                            <rect key="frame" x="20" y="20" width="374" height="220"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-dn-H87">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="220"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-UM-tIC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="220"/>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -249,7 +262,7 @@
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="leading" secondItem="a69-hh-OPm" secondAttribute="leading" id="Cte-HG-6o5"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="height" secondItem="sAn-Ww-ZLO" secondAttribute="height" id="H1K-c7-mG2"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="trailing" secondItem="a69-hh-OPm" secondAttribute="trailing" id="Klg-08-sbA"/>
-                                                                <constraint firstAttribute="height" constant="200" id="VTz-CL-Wh1"/>
+                                                                <constraint firstAttribute="height" constant="220" id="VTz-CL-Wh1"/>
                                                                 <constraint firstItem="t6P-dn-H87" firstAttribute="bottom" secondItem="a69-hh-OPm" secondAttribute="bottom" id="gXY-En-ReS"/>
                                                             </constraints>
                                                             <viewLayoutGuide key="contentLayoutGuide" id="a69-hh-OPm"/>
@@ -259,20 +272,35 @@
                                                             </connections>
                                                         </scrollView>
                                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-33-Pdo">
-                                                            <rect key="frame" x="167.5" y="183" width="39" height="37"/>
+                                                            <rect key="frame" x="187.5" y="203" width="39" height="37"/>
                                                             <connections>
                                                                 <action selector="moveToPage:" destination="edH-pV-TOT" eventType="valueChanged" id="6Hu-uG-TOu"/>
                                                             </connections>
                                                         </pageControl>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elz-VG-pF2">
-                                                            <rect key="frame" x="322" y="20" width="32" height="32"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elz-VG-pF2" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
+                                                            <rect key="frame" x="354" y="28" width="32" height="32"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="gLp-5a-Jbm"/>
                                                                 <constraint firstAttribute="height" constant="32" id="pUQ-fH-fLQ"/>
                                                             </constraints>
-                                                            <color key="tintColor" name="Color-3"/>
+                                                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="heart" catalog="system"/>
                                                             <state key="selected" image="heart.fill" catalog="system"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="0.29999999999999999"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                    <size key="value" width="0.0" height="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="buttonTouched:" destination="edH-pV-TOT" eventType="touchUpInside" id="3bL-R3-xnK"/>
                                                             </connections>
@@ -282,7 +310,7 @@
                                                     <constraints>
                                                         <constraint firstItem="32Q-33-Pdo" firstAttribute="centerX" secondItem="06v-2l-ZZF" secondAttribute="centerX" id="33v-5s-gkI"/>
                                                         <constraint firstAttribute="trailing" secondItem="06v-2l-ZZF" secondAttribute="trailing" constant="20" id="4PP-WK-PxD"/>
-                                                        <constraint firstItem="elz-VG-pF2" firstAttribute="trailing" secondItem="06v-2l-ZZF" secondAttribute="trailing" id="4hV-eg-YFR"/>
+                                                        <constraint firstItem="elz-VG-pF2" firstAttribute="trailing" secondItem="06v-2l-ZZF" secondAttribute="trailing" constant="-8" id="4hV-eg-YFR"/>
                                                         <constraint firstItem="32Q-33-Pdo" firstAttribute="bottom" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="7MT-1g-dFs"/>
                                                         <constraint firstItem="51g-oz-fu5" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="bottom" id="D2C-bk-Qvk"/>
                                                         <constraint firstItem="51g-oz-fu5" firstAttribute="leading" secondItem="sa5-Zk-7Y7" secondAttribute="leading" constant="20" id="E4W-Lz-pIU"/>
@@ -290,35 +318,34 @@
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="leading" secondItem="sa5-Zk-7Y7" secondAttribute="leading" constant="20" id="SVP-Nw-n9r"/>
                                                         <constraint firstAttribute="trailing" secondItem="51g-oz-fu5" secondAttribute="trailing" constant="20" id="Y3G-cN-LMR"/>
                                                         <constraint firstItem="06v-2l-ZZF" firstAttribute="top" secondItem="sa5-Zk-7Y7" secondAttribute="top" constant="20" id="apo-95-5rE"/>
-                                                        <constraint firstItem="elz-VG-pF2" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="top" id="qyz-EK-cK3"/>
+                                                        <constraint firstItem="elz-VG-pF2" firstAttribute="top" secondItem="06v-2l-ZZF" secondAttribute="top" constant="8" id="qyz-EK-cK3"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                            <size key="value" width="5" height="2"/>
+                                                            <size key="value" width="0.0" height="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.5"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="15"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                             <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="sa5-Zk-7Y7" secondAttribute="bottom" constant="8" id="44x-6k-ZCQ"/>
-                                                <constraint firstItem="sa5-Zk-7Y7" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" constant="8" id="6GX-rE-uGt"/>
-                                                <constraint firstAttribute="trailing" secondItem="sa5-Zk-7Y7" secondAttribute="trailing" constant="8" id="6qn-Gi-1Pe"/>
-                                                <constraint firstItem="sa5-Zk-7Y7" firstAttribute="top" secondItem="Kc9-dW-JLm" secondAttribute="top" constant="8" id="L10-KQ-hES"/>
+                                                <constraint firstAttribute="bottom" secondItem="sa5-Zk-7Y7" secondAttribute="bottom" id="44x-6k-ZCQ"/>
+                                                <constraint firstItem="sa5-Zk-7Y7" firstAttribute="leading" secondItem="Kc9-dW-JLm" secondAttribute="leading" id="6GX-rE-uGt"/>
+                                                <constraint firstAttribute="trailing" secondItem="sa5-Zk-7Y7" secondAttribute="trailing" id="6qn-Gi-1Pe"/>
+                                                <constraint firstItem="sa5-Zk-7Y7" firstAttribute="top" secondItem="Kc9-dW-JLm" secondAttribute="top" id="L10-KQ-hES"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" name="Color"/>
                                         <connections>
                                             <outlet property="accommodationsInfoView" destination="51g-oz-fu5" id="yff-eQ-tu7"/>
                                             <outlet property="favoritesButton" destination="elz-VG-pF2" id="Vkm-nq-Wb3"/>
@@ -332,26 +359,27 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8h-4x-PHp" customClass="BorderButton" customModule="Airbnb" customModuleProvider="target">
-                                <rect key="frame" x="354" y="753" width="48" height="48"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="167" y="761" width="80" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="uHD-LD-bbB"/>
-                                    <constraint firstAttribute="height" constant="48" id="zh2-PC-3w8"/>
+                                    <constraint firstAttribute="width" constant="80" id="uHD-LD-bbB"/>
+                                    <constraint firstAttribute="height" constant="40" id="zh2-PC-3w8"/>
                                 </constraints>
-                                <color key="tintColor" name="Color-3"/>
-                                <state key="normal" image="location.fill" catalog="system"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="지도" image="map" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="24"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="2" height="5"/>
+                                        <size key="value" width="0.0" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -359,17 +387,17 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="Color"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="0DT-CL-gIh"/>
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7AP-IT-oIn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O8h-4x-PHp" secondAttribute="bottom" constant="12" id="7S2-Dh-FgP"/>
                             <constraint firstItem="mvG-Sv-fN4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Apk-BC-9Yp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O8h-4x-PHp" secondAttribute="trailing" constant="12" id="KNH-dG-dT0"/>
-                            <constraint firstItem="rZ3-kf-nfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="Mtm-kg-hYM"/>
+                            <constraint firstItem="rZ3-kf-nfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mtm-kg-hYM"/>
                             <constraint firstItem="rZ3-kf-nfJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P6n-fC-NHP"/>
                             <constraint firstItem="mvG-Sv-fN4" firstAttribute="top" secondItem="OSx-Vn-QPP" secondAttribute="bottom" constant="16" id="Qx6-XN-1Nd"/>
+                            <constraint firstItem="O8h-4x-PHp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wwt-eg-eyF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rZ3-kf-nfJ" secondAttribute="bottom" id="lLh-9m-vin"/>
                             <constraint firstItem="rZ3-kf-nfJ" firstAttribute="top" secondItem="mvG-Sv-fN4" secondAttribute="bottom" constant="24" id="m0w-Db-aUf"/>
                             <constraint firstItem="OSx-Vn-QPP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="p9f-Mn-9ls"/>
@@ -451,8 +479,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CE8-JE-BQX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Color"/>
-                        <color key="selectedImageTintColor" name="Color-3"/>
+                        <color key="selectedImageTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3VF-ri-e5K"/>
@@ -500,19 +527,10 @@
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <namedColor name="Color">
-            <color red="0.9570000171661377" green="0.93300002813339233" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Color-2">
-            <color red="0.65100002288818359" green="0.6940000057220459" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Color-3">
-            <color red="0.25900000333786011" green="0.28200000524520874" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

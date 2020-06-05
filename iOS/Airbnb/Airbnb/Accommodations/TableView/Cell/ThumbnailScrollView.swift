@@ -19,6 +19,8 @@ final class ThumbnailScrollView: UIScrollView {
             let imageView = UIImageView()
             imageView.image = image
             imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 8
             return imageView
         }()
         contentView.addArrangedSubview(imageView)
