@@ -56,6 +56,7 @@
 		AE46E8DE247E2D2A00914CEB /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */; };
 		AE46E8E0247E503C00914CEB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46E8DF247E503C00914CEB /* CalendarView.swift */; };
 		AEAEA923248982E0005F4582 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAEA922248982E0005F4582 /* MapViewController.swift */; };
+		AEAEA9262489F385005F4582 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAEA9252489F385005F4582 /* MapAnnotation.swift */; };
 		AEB5CB592477A30F009AD1E2 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB5CB582477A30F009AD1E2 /* Color.xcassets */; };
 		AEDAB0D924867BAF00D5970F /* AgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDAB0D824867BAF00D5970F /* AgeGroup.swift */; };
 		AEE36F17247BC6880063821D /* AccommodationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */; };
@@ -134,6 +135,7 @@
 		AE46E8DD247E2D2A00914CEB /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		AE46E8DF247E503C00914CEB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		AEAEA922248982E0005F4582 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AEAEA9252489F385005F4582 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		AEB5CB582477A30F009AD1E2 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		AEDAB0D824867BAF00D5970F /* AgeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroup.swift; sourceTree = "<group>"; };
 		AEE36F16247BC6880063821D /* AccommodationsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccommodationsInfoView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				AEAEA922248982E0005F4582 /* MapViewController.swift */,
+				AEAEA9252489F385005F4582 /* MapAnnotation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				447E2F322486486F00ED049F /* DetailSelectionView.swift in Sources */,
 				AE46E8D9247D46E900914CEB /* DatePickerView.swift in Sources */,
 				442028342480E48F00B3DF42 /* Month.swift in Sources */,
+				AEAEA9262489F385005F4582 /* MapAnnotation.swift in Sources */,
 				449F2CE8247E403D0036214A /* WeekDayView.swift in Sources */,
 				AE1910722480D542003EE161 /* WeekDays.swift in Sources */,
 				AE19100F247E5694003EE161 /* Dependencies.swift in Sources */,

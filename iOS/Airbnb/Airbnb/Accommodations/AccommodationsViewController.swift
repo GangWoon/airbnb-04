@@ -60,6 +60,7 @@ final class AccommodationsViewController: UIViewController {
     @IBAction func presentMapViewController(_ sender: UIButton) {
         guard let mapViewController = storyboard?.instantiateViewController(identifier: MapViewController.identifier) as? MapViewController else { return }
         mapViewController.updateCenterLocation(location)
+        mapViewController.accommodations = dataSource.accomodations
         present(mapViewController, animated: true)
     }
     
