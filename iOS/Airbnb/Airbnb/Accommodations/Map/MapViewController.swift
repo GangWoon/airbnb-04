@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         setCenterLocation()
         addAnnotations()
     }
@@ -45,8 +46,41 @@ class MapViewController: UIViewController {
         guard let accommodations = accommodations else { return }
         let array = accommodations.map { info -> MapAnnotation in
             let location = CLLocationCoordinate2D(latitude: info.latitude, longitude: info.longitude)
-            return MapAnnotation(coordinate: location, title: info.name)
+            return MapAnnotation(coordinate: location, accommodations: info)
         }
         mapView.addAnnotations(array)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? MapAnnotation else { return nil }
+        
+        var view: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: MapAnnotation.identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation,
+                                          reuseIdentifier: MapAnnotation.identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: 0, y: 0)
+            let callOutView = MapDetailView()
+            let viewModel = AccommodationsCellViewModel(accommodations: annotation.accommodations)
+            viewModel.images.append(ImageManager.load(from: annotation.accommodations.images[0])!)
+            callOutView.apply(with: viewModel)
+            view.detailCalloutAccessoryView = callOutView
+            
+            let titleLabel = UILabel()
+            titleLabel.font = .systemFont(ofSize: 10)
+            titleLabel.text = annotation.accommodations.name
+            view.addSubview(titleLabel)
+            titleLabel.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(view.snp.bottom)
+            }
+        }
+        return view
     }
 }

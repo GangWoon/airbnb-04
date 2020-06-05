@@ -8,13 +8,16 @@
 
 import MapKit
 
-class MapAnnotation: NSObject, MKAnnotation {
+final class MapAnnotation: NSObject, MKAnnotation {
     
-    var coordinate: CLLocationCoordinate2D
-    var title: String?
+    // MARK: - Properties
+    static let identifier: String = "MapAnnotation"
+    let accommodations: Accommodations
+    let coordinate: CLLocationCoordinate2D
     
-    init(coordinate: CLLocationCoordinate2D, title: String) {
+    // MARK: - Lifecycle
+    init(coordinate: CLLocationCoordinate2D, accommodations: Accommodations) {
         self.coordinate = coordinate
-        self.title = title
+        self.accommodations = accommodations
     }
 }
